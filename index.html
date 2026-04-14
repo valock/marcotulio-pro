@@ -28,7 +28,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- JSON-LD Schema -->
   <script type="application/ld+json">
@@ -66,16 +66,17 @@
       --border:  #E2E8F0;
       --r:       14px;
       --r-sm:    8px;
-      --font-display: 'Syne', sans-serif;
-      --font-body:    'Inter', sans-serif;
+      --font-display: 'Bricolage Grotesque', sans-serif;
+      --font-body:    'Plus Jakarta Sans', sans-serif;
     }
 
     body {
       font-family: var(--font-body);
       background: var(--white);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
       font-size: 16px;
+      font-feature-settings: 'kern' 1, 'liga' 1;
       overflow-x: hidden;
     }
 
@@ -97,7 +98,7 @@
       transition: padding 0.3s;
     }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: white; letter-spacing: -0.3px; }
+    .nav-logo { font-family: var(--font-display); font-size: 17px; font-weight: 800; color: white; letter-spacing: -0.1px; }
     .nav-logo span { color: var(--gold); }
     .nav-links { display: flex; align-items: center; gap: 28px; }
     .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.15s; }
@@ -150,9 +151,9 @@
 
     .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(36px, 6vw, 68px);
+      font-size: clamp(40px, 7vw, 70px);
       font-weight: 800; color: white;
-      line-height: 1.05; letter-spacing: -1.5px;
+      line-height: 1.1; letter-spacing: -0.5px;
       margin-bottom: 24px;
       animation: fadeUp 0.6s ease 0.1s both;
     }
@@ -160,8 +161,8 @@
     .hero h1 .line2 { color: rgba(255,255,255,0.55); display: block; }
 
     .hero-desc {
-      font-size: 18px; color: rgba(255,255,255,0.65);
-      max-width: 520px; line-height: 1.65;
+      font-size: 17px; color: rgba(255,255,255,0.72);
+      max-width: 520px; line-height: 1.7;
       margin-bottom: 40px;
       animation: fadeUp 0.6s ease 0.2s both;
     }
@@ -192,7 +193,7 @@
       display: flex; gap: 40px; margin-top: 60px; flex-wrap: wrap;
       animation: fadeUp 0.6s ease 0.4s both;
     }
-    .hero-stat-num { font-family: var(--font-display); font-size: 32px; font-weight: 800; color: var(--gold); line-height: 1; }
+    .hero-stat-num { font-family: var(--font-display); font-size: 30px; font-weight: 800; color: var(--gold); line-height: 1.1; }
     .hero-stat-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; }
 
     .hero-visual {
@@ -225,13 +226,13 @@
     }
     .section-label.dark { color: var(--gold2); }
     .section-title {
-      font-family: var(--font-display); font-size: clamp(28px, 4vw, 42px);
-      font-weight: 800; line-height: 1.1; letter-spacing: -0.8px;
+      font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700; line-height: 1.15; letter-spacing: -0.3px;
       margin-bottom: 16px;
     }
     .section-title em { color: var(--gold); font-style: normal; }
     .section-title.white { color: white; }
-    .section-desc { font-size: 17px; color: var(--muted); line-height: 1.65; max-width: 560px; }
+    .section-desc { font-size: 16px; color: var(--muted); line-height: 1.7; max-width: 560px; }
     .section-desc.white { color: rgba(255,255,255,0.65); }
 
     /* ===== PRODUCTS ===== */
@@ -262,7 +263,7 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 22px; margin-bottom: 16px;
     }
-    .product-name { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: white; margin-bottom: 6px; }
+    .product-name { font-family: var(--font-display); font-size: 21px; font-weight: 700; color: white; margin-bottom: 6px; }
     .product-tagline { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5; }
     .product-body { padding: 24px 28px; }
     .product-features { list-style: none; margin-bottom: 24px; }
@@ -315,7 +316,7 @@
       font-family: var(--font-display); font-size: 18px; font-weight: 800;
       margin-bottom: 20px;
     }
-    .step-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 10px; color: var(--navy); }
+    .step-title { font-family: var(--font-display); font-size: 19px; font-weight: 700; margin-bottom: 10px; color: var(--navy); letter-spacing: -0.1px; }
     .step-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
     /* ===== TESTIMONIALS ===== */
@@ -377,8 +378,8 @@
     }
     .cta-section h2 {
       font-family: var(--font-display); font-size: clamp(26px, 4vw, 40px);
-      font-weight: 800; color: white; margin-bottom: 14px;
-      position: relative;
+      font-weight: 700; color: white; margin-bottom: 14px;
+      position: relative; letter-spacing: -0.2px; line-height: 1.15;
     }
     .cta-section p { font-size: 16px; color: rgba(255,255,255,0.65); margin-bottom: 32px; position: relative; }
     .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
@@ -388,7 +389,7 @@
     footer { background: var(--navy); color: white; padding: 56px 0 28px; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
     @media(max-width:768px) { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
-    .footer-logo { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: white; margin-bottom: 12px; }
+    .footer-logo { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: white; margin-bottom: 12px; letter-spacing: -0.1px; }
     .footer-logo span { color: var(--gold); }
     .footer-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 280px; }
     .footer-col-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
