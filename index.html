@@ -441,6 +441,44 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
 
+    /* ===== BLOG TEASER ===== */
+    .blog-teaser-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;
+      margin-top: 48px;
+    }
+    @media(max-width:900px) { .blog-teaser-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:600px) { .blog-teaser-grid { grid-template-columns: 1fr; } }
+    .blog-teaser-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 24px;
+      text-decoration: none; display: block;
+      transition: all 0.22s;
+    }
+    .blog-teaser-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(15,36,68,0.1);
+      border-color: var(--navy2);
+    }
+    .blog-teaser-cat {
+      font-size: 11px; font-weight: 700;
+      color: var(--gold); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    .blog-teaser-title {
+      font-family: var(--font-display); font-size: 17px; font-weight: 700;
+      color: var(--navy); line-height: 1.3; margin-bottom: 10px;
+    }
+    .blog-teaser-excerpt {
+      font-size: 13px; color: var(--muted); line-height: 1.65;
+    }
+    .blog-teaser-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 13px; font-weight: 600; color: var(--navy);
+      margin-top: 14px; text-decoration: none;
+      transition: gap 0.15s;
+    }
+    .blog-teaser-card:hover .blog-teaser-link { gap: 7px; }
+
     /* ===== RESPONSIVE ===== */
     @media(max-width:600px) {
       .section { padding: 60px 0; }
@@ -462,6 +500,7 @@
         <a href="#como-funciona">Como funciona</a>
         <a href="#sobre">Sobre</a>
         <a href="#faq">FAQ</a>
+        <a href="/blog">Blog</a>
         <a href="https://wa.me/5534996778075?text=Olá Marco Túlio! Vi seu site e tenho interesse nas ferramentas." target="_blank" class="nav-cta">Falar com Marco</a>
       </div>
       <button class="nav-menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
@@ -472,6 +511,7 @@
     <a href="#como-funciona" onclick="toggleMenu()">Como funciona</a>
     <a href="#sobre" onclick="toggleMenu()">Sobre</a>
     <a href="#faq" onclick="toggleMenu()">FAQ</a>
+    <a href="/blog" onclick="toggleMenu()">Blog</a>
     <a href="https://wa.me/5534996778075" target="_blank" style="color:var(--wa)!important;">💬 Falar no WhatsApp</a>
   </div>
 </nav>
@@ -773,6 +813,42 @@
   </div>
 </section>
 
+<!-- BLOG TEASER -->
+<section class="section section-alt" id="blog">
+  <div class="container">
+    <div class="reveal" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:0;">
+      <div>
+        <span class="section-label">Do mercado pra prática</span>
+        <h2 class="section-title">Últimas do <em>blog</em></h2>
+        <p class="section-desc">Escrevo sobre o que vivo: ferramentas, MCMV, erros e ajustes. Sem teoria vazia.</p>
+      </div>
+      <a href="/blog" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap;">
+        Ver todos os artigos →
+      </a>
+    </div>
+    <div class="blog-teaser-grid">
+      <a href="/blog" class="blog-teaser-card reveal">
+        <div class="blog-teaser-cat">Ferramentas & Automação</div>
+        <div class="blog-teaser-title">Como construí um sistema de indicações do zero — e o que aprendi no caminho</div>
+        <p class="blog-teaser-excerpt">Por anos, indicação foi o canal que mais fechava — e o mais bagunçado. Aqui conto como nasceu o Torrano Indica.</p>
+        <span class="blog-teaser-link">Ler artigo →</span>
+      </a>
+      <a href="/blog" class="blog-teaser-card reveal reveal-delay-1">
+        <div class="blog-teaser-cat">MCMV & Mercado</div>
+        <div class="blog-teaser-title">MCMV em Uberlândia em 2025: o que está acontecendo de verdade na ponta</div>
+        <p class="blog-teaser-excerpt">O mercado nunca esteve tão movimentado. E nunca teve tanto corretor despreparado pra atender esse público.</p>
+        <span class="blog-teaser-link">Ler artigo →</span>
+      </a>
+      <a href="/blog" class="blog-teaser-card reveal reveal-delay-2">
+        <div class="blog-teaser-cat">Produtividade</div>
+        <div class="blog-teaser-title">O corretor trabalha mais horas do que deveria — e quase tudo é problema de processo</div>
+        <p class="blog-teaser-excerpt">Minha tentativa de resolver o problema do tempo desperdiçado com ferramentas simples que funcionam no celular.</p>
+        <span class="blog-teaser-link">Ler artigo →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- CTA FINAL -->
 <section class="section" style="padding-top:0;">
   <div class="container">
@@ -817,6 +893,7 @@
         <ul class="footer-links">
           <li><a href="#sobre">Sobre Marco Túlio</a></li>
           <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="/blog">Blog</a></li>
           <li><a href="#faq">Perguntas frequentes</a></li>
           <li><a href="https://torrano.marcotulio.pro" target="_blank">Torrano Indica →</a></li>
           <li><a href="/admin.html">Admin</a></li>
