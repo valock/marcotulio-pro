@@ -1,0 +1,19 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Deps / env
+node_modules/
+.env
+.env.*
+
+# Contexto de design (impeccable) — local, fora do deploy
+PRODUCT.md
+DESIGN.md
+.impeccable/
+.claude/
+
+# Netlify
+.netlify/
