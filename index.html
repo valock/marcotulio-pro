@@ -6,6 +6,7 @@
   <script>document.documentElement.className="js";</script>
 
   <!-- Favicons / PWA -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -139,6 +140,13 @@
     .field input:focus{outline:none;border-color:var(--azul);box-shadow:0 0 0 3px rgba(26,86,219,.2)}
     .lead .btn{width:100%;margin-top:4px}
     .lead-fine{font-size:.78rem;color:var(--tinta-suave);text-align:center;margin-top:12px}
+    .lead-photo{width:60px;height:60px;border-radius:50%;object-fit:cover;flex:none;background:var(--azul-claro)}
+    .hero-logos{margin-bottom:24px}
+    .hl-label{display:block;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.82);margin-bottom:10px}
+    .hl-row{display:flex;flex-wrap:wrap;gap:10px}
+    .hl-chip{display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:12px;padding:6px 12px;height:52px;min-width:64px}
+    .hl-chip img{max-height:34px;max-width:92px;width:auto;height:auto;object-fit:contain;display:block}
+    .sobre-photo img{width:100%;height:100%;object-fit:contain;display:block}
 
     /* sections */
     .sec{padding:84px 0}
@@ -316,9 +324,13 @@
 <section class="hero" id="hero">
   <div class="wrap hero-in">
     <div>
-      <div class="chips">
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/></svg> Especialista Caixa · MCMV · FGTS</span>
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 9h14"/></svg> 15 anos em Uberlândia</span>
+      <div class="hero-logos">
+        <span class="hl-label">Especialista nos programas</span>
+        <div class="hl-row">
+          <span class="hl-chip"><img src="/img/caixa.png" alt="Caixa Econômica Federal" width="92" height="34" decoding="async"></span>
+          <span class="hl-chip"><img src="/img/mcmv.png" alt="Minha Casa Minha Vida" width="40" height="34" decoding="async"></span>
+          <span class="hl-chip"><img src="/img/fgts.png" alt="FGTS — Fundo de Garantia do Tempo de Serviço" width="46" height="34" decoding="async"></span>
+        </div>
       </div>
       <h1>Realize o sonho da <em>casa própria</em> em Uberlândia</h1>
       <p class="hero-sub">Eu te acompanho do primeiro contato à chave na mão: financiamento Caixa, Minha Casa Minha Vida e FGTS — sem juridiquês e com resposta rápida.</p>
@@ -331,13 +343,13 @@
       </div>
       <div class="hero-proof">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:18px;height:18px;flex:none"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        Especializado em Caixa, Minha Casa Minha Vida e FGTS — atendimento de gente, do "oi" à mudança.
+        15 anos ajudando famílias de Uberlândia a sair do aluguel — atendimento de gente, do "oi" à mudança.
       </div>
     </div>
 
     <form class="lead" id="leadForm" aria-label="Fale com o Marco">
       <div class="lead-top">
-        <div class="mono">MT</div>
+        <img class="lead-photo" src="/img/marco.png" alt="Marco Túlio" width="60" height="60">
         <div>
           <p class="lead-title">Bora começar?</p>
           <p class="lead-sub">Deixe seu nome e WhatsApp — eu te chamo agora.</p>
@@ -412,7 +424,7 @@
 <section class="sec" id="sobre" style="background:var(--superficie);border-top:1px solid var(--nevoa);border-bottom:1px solid var(--nevoa)">
   <div class="wrap sobre">
     <div class="sobre-photo reveal">
-      <div class="mono">MT</div>
+      <img src="/img/marco.png" alt="Marco Túlio, corretor de imóveis em Uberlândia" width="300" height="300" loading="lazy" decoding="async">
     </div>
     <div class="reveal">
       <h2>Gente de verdade, do seu lado</h2>
