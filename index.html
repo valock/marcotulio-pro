@@ -51,6 +51,15 @@
     "url": "https://marcotulio.pro",
     "telephone": "+5534996778075",
     "areaServed": "Uberlândia, MG",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Benjamin Constant, 56 - Centro",
+      "addressLocality": "Uberlândia",
+      "addressRegion": "MG",
+      "postalCode": "38400-678",
+      "addressCountry": "BR"
+    },
+    "worksFor": { "@type": "Organization", "name": "Torrano Negócios Imobiliários LTDA" },
     "knowsAbout": ["Financiamento Caixa", "Minha Casa Minha Vida", "FGTS", "Compra e venda de imóveis"],
     "sameAs": ["https://wa.me/5534996778075"]
   }
@@ -143,10 +152,9 @@
     .lead-photo{width:60px;height:60px;border-radius:50%;object-fit:cover;flex:none;background:var(--azul-claro)}
     .hero-logos{margin-bottom:24px}
     .hl-label{display:block;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.82);margin-bottom:10px}
-    .hl-row{display:flex;flex-wrap:wrap;gap:10px}
-    .hl-chip{display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:12px;padding:6px 12px;height:52px;min-width:64px}
-    .hl-chip img{max-height:34px;max-width:92px;width:auto;height:auto;object-fit:contain;display:block}
-    .sobre-photo img{width:100%;height:100%;object-fit:contain;display:block}
+    .hl-row{display:inline-flex;flex-wrap:wrap;align-items:center;gap:20px;background:#fff;border-radius:14px;padding:12px 20px}
+    .hl-row img{height:30px;width:auto;max-width:104px;object-fit:contain;display:block;mix-blend-mode:multiply}
+    .sobre-photo img{width:100%;height:100%;object-fit:cover;display:block}
 
     /* sections */
     .sec{padding:84px 0}
@@ -171,7 +179,7 @@
 
     /* sobre */
     .sobre{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:center}
-    .sobre-photo{aspect-ratio:1;border-radius:var(--r-lg);background:var(--azul-claro);display:grid;place-items:center;position:relative;overflow:hidden;border:1px solid var(--nevoa)}
+    .sobre-photo{aspect-ratio:1;border-radius:50%;background:var(--azul-claro);overflow:hidden;border:6px solid #fff;box-shadow:var(--lift)}
     .sobre-photo .mono{width:110px;height:110px;border-radius:30px;font-size:2.8rem}
     .sobre-photo .ph{position:absolute;bottom:14px;font-size:.78rem;color:var(--tinta-suave)}
     .sobre h2{margin-bottom:18px}
@@ -327,9 +335,9 @@
       <div class="hero-logos">
         <span class="hl-label">Especialista nos programas</span>
         <div class="hl-row">
-          <span class="hl-chip"><img src="/img/caixa.png" alt="Caixa Econômica Federal" width="92" height="34" decoding="async"></span>
-          <span class="hl-chip"><img src="/img/mcmv.png" alt="Minha Casa Minha Vida" width="40" height="34" decoding="async"></span>
-          <span class="hl-chip"><img src="/img/fgts.png" alt="FGTS — Fundo de Garantia do Tempo de Serviço" width="46" height="34" decoding="async"></span>
+          <img src="/img/caixa.png" alt="Caixa Econômica Federal" decoding="async">
+          <img src="/img/mcmv.png" alt="Minha Casa Minha Vida" decoding="async">
+          <img src="/img/fgts.png" alt="FGTS — Fundo de Garantia do Tempo de Serviço" decoding="async">
         </div>
       </div>
       <h1>Realize o sonho da <em>casa própria</em> em Uberlândia</h1>
@@ -428,7 +436,7 @@
     </div>
     <div class="reveal">
       <h2>Gente de verdade, do seu lado</h2>
-      <div class="role">Marco Túlio Andrade Freitas · Corretor de imóveis · Uberlândia, MG</div>
+      <div class="role">Marco Túlio Andrade Freitas · Corretor parceiro da Torrano Negócios Imobiliários · Uberlândia/MG</div>
       <p>São 15 anos vivendo o mercado imobiliário de Uberlândia por dentro. Já ajudei muita gente a sair do aluguel e conquistar a casa própria — e aprendi que o que trava as pessoas não é o imóvel, é a confusão do financiamento: renda, FGTS, taxas, documentação.</p>
       <p>Meu trabalho é tirar esse peso das suas costas. Eu explico cada etapa na sua língua, cuido da papelada com a Caixa e fico do seu lado até a chave na mão. Sério no processo, gente boa na conversa.</p>
       <a href="https://wa.me/5534996778075?text=Olá Marco! Quero tirar uma dúvida sobre financiamento." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:8px">Tirar uma dúvida agora</a>
@@ -589,13 +597,13 @@
         <ul>
           <li><a href="https://wa.me/5534996778075" target="_blank" rel="noopener">WhatsApp: (34) 99677-8075</a></li>
           <li><a href="mailto:marcotulioandra@gmail.com">marcotulioandra@gmail.com</a></li>
-          <li>Uberlândia, MG</li>
+          <li>R. Benjamin Constant, 56 — Centro<br>Uberlândia/MG · 38400-678</li>
         </ul>
       </div>
     </div>
     <div class="foot-bar">
-      <span>© 2026 Marco Túlio Andrade Freitas · Corretor de Imóveis</span>
-      <span>Uberlândia, MG · Caixa · MCMV · FGTS</span>
+      <span>© 2026 Marco Túlio Andrade Freitas · Corretor parceiro da Torrano Negócios Imobiliários LTDA · CRECI/MG nº 7469</span>
+      <span>Uberlândia, MG</span>
     </div>
   </div>
 </footer>
