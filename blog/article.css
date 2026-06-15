@@ -95,6 +95,7 @@ footer{background:var(--tinta);color:rgba(255,255,255,.72);padding:48px 0 28px;m
 
 @media(max-width:680px){
   body{font-size:17px}
+  .wrap{padding:0 28px}
   .nav-back span{display:none}
   .prose>p,.prose>ul,.prose>ol{font-size:1.06rem}
 }
