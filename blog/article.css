@@ -68,6 +68,15 @@ img{max-width:100%;display:block}
 .prose blockquote{margin:28px 0;padding:20px 24px;background:var(--azul-claro);border-radius:var(--r-md);font-size:1.18rem;color:var(--azul-profundo);font-weight:500}
 .prose .callout{margin:28px 0;padding:22px 24px;background:var(--superficie);border:1px solid var(--nevoa);border-radius:var(--r-lg);box-shadow:var(--lift)}
 .prose .callout strong{color:var(--azul-profundo)}
+.prose figure{margin:30px 0}
+.prose figure img{width:100%;border-radius:var(--r-lg);display:block;border:1px solid var(--nevoa)}
+.prose figure figcaption{font-size:.9rem;color:var(--tinta-suave);margin-top:10px;text-align:center}
+.prose .table-wrap{overflow-x:auto;margin:30px 0;border:1px solid var(--nevoa);border-radius:var(--r-md)}
+.prose table{width:100%;border-collapse:collapse;font-size:1rem;min-width:460px}
+.prose thead th{background:var(--azul);color:#fff;font-weight:700;text-align:left;padding:13px 16px;font-size:.95rem}
+.prose tbody td{padding:13px 16px;border-top:1px solid var(--nevoa);color:#21314a}
+.prose tbody tr:nth-child(even){background:var(--azul-claro)}
+.prose tbody td:first-child{font-weight:700;color:var(--azul-profundo)}
 
 /* cta */
 .art-cta{max-width:760px;margin:48px auto 0;background:var(--azul);color:#fff;border-radius:var(--r-lg);padding:clamp(28px,5vw,44px);text-align:center;position:relative;overflow:hidden}
