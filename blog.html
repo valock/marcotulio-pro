@@ -1,886 +1,253 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0F2444">
-
-  <!-- SEO -->
-  <title>Blog | Marco Túlio — Mercado imobiliário, MCMV e ferramentas para corretores</title>
-  <meta name="description" content="Insights reais de 15 anos de experiência em relacionamento e, hoje, no mercado imobiliário de Uberlândia. Dicas práticas de MCMV, ferramentas para corretores e o que aprendi construindo sistemas do zero.">
-  <meta name="keywords" content="blog corretor imóveis, MCMV Uberlândia, ferramentas corretor, sistema indicações, mercado imobiliário MG">
-  <meta name="author" content="Marco Túlio">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://marcotulio.pro/blog">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="blog">
-  <meta property="og:url" content="https://marcotulio.pro/blog">
-  <meta property="og:title" content="Blog | Marco Túlio — Mercado imobiliário e ferramentas para corretores">
-  <meta property="og:description" content="Insights reais de 15 anos de experiência em relacionamento e, hoje, no mercado imobiliário de Uberlândia. MCMV, ferramentas e o que aprendi construindo sistemas do zero.">
-  <meta property="og:image" content="https://marcotulio.pro/og-image.jpg">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Blog | Marco Túlio — Corretor e desenvolvedor de ferramentas">
-  <meta name="twitter:description" content="Insights de 15 anos de experiência em relacionamento e, hoje, no mercado imobiliário de Uberlândia. MCMV, ferramentas e estratégias reais.">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://marcotulio.pro/blog"
-    },
-    "name": "Blog | Marco Túlio",
-    "description": "Insights reais de 15 anos de experiência em relacionamento e, hoje, no mercado imobiliário. MCMV, ferramentas para corretores e estratégias que funcionam na prática.",
-    "url": "https://marcotulio.pro/blog",
-    "publisher": {
-      "@type": "Person",
-      "name": "Marco Túlio Andrade Freitas",
-      "url": "https://marcotulio.pro",
-      "jobTitle": "Corretor de Imóveis & Desenvolvedor de Ferramentas"
-    }
-  }
-  </script>
-
-  <style>
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-
-    :root {
-      --navy:    #0F2444;
-      --navy2:   #1B3A6B;
-      --navy3:   #2d5099;
-      --gold:    #C8A84B;
-      --gold2:   #e8c96a;
-      --gold-bg: #FFF9EC;
-      --wa:      #25D366;
-      --bg:      #F5F6FA;
-      --white:   #FFFFFF;
-      --text:    #0D1B2A;
-      --muted:   #5A6A7E;
-      --border:  #E2E8F0;
-      --r:       14px;
-      --r-sm:    8px;
-      --font-display: 'Bricolage Grotesque', sans-serif;
-      --font-body:    'Plus Jakarta Sans', sans-serif;
-    }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      font-size: 16px;
-      overflow-x: hidden;
-    }
-
-    /* ===== UTILITIES ===== */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-    /* ===== NAV ===== */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(15,36,68,0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding: 14px 0;
-    }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { font-family: var(--font-display); font-size: 17px; font-weight: 800; color: white; letter-spacing: -0.1px; text-decoration: none; }
-    .nav-logo span { color: var(--gold); }
-    .nav-links { display: flex; align-items: center; gap: 28px; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.15s; }
-    .nav-links a:hover, .nav-links a.active { color: white; }
-    .nav-links a.active { color: var(--gold2); }
-    .nav-cta {
-      background: var(--gold); color: var(--navy) !important;
-      padding: 9px 18px; border-radius: 8px;
-      font-weight: 600 !important; font-size: 14px !important;
-      transition: all 0.15s !important;
-    }
-    .nav-cta:hover { background: var(--gold2) !important; transform: translateY(-1px); }
-    .nav-menu-btn { display: none; background: none; border: none; color: white; font-size: 22px; cursor: pointer; padding: 4px; }
-    .nav-mobile { display: none; flex-direction: column; gap: 0; background: var(--navy); border-top: 1px solid rgba(255,255,255,0.1); }
-    .nav-mobile a { padding: 14px 20px; font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.85); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-    .nav-mobile.open { display: flex; }
-    @media(max-width:768px) { .nav-links { display: none; } .nav-menu-btn { display: block; } }
-
-    /* ===== PAGE HEADER ===== */
-    .page-header {
-      background: var(--navy);
-      padding: 100px 0 52px;
-      position: relative;
-      overflow: hidden;
-    }
-    .page-header::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 80% at 80% 60%, rgba(200,168,75,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .page-header-inner { position: relative; z-index: 2; }
-    .breadcrumb {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 13px; color: rgba(255,255,255,0.45);
-      margin-bottom: 20px;
-    }
-    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; }
-    .breadcrumb a:hover { color: var(--gold2); }
-    .breadcrumb span { color: var(--gold2); }
-    .page-header h1 {
-      font-family: var(--font-display);
-      font-size: clamp(30px, 5vw, 48px);
-      font-weight: 800; color: white;
-      line-height: 1.1; letter-spacing: -0.3px;
-      margin-bottom: 14px;
-    }
-    .page-header h1 em { color: var(--gold); font-style: normal; }
-    .page-header p {
-      font-size: 16px; color: rgba(255,255,255,0.65);
-      max-width: 520px; line-height: 1.65;
-    }
-
-    /* ===== BLOG LAYOUT ===== */
-    .blog-wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 48px 20px 80px;
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 40px;
-      align-items: start;
-    }
-    @media(max-width:900px) { .blog-wrap { grid-template-columns: 1fr; } }
-
-    /* ===== ARTICLES ===== */
-    .posts-list { display: flex; flex-direction: column; gap: 28px; }
-
-    article.post-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      overflow: hidden;
-      transition: all 0.22s;
-    }
-    article.post-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 40px rgba(15,36,68,0.1);
-      border-color: rgba(15,36,68,0.2);
-    }
-
-    .post-thumb {
-      width: 100%; height: 220px;
-      object-fit: cover; display: block;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
-    }
-    .post-thumb-placeholder {
-      width: 100%; height: 220px;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 48px;
-    }
-
-    .post-body { padding: 28px 28px 24px; }
-    .post-category {
-      display: inline-block;
-      font-size: 11px; font-weight: 700;
-      color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .post-title {
-      font-family: var(--font-display);
-      font-size: 21px; font-weight: 700;
-      color: var(--navy); line-height: 1.25;
-      letter-spacing: -0.1px; margin-bottom: 12px;
-    }
-    .post-title a {
-      color: inherit; text-decoration: none;
-      transition: color 0.15s;
-    }
-    .post-title a:hover { color: var(--navy2); }
-
-    .post-meta {
-      display: flex; align-items: center; gap: 14px;
-      font-size: 12px; color: var(--muted);
-      margin-bottom: 14px; flex-wrap: wrap;
-    }
-    .post-meta time { font-weight: 500; }
-    .post-meta .dot { opacity: 0.4; }
-    .post-meta .reading-time { display: flex; align-items: center; gap: 4px; }
-
-    .post-excerpt {
-      font-size: 14px; color: var(--muted);
-      line-height: 1.75; margin-bottom: 20px;
-    }
-
-    .post-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-    .author-chip {
-      display: flex; align-items: center; gap: 8px;
-    }
-    .author-chip-avatar {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: var(--navy); color: var(--gold);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 10px; font-weight: 800; flex-shrink: 0;
-    }
-    .author-chip-name { font-size: 12px; font-weight: 600; color: var(--text); }
-    .read-more {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-size: 13px; font-weight: 600;
-      color: var(--navy); text-decoration: none;
-      transition: gap 0.15s, color 0.15s;
-    }
-    .read-more:hover { color: var(--navy2); gap: 8px; }
-
-    /* ===== FEATURED POST (primeiro) ===== */
-    article.post-card.featured {
-      border-color: rgba(200,168,75,0.35);
-      box-shadow: 0 0 0 1px rgba(200,168,75,0.2), 0 8px 32px rgba(200,168,75,0.08);
-    }
-    .featured-badge {
-      display: inline-flex; align-items: center; gap: 5px;
-      background: rgba(200,168,75,0.15); border: 1px solid rgba(200,168,75,0.3);
-      color: var(--gold); font-size: 11px; font-weight: 700;
-      padding: 4px 10px; border-radius: 100px;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .featured-badge::before { content: '★'; font-size: 9px; }
-
-    /* ===== COMING SOON POST ===== */
-    article.post-card.draft {
-      opacity: 0.72;
-      pointer-events: none;
-    }
-    .draft-label {
-      display: inline-flex; align-items: center; gap: 5px;
-      background: var(--bg); border: 1px solid var(--border);
-      color: var(--muted); font-size: 11px; font-weight: 600;
-      padding: 4px 10px; border-radius: 100px;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    /* ===== SIDEBAR ===== */
-    aside.blog-sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 90px; }
-
-    .sidebar-widget {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      padding: 24px;
-    }
-    .sidebar-widget h3 {
-      font-family: var(--font-display);
-      font-size: 16px; font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* author widget */
-    .widget-author { text-align: center; }
-    .widget-author-avatar {
-      width: 72px; height: 72px; border-radius: 50%;
-      background: var(--navy); color: var(--gold);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-display); font-size: 22px; font-weight: 800;
-      border: 3px solid var(--gold);
-      margin: 0 auto 12px;
-    }
-    .widget-author-name { font-family: var(--font-display); font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
-    .widget-author-role { font-size: 12px; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
-    .widget-author-bio { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
-
-    /* categories widget */
-    .cat-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
-    .cat-list li a {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 9px 12px; border-radius: 8px;
-      font-size: 14px; color: var(--text); text-decoration: none;
-      font-weight: 500; transition: all 0.15s;
-    }
-    .cat-list li a:hover { background: var(--bg); color: var(--navy); }
-    .cat-list li a span {
-      background: var(--bg); border: 1px solid var(--border);
-      font-size: 11px; color: var(--muted); font-weight: 600;
-      padding: 2px 8px; border-radius: 100px;
-    }
-
-    /* newsletter widget */
-    .sidebar-widget.widget-notify {
-      background: var(--navy);
-      border-color: var(--navy);
-    }
-    .sidebar-widget.widget-notify h3 { color: white; border-color: rgba(255,255,255,0.1); }
-    .widget-notify p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; margin-bottom: 16px; }
-    .notify-input {
-      width: 100%; padding: 11px 14px; border-radius: 8px;
-      border: 1.5px solid rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.08); color: white;
-      font-family: var(--font-body); font-size: 14px;
-      margin-bottom: 10px; outline: none;
-      transition: border-color 0.15s;
-    }
-    .notify-input::placeholder { color: rgba(255,255,255,0.35); }
-    .notify-input:focus { border-color: var(--gold); }
-    .notify-btn {
-      width: 100%; padding: 11px; border-radius: 8px;
-      background: var(--gold); color: var(--navy);
-      font-family: var(--font-body); font-size: 14px; font-weight: 700;
-      border: none; cursor: pointer; transition: background 0.15s;
-    }
-    .notify-btn:hover { background: var(--gold2); }
-    .notify-note { font-size: 11px; color: rgba(255,255,255,0.35); text-align: center; margin-top: 8px; }
-
-    /* wa widget */
-    .wa-btn {
-      display: flex; align-items: center; justify-content: center; gap: 9px;
-      width: 100%; padding: 13px 18px; border-radius: 10px;
-      background: var(--wa); color: white;
-      font-family: var(--font-body); font-size: 14px; font-weight: 700;
-      text-decoration: none; transition: background 0.15s;
-    }
-    .wa-btn:hover { background: #1da950; }
-    .wa-sub { font-size: 13px; color: var(--muted); text-align: center; margin-top: 10px; line-height: 1.5; }
-
-    /* tags widget */
-    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
-    .tag-cloud a {
-      display: inline-block; padding: 5px 12px; border-radius: 100px;
-      background: var(--bg); border: 1px solid var(--border);
-      font-size: 12px; font-weight: 500; color: var(--muted);
-      text-decoration: none; transition: all 0.15s;
-    }
-    .tag-cloud a:hover { background: var(--navy); color: white; border-color: var(--navy); }
-
-    /* ===== FOOTER ===== */
-    footer { background: var(--navy); color: white; padding: 56px 0 28px; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    @media(max-width:768px) { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
-    .footer-logo { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: white; margin-bottom: 12px; letter-spacing: -0.1px; }
-    .footer-logo span { color: var(--gold); }
-    .footer-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 280px; }
-    .footer-col-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-links a { font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.15s; }
-    .footer-links a:hover { color: white; }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .footer-legal { font-size: 12px; color: rgba(255,255,255,0.35); }
-    .footer-wa {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--wa); color: white;
-      padding: 9px 16px; border-radius: 8px;
-      font-size: 13px; font-weight: 600; text-decoration: none;
-      transition: all 0.15s;
-    }
-    .footer-wa:hover { background: #1da950; }
-
-    /* ===== SCROLL REVEAL ===== */
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-
-    /* ===== RESPONSIVE ===== */
-    @media(max-width:600px) {
-      .page-header { padding: 88px 0 40px; }
-      .blog-wrap { padding: 32px 16px 60px; }
-      .post-body { padding: 20px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.className="js";</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1A56DB">
+<title>Blog | Marco Túlio — Casa própria, MCMV e financiamento em Uberlândia</title>
+<meta name="description" content="Guias e análises sobre comprar a casa própria em Uberlândia: Minha Casa Minha Vida, financiamento Caixa, FGTS, empreendimentos e bairros. Por um corretor que descomplica.">
+<meta name="author" content="Marco Túlio Andrade Freitas">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://marcotulio.pro/blog">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marcotulio.pro/blog">
+<meta property="og:title" content="Blog | Marco Túlio — Casa própria e financiamento em Uberlândia">
+<meta property="og:description" content="Guias e análises sobre Minha Casa Minha Vida, financiamento Caixa, FGTS e o mercado imobiliário de Uberlândia.">
+<meta property="og:image" content="https://marcotulio.pro/og-image.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog | Marco Túlio — Uberlândia">
+<meta name="twitter:description" content="Guias sobre Minha Casa Minha Vida, financiamento Caixa e FGTS em Uberlândia.">
+<meta name="twitter:image" content="https://marcotulio.pro/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/article.css">
+<style>
+.bgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;max-width:1140px;margin:0 auto 40px}
+.bcard{display:flex;flex-direction:column;background:var(--superficie);border:1px solid var(--nevoa);border-radius:var(--r-lg);overflow:hidden;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.bcard:hover{transform:translateY(-4px);box-shadow:var(--lift-h)}
+.bcard .thumb{height:170px;background:var(--azul-claro);display:grid;place-items:center;color:var(--azul);font-size:54px;line-height:1;overflow:hidden}
+.bcard .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.bcard .bbody{padding:22px;display:flex;flex-direction:column;flex:1}
+.bcard .bcat{font-size:.78rem;font-weight:700;color:var(--coral-profundo);margin-bottom:8px}
+.bcard h2{font-size:1.18rem;line-height:1.25;letter-spacing:-.02em;margin-bottom:8px}
+.bcard .meta{font-size:.82rem;color:var(--tinta-suave);margin-bottom:10px}
+.bcard p{font-size:.95rem;color:var(--tinta-suave);line-height:1.5;margin-bottom:16px;flex:1}
+.bcard .more{font-weight:700;color:var(--azul-profundo)}
+.bcard:hover .more{color:var(--azul)}
+.bfeat{grid-column:1/-1}
+@media(min-width:760px){.bfeat{flex-direction:row}.bfeat .thumb{height:auto;width:46%;min-height:260px}.bfeat .bbody{width:54%;justify-content:center}.bfeat h2{font-size:1.7rem}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog do Marco Túlio",
+  "description": "Guias e análises sobre comprar a casa própria em Uberlândia: Minha Casa Minha Vida, financiamento Caixa, FGTS e empreendimentos.",
+  "url": "https://marcotulio.pro/blog",
+  "inLanguage": "pt-BR",
+  "publisher": {"@type": "Person", "name": "Marco Túlio Andrade Freitas", "url": "https://marcotulio.pro/sobre"}
+}
+</script>
 </head>
 <body>
-
-<!-- NAV -->
-<nav id="navbar">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">marco<span>tulio</span>.pro</a>
-      <div class="nav-links">
-        <a href="/#produtos">Ferramentas</a>
-        <a href="/#como-funciona">Como funciona</a>
-        <a href="/#sobre">Sobre</a>
-        <a href="/blog" class="active">Blog</a>
-        <a href="https://wa.me/5534996778075?text=Olá Marco Túlio! Vi seu site e tenho interesse nas ferramentas." target="_blank" class="nav-cta">Falar com Marco</a>
-      </div>
-      <button class="nav-menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
-    </div>
-  </div>
-  <div class="nav-mobile" id="navMobile">
-    <a href="/#produtos" onclick="toggleMenu()">Ferramentas</a>
-    <a href="/#como-funciona" onclick="toggleMenu()">Como funciona</a>
-    <a href="/#sobre" onclick="toggleMenu()">Sobre</a>
-    <a href="/blog" onclick="toggleMenu()">Blog</a>
-    <a href="https://wa.me/5534996778075" target="_blank" style="color:var(--wa)!important;">💬 Falar no WhatsApp</a>
-  </div>
-</nav>
-
-<!-- PAGE HEADER -->
-<header class="page-header">
-  <div class="container">
-    <div class="page-header-inner">
-      <nav aria-label="breadcrumb" class="breadcrumb">
-        <a href="/">marcotulio.pro</a>
-        <span>›</span>
-        <span>Blog</span>
-      </nav>
-      <h1>Do mercado pra <em>prática</em></h1>
-      <p>Escrevo sobre o que vivo: atendimento de verdade, ferramentas que desenvolvi, erros e ajustes. Sem teoria vazia — só o que funciona (ou não) no dia a dia do corretor.</p>
+<a href="#conteudo" class="skip">Pular para o conteúdo</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="/" class="logo">marco<b>tulio</b>.pro</a>
+    <div class="nav-right">
+      <a href="/" class="nav-back">← <span>Início</span></a>
+      <a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco%20T%C3%BAlio!%20Vim%20pelo%20blog%20e%20quero%20falar%20sobre%20a%20casa%20pr%C3%B3pria." target="_blank" rel="noopener" class="btn btn-zap"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg> WhatsApp</a>
     </div>
   </div>
 </header>
-
-<!-- BLOG CONTENT -->
-<div class="blog-wrap">
-
-  <!-- POSTS -->
-  <main>
-    <div class="posts-list">
-
-      <!-- FILTRO RÁPIDO -->
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px;" class="reveal">
-        <span style="font-size:12px;font-weight:600;color:var(--muted);align-self:center;">Ver:</span>
-        <a href="#todos" style="font-size:13px;font-weight:600;padding:6px 14px;border-radius:100px;background:var(--navy);color:white;text-decoration:none;">Todos</a>
-        <a href="#mcmv" style="font-size:13px;font-weight:500;padding:6px 14px;border-radius:100px;background:var(--bg);border:1px solid var(--border);color:var(--muted);text-decoration:none;">MCMV & Produtos</a>
-        <a href="#ferramentas" style="font-size:13px;font-weight:500;padding:6px 14px;border-radius:100px;background:var(--bg);border:1px solid var(--border);color:var(--muted);text-decoration:none;">Ferramentas</a>
-        <a href="#bairros" style="font-size:13px;font-weight:500;padding:6px 14px;border-radius:100px;background:var(--bg);border:1px solid var(--border);color:var(--muted);text-decoration:none;">Bairros</a>
-      </div>
-
-      <!-- SEÇÃO: EMPREENDIMENTOS ECONÔMICOS -->
-      <div class="reveal" style="padding:14px 0 4px;">
-        <span style="font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;">🏠 Empreendimentos econômicos em Uberlândia</span>
-      </div>
-
-      <!-- DESTAQUE: MCMV 2026 NOVAS REGRAS -->
-      <article class="post-card featured reveal" itemscope itemtype="https://schema.org/Article">
-        <div class="post-thumb-placeholder" style="padding:0;overflow:hidden;min-height:220px"><img src="/blog/img/mcmv-2026-caixa.jpg" alt="Tabela do Minha Casa Minha Vida 2026" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-        <div class="post-body">
-          <span class="featured-badge">Novidade · 2026</span>
-          <span class="post-category" itemprop="articleSection">Minha Casa Minha Vida</span>
-          <h2 class="post-title"><a href="/blog/minha-casa-minha-vida-2026-novas-regras" itemprop="headline">Minha Casa Minha Vida 2026: novas regras e tabela (sem juridiquês)</a></h2>
-          <div class="post-meta"><time datetime="2026-06-15" itemprop="datePublished">15 de junho de 2026</time><span class="dot">·</span><span class="reading-time">⏱ 7 min de leitura</span></div>
-          <p class="post-excerpt" itemprop="description">A nova tabela do MCMV 2026 (faixas, renda até R$ 13 mil, imóveis até R$ 600 mil), os juros e o que mudou na prática — explicado sem juridiquês.</p>
-          <div class="post-footer"><div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person"><div class="author-chip-avatar">MT</div><span class="author-chip-name" itemprop="name">Marco Túlio</span></div><a href="/blog/minha-casa-minha-vida-2026-novas-regras" class="read-more">Ler o artigo <span>→</span></a></div>
+<main id="conteudo" class="article">
+  <div class="wrap">
+    <header class="art-head" style="text-align:center;max-width:720px;margin:0 auto 40px">
+      <span class="kicker">Blog</span>
+      <h1>O blog do Marco Túlio</h1>
+      <p class="art-sub">Guias e análises sobre comprar a casa própria em Uberlândia — Minha Casa Minha Vida, financiamento Caixa, FGTS, empreendimentos e bairros. Tudo sem juridiquês.</p>
+    </header>
+    <div class="bgrid">
+      <a class="bcard bfeat" href="/blog/minha-casa-minha-vida-2026-novas-regras">
+        <div class="thumb"><img src="/blog/img/mcmv-2026-caixa.jpg" alt="MCMV 2026: novas regras e tabela (sem juridiquês)" loading="lazy"></div>
+        <div class="bbody">
+          <div class="bcat">Minha Casa Minha Vida</div>
+          <h2>MCMV 2026: novas regras e tabela (sem juridiquês)</h2>
+          <div class="meta">15 de junho de 2026</div>
+          <p>A nova tabela do MCMV 2026 (faixas, renda até R$ 13 mil, imóveis até R$ 600 mil), os juros e o que mudou na prática.</p>
+          <span class="more">Ler artigo →</span>
         </div>
-      </article>
-
-      <!-- GUIA MCMV (destaque) -->
-      <article class="post-card featured reveal" itemscope itemtype="https://schema.org/Article">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#11399E 0%,#1A56DB 100%);">🏢</div>
-        <div class="post-body">
-          <span class="featured-badge">Guia completo</span>
-          <span class="post-category" itemprop="articleSection">Minha Casa Minha Vida</span>
-          <h2 class="post-title"><a href="/blog/comprar-apartamento-minha-casa-minha-vida-uberlandia" itemprop="headline">Comprar apartamento Minha Casa Minha Vida em Uberlândia: o guia completo</a></h2>
-          <div class="post-meta"><time datetime="2026-06-14" itemprop="datePublished">14 de junho de 2026</time><span class="dot">·</span><span class="reading-time">⏱ 8 min de leitura</span></div>
-          <p class="post-excerpt" itemprop="description">Requisitos, faixas de renda, cadastro no eHABITA, passo a passo, benefícios da prefeitura e onde encontrar. O guia definitivo do MCMV em Uberlândia.</p>
-          <div class="post-footer"><div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person"><div class="author-chip-avatar">MT</div><span class="author-chip-name" itemprop="name">Marco Túlio</span></div><a href="/blog/comprar-apartamento-minha-casa-minha-vida-uberlandia" class="read-more">Ler o guia <span>→</span></a></div>
-        </div>
-      </article>
-
-      <!-- POSTS COPA DO MUNDO 2026 -->
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#11399E 0%,#1A56DB 100%);">⚽</div>
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">Mercado Imobiliário</span>
-          <h2 class="post-title"><a href="/blog/copa-2026-comprar-imovel-uberlandia" itemprop="headline">Copa 2026: por que comprar imóvel em Uberlândia agora</a></h2>
-          <div class="post-meta"><time datetime="2026-06-14" itemprop="datePublished">14 de junho de 2026</time><span class="dot">·</span><span class="reading-time">⏱ 6 min de leitura</span></div>
-          <p class="post-excerpt" itemprop="description">Enquanto o país torce na Copa do Mundo, quem se planeja sai na frente. Entenda o timing do mercado, o MCMV 2026 e o financiamento Caixa em Uberlândia.</p>
-          <div class="post-footer"><div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person"><div class="author-chip-avatar">MT</div><span class="author-chip-name" itemprop="name">Marco Túlio</span></div><a href="/blog/copa-2026-comprar-imovel-uberlandia" class="read-more">Ler artigo <span>→</span></a></div>
-        </div>
-      </article>
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#1A56DB 0%,#3D74E8 100%);">⚽</div>
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">Casa Própria</span>
-          <h2 class="post-title"><a href="/blog/assistir-copa-2026-casa-propria" itemprop="headline">Assista à próxima Copa na sua própria casa</a></h2>
-          <div class="post-meta"><time datetime="2026-06-14" itemprop="datePublished">14 de junho de 2026</time><span class="dot">·</span><span class="reading-time">⏱ 6 min de leitura</span></div>
-          <p class="post-excerpt" itemprop="description">A Copa 2026 passou em casa alugada? Veja o passo a passo simples pra sair do aluguel e comprar a casa própria via MCMV e Caixa em Uberlândia.</p>
-          <div class="post-footer"><div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person"><div class="author-chip-avatar">MT</div><span class="author-chip-name" itemprop="name">Marco Túlio</span></div><a href="/blog/assistir-copa-2026-casa-propria" class="read-more">Ler artigo <span>→</span></a></div>
-        </div>
-      </article>
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#0E7A33 0%,#16A047 100%);">⚽</div>
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">Financiamento e FGTS</span>
-          <h2 class="post-title"><a href="/blog/copa-2026-planejamento-fgts-imovel" itemprop="headline">Copa 2026: a estratégia para usar o FGTS e comprar seu imóvel</a></h2>
-          <div class="post-meta"><time datetime="2026-06-14" itemprop="datePublished">14 de junho de 2026</time><span class="dot">·</span><span class="reading-time">⏱ 6 min de leitura</span></div>
-          <p class="post-excerpt" itemprop="description">Preparo, time e tática: inspirado na Copa do Mundo, veja como usar o FGTS para comprar imóvel em Uberlândia e tirar a casa própria do papel.</p>
-          <div class="post-footer"><div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person"><div class="author-chip-avatar">MT</div><span class="author-chip-name" itemprop="name">Marco Túlio</span></div><a href="/blog/copa-2026-planejamento-fgts-imovel" class="read-more">Ler artigo <span>→</span></a></div>
-        </div>
-      </article>
-
-      <!-- GUIAS SEO (MRV, Caixa, Shopping Park, Pacaembu, casa no terreno, casinha da prefeitura) -->
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/Article">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#11399E 0%,#1A56DB 100%);">🏢</div>
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">Apartamentos em Uberlândia</span>
-          <h2 class="post-title"><a href="/blog/apartamento-mrv-uberlandia" itemprop="headline">Apartamento MRV em Uberlândia: como comprar com segurança</a></h2>
-          <div class="post-meta"><time datetime="2026-06-14" itemprop="datePublished">14 de junho de 2026</time><span class="dot">·</span><span class="reading-time">⏱ 8 min de leitura</span></div>
-          <p class="post-excerpt" itemprop="description">Como funciona comprar de uma grande construtora, financiar pela Caixa, usar o FGTS e se enquadrar no Minha Casa Minha Vida — com um corretor que escolhe e negocia ao seu lado.</p>
-          <div class="post-footer"><div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person"><div class="author-chip-avatar">MT</div><span class="author-chip-name" itemprop="name">Marco Túlio</span></div><a href="/blog/apartamento-mrv-uberlandia" class="read-more">Ler o guia <span>→</span></a></div>
-        </div>
-      </article>
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/Article">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#1A56DB 0%,#3D74E8 100%);">🏦</div>
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">Financiamento Caixa</span>
-          <h2 class="post-title"><a href="/blog/financiamento-caixa-uberlandia" itemprop="headline">Financiamento Caixa em Uberlândia: o guia completo de 2026</a></h2>
-          <div class="post-meta"><time datetime="2026-06-14" itemprop="datePublished">14 de junho de 2026</time><span class="dot">·</span><span class="reading-time">⏱ 8 min de leitura</span></div>
-          <p class="post-excerpt" itemprop="description">Como funciona o financiamento Caixa, como simular, as faixas e o subsídio do Minha Casa Minha Vida, o uso do FGTS, a documentação e os prazos — explicado por um corretor que te acompanha do primeiro cálculo à chave na mão.</p>
-          <div class="post-footer"><div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person"><div class="author-chip-avatar">MT</div><span class="author-chip-name" itemprop="name">Marco Túlio</span></div><a href="/blog/financiamento-caixa-uberlandia" class="read-more">Ler o guia <span>→</span></a></div>
-        </div>
-      </article>
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/Article">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#0E7A33 0%,#16A047 100%);">🏘️</div>
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">Minha Casa Minha Vida</span>
-          <h2 class="post-title"><a href="/blog/shopping-park-minha-casa-minha-vida-uberlandia" itemprop="headline">Shopping Park Minha Casa Minha Vida: como comprar na região</a></h2>
-          <div class="post-meta"><time datetime="2026-06-14" itemprop="datePublished">14 de junho de 2026</time><span class="dot">·</span><span class="reading-time">⏱ 6 min de leitura</span></div>
-          <p class="post-excerpt" itemprop="description">A região do Shopping Park, em Uberlândia, concentra moradias do Minha Casa Minha Vida. Veja como se preparar, se cadastrar e contar com um corretor que acompanha você de perto.</p>
-          <div class="post-footer"><div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person"><div class="author-chip-avatar">MT</div><span class="author-chip-name" itemprop="name">Marco Túlio</span></div><a href="/blog/shopping-park-minha-casa-minha-vida-uberlandia" class="read-more">Ler o guia <span>→</span></a></div>
-        </div>
-      </article>
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/Article">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#11399E 0%,#2d5099 100%);">🏠</div>
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">Minha Casa Minha Vida</span>
-          <h2 class="post-title"><a href="/blog/casas-pacaembu-uberlandia" itemprop="headline">Casas da Pacaembu em Uberlândia: guia da casa térrea no MCMV</a></h2>
-          <div class="post-meta"><time datetime="2026-06-14" itemprop="datePublished">14 de junho de 2026</time><span class="dot">·</span><span class="reading-time">⏱ 6 min de leitura</span></div>
-          <p class="post-excerpt" itemprop="description">Quer uma casa térrea, no chão, sem condomínio? Entenda as vantagens das casas da Pacaembu em Uberlândia, como funciona o financiamento pelo Minha Casa Minha Vida e como eu te acompanho até a chave.</p>
-          <div class="post-footer"><div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person"><div class="author-chip-avatar">MT</div><span class="author-chip-name" itemprop="name">Marco Túlio</span></div><a href="/blog/casas-pacaembu-uberlandia" class="read-more">Ler o guia <span>→</span></a></div>
-        </div>
-      </article>
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/Article">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#1A56DB 0%,#11399E 100%);">🏡</div>
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">Minha Casa Minha Vida</span>
-          <h2 class="post-title"><a href="/blog/casa-no-terreno-uberlandia" itemprop="headline">Casa sozinha no terreno em Uberlândia: as opções no MCMV</a></h2>
-          <div class="post-meta"><time datetime="2026-06-14" itemprop="datePublished">14 de junho de 2026</time><span class="dot">·</span><span class="reading-time">⏱ 8 min de leitura</span></div>
-          <p class="post-excerpt" itemprop="description">Quer uma casa térrea, individual, no próprio lote — sem condomínio e com quintal? Veja as opções de casa individual no Minha Casa Minha Vida em Uberlândia, as diferenças em relação ao apartamento e como financiar pela Caixa com FGTS.</p>
-          <div class="post-footer"><div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person"><div class="author-chip-avatar">MT</div><span class="author-chip-name" itemprop="name">Marco Túlio</span></div><a href="/blog/casa-no-terreno-uberlandia" class="read-more">Ler o guia <span>→</span></a></div>
-        </div>
-      </article>
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/Article">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#0E7A33 0%,#0A5526 100%);">🔑</div>
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">Minha Casa Minha Vida</span>
-          <h2 class="post-title"><a href="/blog/casinha-da-prefeitura-uberlandia" itemprop="headline">Casinha da prefeitura em Uberlândia: como funciona de verdade</a></h2>
-          <div class="post-meta"><time datetime="2026-06-14" itemprop="datePublished">14 de junho de 2026</time><span class="dot">·</span><span class="reading-time">⏱ 7 min de leitura</span></div>
-          <p class="post-excerpt" itemprop="description">A "casinha da prefeitura" é a Faixa 1 do MCMV — alocada por cadastro no eHABITA e critérios sociais, não vendida por corretor. Entenda como se cadastrar e o que fazer se você não se enquadra.</p>
-          <div class="post-footer"><div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person"><div class="author-chip-avatar">MT</div><span class="author-chip-name" itemprop="name">Marco Túlio</span></div><a href="/blog/casinha-da-prefeitura-uberlandia" class="read-more">Ler o guia <span>→</span></a></div>
-        </div>
-      </article>
-
-      <!-- POST DESTAQUE — MORUMBI -->
-      <article class="post-card featured reveal" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#0F2444 0%,#2d5099 100%);">🏘️</div>
-        <div class="post-body">
-          <span class="featured-badge">Análise de bairro</span>
-          <span class="post-category" itemprop="articleSection">Dicas de Bairros</span>
-          <h2 class="post-title">
-            <a href="/blog/morumbi-uberlandia-mcmv" itemprop="headline">O bairro Morumbi em Uberlândia: por que virou o epicentro do MCMV na cidade</a>
-          </h2>
-          <div class="post-meta">
-            <time datetime="2025-04-20" itemprop="datePublished">20 de abril de 2025</time>
-            <span class="dot">·</span>
-            <span class="reading-time">⏱ 6 min de leitura</span>
-          </div>
-          <p class="post-excerpt" itemprop="description">
-            Acompanho de perto o mercado de Uberlândia e nunca vi um bairro crescer tão rápido no MCMV como o Morumbi. Trez Residence, Bris Residence, novos empreendimentos chegando. O que está acontecendo nesse bairro e por que você deveria olhar pra ele agora.
-          </p>
-          <div class="post-footer">
-            <div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <div class="author-chip-avatar">MT</div>
-              <span class="author-chip-name" itemprop="name">Marco Túlio</span>
-            </div>
-            <a href="/blog/morumbi-uberlandia-mcmv" class="read-more">Ler artigo <span>→</span></a>
-          </div>
-        </div>
-      </article>
-
-      <!-- POST — TREZ RESIDENCE -->
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#1B3A6B 0%,#0F2444 100%);">🏢</div>
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">MCMV & Mercado</span>
-          <h2 class="post-title">
-            <a href="/blog/trez-residence-morumbi-uberlandia" itemprop="headline">Trez Residence no Morumbi: vale a pena? Análise real de um corretor</a>
-          </h2>
-          <div class="post-meta">
-            <time datetime="2025-05-15" itemprop="datePublished">15 de maio de 2025</time>
-            <span class="dot">·</span>
-            <span class="reading-time">⏱ 5 min de leitura</span>
-            <span class="dot">·</span>
-            <span style="background:rgba(200,168,75,0.12);color:var(--gold);font-size:11px;font-weight:600;padding:2px 8px;border-radius:100px;">R$ 205.000 · 59m²</span>
-          </div>
-          <p class="post-excerpt" itemprop="description">
-            2 quartos, 1 suíte, 59m², lazer completo e MCMV no Morumbi. O que ninguém te conta sobre esse empreendimento — incluindo o que ele tem de limitação e por que ainda assim faz sentido pra muitos compradores.
-          </p>
-          <div class="post-footer">
-            <div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <div class="author-chip-avatar">MT</div>
-              <span class="author-chip-name" itemprop="name">Marco Túlio</span>
-            </div>
-            <a href="/blog/trez-residence-morumbi-uberlandia" class="read-more">Ler artigo <span>→</span></a>
-          </div>
-        </div>
-      </article>
-
-      <!-- POST — BRIS RESIDENCE -->
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#1a3a5c 0%,#0d2035 100%);">🏗️</div>
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">MCMV & Mercado</span>
-          <h2 class="post-title">
-            <a href="/blog/bris-residence-morumbi-uberlandia" itemprop="headline">Bris Residence Morumbi: 3 torres, garden e entrada parcelada — o que muda na prática</a>
-          </h2>
-          <div class="post-meta">
-            <time datetime="2025-05-28" itemprop="datePublished">28 de maio de 2025</time>
-            <span class="dot">·</span>
-            <span class="reading-time">⏱ 6 min de leitura</span>
-            <span class="dot">·</span>
-            <span style="background:rgba(200,168,75,0.12);color:var(--gold);font-size:11px;font-weight:600;padding:2px 8px;border-radius:100px;">R$ 245.000 · Garden</span>
-          </div>
-          <p class="post-excerpt" itemprop="description">
-            Entrada a partir de R$ 1.000 parcelada em 12x, unidades garden com quintal, 3 torres no Morumbi. Análise honesta do Bris Residence — com tabela comparativa direta contra o Trez Residence pra você decidir sem enrolação.
-          </p>
-          <div class="post-footer">
-            <div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <div class="author-chip-avatar">MT</div>
-              <span class="author-chip-name" itemprop="name">Marco Túlio</span>
-            </div>
-            <a href="/blog/bris-residence-morumbi-uberlandia" class="read-more">Ler artigo <span>→</span></a>
-          </div>
-        </div>
-      </article>
-
-      <!-- POST — SOUL MRV -->
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#0d3320 0%,#1a5c3a 100%);">🌿</div>
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">MCMV & Mercado</span>
-          <h2 class="post-title">
-            <a href="/blog/soul-mrv-gavea-sul-uberlandia" itemprop="headline">Soul MRV Gávea Sul: lazer premium num econômico — isso muda a conta?</a>
-          </h2>
-          <div class="post-meta">
-            <time datetime="2025-06-02" itemprop="datePublished">2 de junho de 2025</time>
-            <span class="dot">·</span>
-            <span class="reading-time">⏱ 5 min de leitura</span>
-            <span class="dot">·</span>
-            <span style="background:rgba(200,168,75,0.12);color:var(--gold);font-size:11px;font-weight:600;padding:2px 8px;border-radius:100px;">R$ 265.000 · Entrega jul/27</span>
-          </div>
-          <p class="post-excerpt" itemprop="description">
-            Piscina com raia de 25m, wine bar, sky lounge e beach tennis num econômico de R$ 265 mil. A MRV apostou em lazer pra se diferenciar no Gávea Sul. Analisei se esse posicionamento vale a espera até julho de 2027.
-          </p>
-          <div class="post-footer">
-            <div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <div class="author-chip-avatar">MT</div>
-              <span class="author-chip-name" itemprop="name">Marco Túlio</span>
-            </div>
-            <a href="/blog/soul-mrv-gavea-sul-uberlandia" class="read-more">Ler artigo <span>→</span></a>
-          </div>
-        </div>
-      </article>
-
-      <!-- POST — RESERVA COSTA DO SOL -->
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="post-thumb-placeholder" style="background:linear-gradient(135deg,#1a2a40 0%,#0d1f33 100%);">☀️</div>
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">MCMV & Mercado</span>
-          <h2 class="post-title">
-            <a href="/blog/reserva-costa-do-sol-mrv-uberlandia" itemprop="headline">Reserva Costa do Sol MRV: o menor preço de entrada no econômico de Uberlândia em 2025</a>
-          </h2>
-          <div class="post-meta">
-            <time datetime="2025-06-10" itemprop="datePublished">10 de junho de 2025</time>
-            <span class="dot">·</span>
-            <span class="reading-time">⏱ 4 min de leitura</span>
-            <span class="dot">·</span>
-            <span style="background:rgba(200,168,75,0.12);color:var(--gold);font-size:11px;font-weight:600;padding:2px 8px;border-radius:100px;">R$ 225.000 · Zona Oeste</span>
-          </div>
-          <p class="post-excerpt" itemprop="description">
-            R$ 225 mil por apartamento novo em Uberlândia é o menor ticket formal que encontrei em 2025. Zona Oeste, MRV, 2 quartos e 41m². O que entra nesse preço, o que fica de fora — e pra quem realmente faz sentido comprar aqui.
-          </p>
-          <div class="post-footer">
-            <div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <div class="author-chip-avatar">MT</div>
-              <span class="author-chip-name" itemprop="name">Marco Túlio</span>
-            </div>
-            <a href="/blog/reserva-costa-do-sol-mrv-uberlandia" class="read-more">Ler artigo <span>→</span></a>
-          </div>
-        </div>
-      </article>
-
-      <!-- DIVISOR -->
-      <div class="reveal" style="padding:14px 0 4px;">
-        <span style="font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;">🛠 Ferramentas & bastidores</span>
-      </div>
-
-      <!-- POST — INDICAÇÕES -->
-      <article class="post-card reveal" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="post-body">
-          <span class="post-category" itemprop="articleSection">Ferramentas & Automação</span>
-          <h2 class="post-title">
-            <a href="#" itemprop="headline">Como construí um sistema de indicações do zero — e o que aprendi no caminho</a>
-          </h2>
-          <div class="post-meta">
-            <time datetime="2025-07-01" itemprop="datePublished">Em breve</time>
-            <span class="dot">·</span>
-            <span class="reading-time">⏱ 6 min de leitura</span>
-          </div>
-          <p class="post-excerpt" itemprop="description">
-            Por anos, indicação foi o canal que mais fechava — e o mais bagunçado. Cada cliente que indicava alguém virava um "cadê o retorno?" no WhatsApp. Aqui conto como nasceu o Torrano Indica.
-          </p>
-          <div class="post-footer">
-            <div class="author-chip" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <div class="author-chip-avatar">MT</div>
-              <span class="author-chip-name" itemprop="name">Marco Túlio</span>
-            </div>
-            <a href="#" class="read-more" style="opacity:0.45;pointer-events:none;">Em breve <span>→</span></a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </main>
-
-  <!-- SIDEBAR -->
-  <aside class="blog-sidebar">
-
-    <!-- Autor -->
-    <div class="sidebar-widget widget-author reveal">
-      <div class="widget-author-avatar">MT</div>
-      <div class="widget-author-name">Marco Túlio</div>
-      <div class="widget-author-role">Corretor · Desenvolvedor · Uberlândia</div>
-      <p class="widget-author-bio">15 anos de experiência em relacionamento e, hoje, no mercado imobiliário. Construo ferramentas porque os problemas do corretor são reais — e resolúveis. Este blog é onde processo o que aprendo.</p>
-      <a href="https://wa.me/5534996778075?text=Olá Marco! Li o blog e quero conversar." target="_blank" class="wa-btn" rel="noopener noreferrer">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Falar com Marco
       </a>
-    </div>
-
-    <!-- Categorias -->
-    <div class="sidebar-widget reveal">
-      <h3>Categorias</h3>
-      <ul class="cat-list">
-        <li><a href="#">MCMV & Mercado <span>4</span></a></li>
-        <li><a href="#">Dicas de Bairros <span>1</span></a></li>
-        <li><a href="#">Ferramentas & Automação <span>em breve</span></a></li>
-        <li><a href="#">Produtividade <span>em breve</span></a></li>
-        <li><a href="#">Bastidores <span>em breve</span></a></li>
-      </ul>
-    </div>
-
-    <!-- Aviso de novos posts -->
-    <div class="sidebar-widget widget-notify reveal">
-      <h3>Novos artigos no WhatsApp</h3>
-      <p>Quando sair post novo, aviso no zap. Sem spam — só conteúdo quando tiver algo real pra dizer.</p>
-      <a href="https://wa.me/5534996778075?text=Olá Marco! Quero receber aviso quando sair post novo no blog." target="_blank" class="notify-btn" rel="noopener noreferrer">Me avisa por lá →</a>
-      <p class="notify-note">Sem lista. Direto no seu WhatsApp.</p>
-    </div>
-
-    <!-- Tags -->
-    <div class="sidebar-widget reveal">
-      <h3>Tópicos</h3>
-      <div class="tag-cloud">
-        <a href="#">MCMV</a>
-        <a href="#">Uberlândia</a>
-        <a href="#">Indicações</a>
-        <a href="#">Pipeline</a>
-        <a href="#">WhatsApp</a>
-        <a href="#">Leads</a>
-        <a href="#">Funil</a>
-        <a href="#">Automação</a>
-        <a href="#">Minha Casa Minha Vida</a>
-        <a href="#">Corretor</a>
-      </div>
-    </div>
-
-    <!-- CTA Ferramenta -->
-    <div class="sidebar-widget reveal" style="background:var(--gold-bg);border-color:rgba(200,168,75,0.3);">
-      <h3 style="border-color:rgba(200,168,75,0.2);">🤝 Torrano Indica</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">Sistema de indicações que construí pra mim. Disponível gratuitamente pra você também.</p>
-      <a href="https://wa.me/5534996778075?text=Quero saber mais sobre o Torrano Indica!" target="_blank" class="wa-btn" style="background:var(--navy);" rel="noopener noreferrer">
-        Quero usar essa ferramenta
+      <a class="bcard" href="/blog/comprar-apartamento-minha-casa-minha-vida-uberlandia">
+        <div class="thumb"><span>🏢</span></div>
+        <div class="bbody">
+          <div class="bcat">Minha Casa Minha Vida</div>
+          <h2>Comprar apartamento Minha Casa Minha Vida em Uberlândia: o guia completo</h2>
+          <div class="meta">14 de junho de 2026</div>
+          <p>Requisitos, faixas, cadastro no eHABITA, passo a passo e benefícios da prefeitura. O guia definitivo do MCMV em Uberlândia.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
       </a>
-    </div>
-
-  </aside>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">marco<span>tulio</span>.pro</div>
-        <p class="footer-desc">Ferramentas criadas por um corretor, para corretores. Cada sistema resolve um problema real do mercado imobiliário brasileiro.</p>
-        <a href="https://wa.me/5534996778075?text=Olá Marco!" target="_blank" class="footer-wa" style="margin-top:20px;display:inline-flex;" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          (34) 9 9677-8075
-        </a>
-      </div>
-      <div>
-        <div class="footer-col-title">Ferramentas</div>
-        <ul class="footer-links">
-          <li><a href="/#produtos">Torrano Indica</a></li>
-          <li><a href="/#produtos">Funil Pro <small style="color:var(--gold);font-size:10px;">em breve</small></a></li>
-          <li><a href="/#produtos">Landing MCMV <small style="color:var(--gold);font-size:10px;">em breve</small></a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Links</div>
-        <ul class="footer-links">
-          <li><a href="/">marcotulio.pro</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/#sobre">Sobre Marco Túlio</a></li>
-          <li><a href="/#faq">Perguntas frequentes</a></li>
-          <li><a href="https://torrano.marcotulio.pro" target="_blank">Torrano Indica →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-legal">© 2025 marcotulio.pro · Marco Túlio Andrade Freitas · Uberlândia, MG</div>
-      <div class="footer-legal">Corretor de Imóveis · CRECI/MG</div>
+      <a class="bcard" href="/blog/apartamento-mrv-uberlandia">
+        <div class="thumb"><span>🏢</span></div>
+        <div class="bbody">
+          <div class="bcat">Apartamentos</div>
+          <h2>Apartamento MRV em Uberlândia: como comprar com segurança</h2>
+          <div class="meta">14 de junho de 2026</div>
+          <p>Como funciona comprar de uma grande construtora, financiar pela Caixa, usar o FGTS e se enquadrar no Minha Casa Minha Vida.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="bcard" href="/blog/financiamento-caixa-uberlandia">
+        <div class="thumb"><span>🏦</span></div>
+        <div class="bbody">
+          <div class="bcat">Financiamento Caixa</div>
+          <h2>Financiamento Caixa em Uberlândia: o guia completo de 2026</h2>
+          <div class="meta">14 de junho de 2026</div>
+          <p>Como funciona o financiamento Caixa, como simular, faixas, FGTS, documentação e prazos — sem juridiquês.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="bcard" href="/blog/shopping-park-minha-casa-minha-vida-uberlandia">
+        <div class="thumb"><span>🏘️</span></div>
+        <div class="bbody">
+          <div class="bcat">Minha Casa Minha Vida</div>
+          <h2>Shopping Park Minha Casa Minha Vida: como comprar na região</h2>
+          <div class="meta">14 de junho de 2026</div>
+          <p>A região do Shopping Park concentra moradias do MCMV. Veja como se preparar, se cadastrar e contar com um corretor.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="bcard" href="/blog/casas-pacaembu-uberlandia">
+        <div class="thumb"><span>🏠</span></div>
+        <div class="bbody">
+          <div class="bcat">Minha Casa Minha Vida</div>
+          <h2>Casas da Pacaembu em Uberlândia: guia da casa térrea no MCMV</h2>
+          <div class="meta">14 de junho de 2026</div>
+          <p>Quer uma casa térrea, sem condomínio? Entenda as casas da Pacaembu em Uberlândia e como financiar pelo MCMV.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="bcard" href="/blog/casa-no-terreno-uberlandia">
+        <div class="thumb"><span>🏡</span></div>
+        <div class="bbody">
+          <div class="bcat">Minha Casa Minha Vida</div>
+          <h2>Casa sozinha no terreno em Uberlândia: as opções no MCMV</h2>
+          <div class="meta">14 de junho de 2026</div>
+          <p>Casa individual, no próprio lote, com quintal? Veja as opções no MCMV em Uberlândia e as diferenças vs apartamento.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="bcard" href="/blog/casinha-da-prefeitura-uberlandia">
+        <div class="thumb"><span>🔑</span></div>
+        <div class="bbody">
+          <div class="bcat">Minha Casa Minha Vida</div>
+          <h2>Casinha da prefeitura em Uberlândia: como funciona de verdade</h2>
+          <div class="meta">14 de junho de 2026</div>
+          <p>A "casinha da prefeitura" é a Faixa 1 do MCMV — via cadastro no eHABITA. Entenda como se cadastrar e as alternativas.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="bcard" href="/blog/copa-2026-comprar-imovel-uberlandia">
+        <div class="thumb"><span>⚽</span></div>
+        <div class="bbody">
+          <div class="bcat">Mercado Imobiliário</div>
+          <h2>Copa 2026: por que comprar imóvel em Uberlândia agora</h2>
+          <div class="meta">14 de junho de 2026</div>
+          <p>Enquanto o país torce na Copa, quem se planeja sai na frente. Timing do mercado, MCMV 2026 e financiamento Caixa.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="bcard" href="/blog/assistir-copa-2026-casa-propria">
+        <div class="thumb"><span>⚽</span></div>
+        <div class="bbody">
+          <div class="bcat">Casa Própria</div>
+          <h2>Assista à próxima Copa na sua própria casa</h2>
+          <div class="meta">14 de junho de 2026</div>
+          <p>A Copa passou em casa alugada? Veja o passo a passo pra sair do aluguel e comprar a casa própria via MCMV e Caixa.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="bcard" href="/blog/copa-2026-planejamento-fgts-imovel">
+        <div class="thumb"><span>⚽</span></div>
+        <div class="bbody">
+          <div class="bcat">Financiamento e FGTS</div>
+          <h2>Copa 2026: a estratégia para usar o FGTS e comprar seu imóvel</h2>
+          <div class="meta">14 de junho de 2026</div>
+          <p>Preparo, time e tática: inspirado na Copa, como usar o FGTS para comprar imóvel em Uberlândia.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="bcard" href="/blog/reserva-costa-do-sol-mrv-uberlandia">
+        <div class="thumb"><span>🏢</span></div>
+        <div class="bbody">
+          <div class="bcat">MCMV & Mercado</div>
+          <h2>Reserva Costa do Sol MRV: R$ 225 mil na Zona Oeste</h2>
+          <div class="meta">10 de junho de 2025</div>
+          <p>O menor ticket do econômico em Uberlândia em 2025: 41m², 2 quartos, MRV. Análise honesta do que cabe — e do que não cabe — nesse preço.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="bcard" href="/blog/soul-mrv-gavea-sul-uberlandia">
+        <div class="thumb"><span>🏢</span></div>
+        <div class="bbody">
+          <div class="bcat">MCMV & Mercado</div>
+          <h2>Soul MRV no Gávea Sul: lazer premium num econômico</h2>
+          <div class="meta">2 de junho de 2025</div>
+          <p>Piscina com raia de 25m, beach tennis e wine bar num apartamento a partir de R$ 265 mil. A MRV apostou no lifestyle acessível no Jardim Sul. Analisamos se a conta fecha.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="bcard" href="/blog/bris-residence-morumbi-uberlandia">
+        <div class="thumb"><span>🏢</span></div>
+        <div class="bbody">
+          <div class="bcat">MCMV & Mercado</div>
+          <h2>Bris Residence Morumbi: 3 torres, garden e entrada parcelada</h2>
+          <div class="meta">28 de maio de 2025</div>
+          <p>Análise honesta do Bris Residence no Morumbi: 59m², garden no térreo e entrada parcelada em 12x sem juros. O que vale e o que observar antes de comprar.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="bcard" href="/blog/trez-residence-morumbi-uberlandia">
+        <div class="thumb"><span>🏢</span></div>
+        <div class="bbody">
+          <div class="bcat">MCMV & Mercado</div>
+          <h2>Trez Residence Morumbi: vale a pena?</h2>
+          <div class="meta">15 de maio de 2025</div>
+          <p>59m² com suíte num bairro em crescimento, por R$ 205 mil dentro do MCMV. A análise honesta de um corretor que vive o mercado de Uberlândia — incluindo o que ele melhoraria no produto.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
+      <a class="bcard" href="/blog/morumbi-uberlandia-mcmv">
+        <div class="thumb"><span>🏢</span></div>
+        <div class="bbody">
+          <div class="bcat">Dicas de Bairros</div>
+          <h2>Morumbi: o epicentro do MCMV em Uberlândia</h2>
+          <div class="meta">20 de abril de 2025</div>
+          <p>Nunca vi um bairro crescer tão rápido no segmento econômico. Terrenos viáveis, Trez e Bris Residence consolidados e mais lançamentos chegando — veja por que olhar pro Morumbi agora.</p>
+          <span class="more">Ler artigo →</span>
+        </div>
+      </a>
     </div>
   </div>
+</main>
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-logo">marco<b>tulio</b>.pro</div>
+    <p>Corretor parceiro da Torrano Negócios Imobiliários LTDA · CRECI/MG nº 7469 · Uberlândia/MG</p>
+    <p><a href="/">Início</a> · <a href="/blog">Blog</a> · <a href="/sobre">Sobre</a> · <a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco%20T%C3%BAlio!%20Vim%20pelo%20blog%20e%20quero%20falar%20sobre%20a%20casa%20pr%C3%B3pria." target="_blank" rel="noopener">WhatsApp</a></p>
+  </div>
 </footer>
-
+<a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco%20T%C3%BAlio!%20Vim%20pelo%20blog%20e%20quero%20falar%20sobre%20a%20casa%20pr%C3%B3pria." class="wa-float" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg></a>
 <script>
-  // NAV
-  function toggleMenu() {
-    document.getElementById('navMobile').classList.toggle('open');
-  }
-
-  // Scroll reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // Fallback reveal
-  setTimeout(() => {
-    document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
-  }, 800);
+(function(){var n=document.getElementById('nav');var f=function(){n.classList.toggle('scrolled',window.scrollY>10)};f();window.addEventListener('scroll',f,{passive:true});})();
 </script>
 </body>
 </html>
