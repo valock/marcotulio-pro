@@ -70,7 +70,8 @@ img{max-width:100%;display:block}
 .prose .callout{margin:28px 0;padding:22px 24px;background:var(--superficie);border:1px solid var(--nevoa);border-radius:var(--r-lg);box-shadow:var(--lift)}
 .prose .callout strong{color:var(--azul-profundo)}
 .prose figure{margin:30px 0}
-.prose figure img{width:100%;border-radius:var(--r-lg);display:block;border:1px solid var(--nevoa)}
+.prose figure img{width:100%;height:auto;border-radius:var(--r-lg);display:block;border:1px solid var(--nevoa)}
+.prose img,.art-head img{height:auto}
 .prose figure figcaption{font-size:.9rem;color:var(--tinta-suave);margin-top:10px;text-align:center}
 .prose .table-wrap{overflow-x:auto;margin:30px 0;border:1px solid var(--nevoa);border-radius:var(--r-md)}
 .prose table{width:100%;border-collapse:collapse;font-size:1rem;min-width:460px}
