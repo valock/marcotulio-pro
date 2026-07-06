@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.className="js";</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1A56DB">
+<title>Alugar ou financiar em Uberlândia? Calculadora grátis</title>
+<meta name="description" content="Calculadora grátis: alugar ou financiar em Uberlândia? Compare o patrimônio das duas escolhas em 30 anos, com juros do MCMV e valorização real. Feita por um corretor local.">
+<meta name="keywords" content="alugar ou financiar Uberlândia, calculadora alugar ou comprar, vale a pena financiar imóvel, patrimônio aluguel vs financiamento, MCMV Uberlândia">
+<meta name="author" content="Marco Túlio Andrade Freitas">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://marcotulio.pro/blog/alugar-ou-financiar-uberlandia">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://marcotulio.pro/blog/alugar-ou-financiar-uberlandia">
+<meta property="og:title" content="Alugar ou financiar em Uberlândia? Calculadora grátis">
+<meta property="og:description" content="Compare o patrimônio das duas escolhas com seus próprios números, com gráfico e os juros do MCMV. Sem achismo.">
+<meta property="og:image" content="https://marcotulio.pro/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:locale" content="pt_BR">
+<meta property="article:published_time" content="2026-07-05">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alugar ou financiar em Uberlândia? Calculadora grátis">
+<meta name="twitter:description" content="Coloque seus números e veja qual escolha constrói mais patrimônio em 30 anos.">
+<meta name="twitter:image" content="https://marcotulio.pro/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/article.css">
+<style>
+:root{--gold:#C8A84B;--navy-700:#1c3b66}
+.prose .calc{background:var(--superficie);border:1px solid var(--nevoa);border-radius:var(--r-lg);box-shadow:var(--lift);padding:26px;margin:24px 0}
+.prose .calc h3{margin:0 0 4px;font-size:1.25rem;font-family:var(--fdisp);color:var(--tinta)}
+.prose .calc .sub{font-size:.9rem;color:var(--tinta-suave);margin:0 0 20px}
+.prose .calc .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+@media(max-width:560px){.prose .calc .grid{grid-template-columns:1fr}}
+.prose .calc .field label{display:block;font-size:.85rem;font-weight:700;color:var(--tinta);margin-bottom:6px}
+.prose .calc .field .hint{font-weight:400;color:var(--tinta-suave);font-size:.75rem}
+.prose .calc .inp{position:relative;display:flex;align-items:center;border:1.5px solid var(--nevoa);border-radius:var(--r-sm);background:var(--fundo);overflow:hidden;transition:border-color .15s}
+.prose .calc .inp:focus-within{border-color:var(--azul)}
+.prose .calc .inp .pre,.prose .calc .inp .suf{padding:0 10px;color:var(--tinta-suave);font-size:.9rem;font-weight:600;white-space:nowrap}
+.prose .calc .inp input{border:none;background:transparent;padding:11px 8px;width:100%;font-family:var(--fbody);font-size:1rem;color:var(--tinta);outline:none;-moz-appearance:textfield}
+.prose .calc .inp input::-webkit-outer-spin-button,.prose .calc .inp input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.prose .calc .calcbtn{margin-top:22px;width:100%;background:var(--coral);color:#fff;border:none;border-radius:var(--r-pill);padding:15px;font-family:var(--fdisp);font-weight:700;font-size:1.05rem;cursor:pointer;transition:transform .15s var(--ease),background .15s}
+.prose .calc .calcbtn:hover{transform:translateY(-2px);background:var(--coral-profundo)}
+.prose .results{margin-top:24px;padding-top:24px;border-top:1px dashed var(--nevoa)}
+.prose .verdict{border-radius:var(--r-md);padding:18px 20px;margin-bottom:18px;font-family:var(--fdisp);font-weight:700;font-size:1.1rem;line-height:1.35;background:var(--azul-claro);border:1px solid var(--nevoa);border-left:4px solid var(--coral);color:var(--tinta)}
+.prose .verdict span{color:var(--azul-profundo)}
+.prose .rescards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.prose .rescards{grid-template-columns:1fr}}
+.prose .resc{border:1px solid var(--nevoa);border-radius:var(--r-md);padding:18px;background:var(--fundo)}
+.prose .resc.buy{border-top:3px solid var(--coral)}
+.prose .resc.rent{border-top:3px solid var(--azul)}
+.prose .resc .cap{font-size:.8rem;color:var(--tinta-suave);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.prose .resc .big{font-family:var(--fdisp);font-weight:800;font-size:clamp(24px,5vw,30px);color:var(--tinta);margin:6px 0 2px;line-height:1}
+.prose .resc .note{font-size:.8rem;color:var(--tinta-suave)}
+.prose .miniStats{display:flex;gap:20px;flex-wrap:wrap;margin:16px 2px 0;font-size:.9rem;color:var(--tinta-suave)}
+.prose .miniStats b{color:var(--tinta);font-family:var(--fdisp)}
+.prose .chartwrap{margin-top:20px}
+.prose .chartwrap .legend{display:flex;gap:18px;font-size:.8rem;color:var(--tinta-suave);margin-bottom:8px;flex-wrap:wrap}
+.prose .chartwrap .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:middle}
+.prose canvas{width:100%;height:260px;display:block}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://marcotulio.pro/blog/alugar-ou-financiar-uberlandia" },
+  "headline": "Alugar ou financiar em Uberlândia? Calculadora grátis (2026)",
+  "description": "Ferramenta que compara o patrimônio de alugar-e-investir vs financiar, com os números de Uberlândia.",
+  "datePublished": "2026-07-05",
+  "dateModified": "2026-07-05",
+  "author": { "@type": "Person", "name": "Marco Túlio Andrade Freitas", "url": "https://marcotulio.pro/sobre", "jobTitle": "Corretor de Imóveis" },
+  "publisher": { "@type": "Person", "name": "Marco Túlio Andrade Freitas", "url": "https://marcotulio.pro" },
+  "image": "https://marcotulio.pro/og-image.jpg",
+  "articleSection": "Ferramentas",
+  "inLanguage": "pt-BR",
+  "url": "https://marcotulio.pro/blog/alugar-ou-financiar-uberlandia",
+  "about": ["alugar ou financiar","patrimônio","financiamento imobiliário","Uberlândia"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "O que vale mais a pena em Uberlândia: alugar ou financiar?", "acceptedAnswer": {"@type": "Answer", "text": "Depende dos seus números e do tempo que pretende ficar no imóvel. Em prazos longos (acima de 8 a 10 anos), financiar tende a construir mais patrimônio, porque você para de pagar aluguel e o imóvel se valoriza. Em prazos curtos, alugar e investir a diferença pode ganhar. A calculadora mostra o resultado para o seu caso."}},
+    {"@type": "Question", "name": "Como a calculadora compara alugar e financiar?", "acceptedAnswer": {"@type": "Answer", "text": "Ela usa o método do patrimônio líquido: no cenário de compra, considera o imóvel valorizado menos o saldo devedor; no cenário de aluguel, considera a entrada investida mais a diferença mensal investida. Assim a comparação é justa, e não só parcela contra aluguel."}},
+    {"@type": "Question", "name": "Os subsídios entram na conta?", "acceptedAnswer": {"@type": "Answer", "text": "De forma indireta: some subsídio, FGTS e Cheque Moradia no campo entrada. Para o número exato, faça a simulação com um corretor, porque cada caso tem um subsídio diferente."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://marcotulio.pro/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://marcotulio.pro/blog" },
+    { "@type": "ListItem", "position": 3, "name": "Alugar ou financiar em Uberlândia", "item": "https://marcotulio.pro/blog/alugar-ou-financiar-uberlandia" }
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#conteudo" class="skip">Pular para o conteúdo</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="/" class="logo">marco<b>tulio</b>.pro</a>
+    <div class="nav-right">
+      <a href="/blog" class="nav-back">← <span>Voltar ao blog</span></a>
+      <a href="https://wa.me/5534996778075?text=Oi%20Marco,%20usei%20a%20calculadora%20e%20quero%20simular%20alugar%20vs%20financiar%20no%20meu%20caso." target="_blank" rel="noopener" class="btn btn-zap"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg> WhatsApp</a>
+    </div>
+  </div>
+</header>
+<main id="conteudo" class="article">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Trilha de navegação"><a href="/">Início</a> › <a href="/blog">Blog</a> › <span>Alugar ou financiar</span></nav>
+    <header class="art-head">
+      <span class="kicker">🧮 Ferramenta · MCMV 2026</span>
+      <h1>Alugar ou financiar em Uberlândia? Descubra com os seus números</h1>
+      <p class="art-sub">"Alugar é jogar dinheiro fora" e "financiar é pagar três imóveis pro banco" — os dois ditados estão errados quando viram regra geral. A resposta certa é matemática, não ditado. Coloque seus valores abaixo e veja qual escolha constrói mais patrimônio pra você.</p>
+      <div class="art-meta">
+        <span class="who"><span class="av">MT</span> Marco Túlio</span>
+        <span class="dot">·</span>
+        <time datetime="2026-07-05">5 de julho de 2026</time>
+        <span class="dot">·</span>
+        <span>⏱ 6 min de leitura</span>
+      </div>
+    </header>
+    <div class="art-cover"><span class="emoji">🧮</span></div>
+    <article class="prose">
+
+  <div class="calc">
+    <h3>Calculadora: Alugar vs. Financiar</h3>
+    <p class="sub">Ajuste os campos com a sua realidade. Já deixei valores típicos de um 2 quartos em Uberlândia.</p>
+    <div class="grid">
+      <div class="field"><label>Valor do imóvel</label><div class="inp"><span class="pre">R$</span><input id="valor" type="number" value="250000" min="0" step="1000"></div></div>
+      <div class="field"><label>Aluguel de um imóvel parecido <span class="hint">(por mês)</span></label><div class="inp"><span class="pre">R$</span><input id="aluguel" type="number" value="1400" min="0" step="50"></div></div>
+      <div class="field"><label>Entrada que você tem <span class="hint">(FGTS + subsídio + próprio)</span></label><div class="inp"><span class="pre">R$</span><input id="entrada" type="number" value="20000" min="0" step="1000"></div></div>
+      <div class="field"><label>Custos de compra <span class="hint">(ITBI+registro; MCMV pode ser isento)</span></label><div class="inp"><input id="custos" type="number" value="2" min="0" step="0.5"><span class="suf">% do imóvel</span></div></div>
+      <div class="field"><label>Prazo do financiamento</label><div class="inp"><input id="prazo" type="number" value="30" min="1" max="35" step="1"><span class="suf">anos</span></div></div>
+      <div class="field"><label>Juros do financiamento <span class="hint">(Faixa 2–3 ≈ 5–8%)</span></label><div class="inp"><input id="juros" type="number" value="7" min="0" step="0.1"><span class="suf">% ao ano</span></div></div>
+      <div class="field"><label>Custo mensal de ser dono <span class="hint">(condomínio+IPTU+manut.)</span></label><div class="inp"><span class="pre">R$</span><input id="dono" type="number" value="400" min="0" step="50"></div></div>
+      <div class="field"><label>Valorização do imóvel</label><div class="inp"><input id="valoriza" type="number" value="6" min="0" step="0.5"><span class="suf">% ao ano</span></div></div>
+      <div class="field"><label>Rendimento dos investimentos <span class="hint">(se alugar e investir)</span></label><div class="inp"><input id="rende" type="number" value="10" min="0" step="0.5"><span class="suf">% ao ano</span></div></div>
+      <div class="field"><label>Reajuste do aluguel</label><div class="inp"><input id="reajuste" type="number" value="5" min="0" step="0.5"><span class="suf">% ao ano</span></div></div>
+    </div>
+    <button class="calcbtn" id="go">Calcular</button>
+
+    <div class="results" id="results" style="display:none">
+      <div class="verdict" id="verdict"></div>
+      <div class="rescards">
+        <div class="resc buy"><div class="cap">Comprar (financiar)</div><div class="big" id="patBuy">–</div><div class="note">patrimônio no fim do prazo</div></div>
+        <div class="resc rent"><div class="cap">Alugar + investir a diferença</div><div class="big" id="patRent">–</div><div class="note">patrimônio no fim do prazo</div></div>
+      </div>
+      <div class="miniStats">
+        <div>Parcela inicial (SAC): <b id="parc">–</b></div>
+        <div>Valor financiado: <b id="fin">–</b></div>
+        <div>Imóvel valorizado: <b id="imv">–</b></div>
+      </div>
+      <div class="chartwrap">
+        <div class="legend"><span><i style="background:var(--gold)"></i>Comprando</span><span><i style="background:var(--navy-700)"></i>Alugando + investindo</span></div>
+        <canvas id="chart" width="700" height="260" aria-label="Gráfico de patrimônio ao longo dos anos"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="box navy">
+    <div class="k">🎯 Como ler o resultado</div>
+    <p>A conta é justa: no lado de comprar, seu patrimônio é o <strong>imóvel valorizado menos o que ainda deve</strong>. No lado de alugar, é a <strong>entrada investida mais a diferença que você guarda</strong> todo mês (quando a parcela é maior que o aluguel). Não é só "parcela contra aluguel" — é patrimônio contra patrimônio.</p>
+  </div>
+
+  <h2>O que a matemática <em>costuma mostrar</em></h2>
+  <p>Não existe resposta universal, mas alguns padrões se repetem em Uberlândia:</p>
+  <ul>
+    <li><strong>Quanto mais tempo você fica, mais comprar ganha.</strong> Custos de compra e venda são altos; eles se diluem no longo prazo. Acima de 8–10 anos, financiar quase sempre vira patrimônio maior.</li>
+    <li><strong>Vai mudar de cidade em 2–3 anos?</strong> Aí alugar e investir costuma fazer mais sentido — você não fica preso a um ativo caro de vender.</li>
+    <li><strong>A alavancagem é a mágica escondida.</strong> No financiamento, você controla um imóvel de R$ 250 mil tendo colocado só a entrada — e a valorização incide sobre o valor cheio, não sobre o que você pôs.</li>
+    <li><strong>Você para de pagar aluguel.</strong> O aluguel sobe todo ano; a parcela do financiamento, não (ela até cai no SAC). Em 30 anos, isso é uma montanha de dinheiro.</li>
+  </ul>
+
+  <div class="box gold">
+    <div class="k">💡 O que a calculadora não sabe (mas eu sei)</div>
+    <p>A ferramenta é honesta, mas trabalha com médias. O seu caso real tem variáveis que mudam tudo: o subsídio exato que você recebe, o <a href="/blog/cheque-moradia-uberlandia-minha-casa-minha-vida">Cheque Moradia de R$ 10 mil</a> da prefeitura, o seu <a href="/blog/como-usar-fgts-comprar-imovel-uberlandia">FGTS</a>, a isenção de ITBI e IPTU. Tudo isso <strong>reduz a entrada e a parcela reais</strong> e joga o jogo pro lado de comprar. Por isso o próximo passo é simular com números de verdade.</p>
+  </div>
+
+  <h2>Perguntas <em>frequentes</em></h2>
+  <details><summary>Afinal, vale mais alugar ou financiar em Uberlândia?</summary><div class="a"><p>Depende dos seus números e de quanto tempo você fica. Em prazos longos (8–10 anos+), financiar tende a construir mais patrimônio; em prazos curtos, alugar e investir pode ganhar. Rode a calculadora com o seu caso.</p></div></details>
+  <details><summary>Como a comparação é feita?</summary><div class="a"><p>Pelo patrimônio líquido no fim do prazo: comprar = imóvel valorizado menos saldo devedor; alugar = entrada investida mais a diferença mensal investida, corrigida pelo rendimento.</p></div></details>
+  <details><summary>Os subsídios entram na conta?</summary><div class="a"><p>De forma indireta: some subsídio, FGTS e Cheque Moradia no campo "entrada". Para o número exato, faça a simulação comigo — cada caso tem um subsídio diferente.</p></div></details>
+
+  <h3>Continue no cluster</h3>
+  <div class="related">
+    <a class="rcard" href="/blog/comprar-apartamento-minha-casa-minha-vida-uberlandia"><span class="tag">Guia completo</span><b>MCMV em Uberlândia</b><span>Faixas, juros, subsídio e Cheque Moradia.</span></a>
+    <a class="rcard" href="/blog/quanto-de-entrada-financiamento-uberlandia"><span class="tag">Entrada</span><b>Quanto de entrada preciso?</b><span>Como subsídio, FGTS e Cheque Moradia montam a entrada.</span></a>
+  </div>
+
+    </article>
+    <aside class="art-cta">
+      <h2>Quer o número real, com subsídio e FGTS na conta?</h2>
+      <p>A calculadora te dá a direção. Eu te dou a precisão: simulação com o seu subsídio, seu FGTS e o Cheque Moradia, e o imóvel certo pro seu bolso em Uberlândia.</p>
+      <a href="https://wa.me/5534996778075?text=Oi%20Marco,%20usei%20a%20calculadora%20e%20quero%20simular%20alugar%20vs%20financiar%20no%20meu%20caso." target="_blank" rel="noopener" class="btn btn-zap"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg> Falar com o Marco</a>
+    </aside>
+    <p class="prose" style="max-width:720px;margin:24px auto 0;font-size:.85rem;color:var(--tinta-suave)">Esta calculadora é uma ferramenta educativa e usa premissas e médias que você mesmo ajusta. Os resultados são estimativas e não consideram todos os custos, impostos ou variações de mercado; não constituem recomendação de investimento, oferta de crédito nem aconselhamento financeiro individual. Marco Túlio Andrade Freitas · Corretor parceiro da Torrano Negócios Imobiliários · CRECI/MG nº 7469 · Uberlândia/MG. Consulte um profissional para decisões reais.</p>
+    <div class="art-back"><a href="/blog">← Ver todos os artigos</a></div>
+  </div>
+</main>
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-logo">marco<b>tulio</b>.pro</div>
+    <p>Corretor parceiro da Torrano Negócios Imobiliários LTDA · CRECI/MG nº 7469 · Uberlândia/MG</p>
+    <p><a href="/">Início</a> · <a href="/blog">Blog</a> · <a href="/sobre">Sobre</a> · <a href="https://wa.me/5534996778075" target="_blank" rel="noopener">WhatsApp</a></p>
+  </div>
+</footer>
+<a href="https://wa.me/5534996778075?text=Oi%20Marco,%20usei%20a%20calculadora%20e%20quero%20simular%20alugar%20vs%20financiar%20no%20meu%20caso." class="wa-float" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg></a>
+<script>
+(function(){var n=document.getElementById('nav');if(!n)return;var f=function(){n.classList.toggle('scrolled',window.scrollY>10)};f();window.addEventListener('scroll',f,{passive:true});})();
+</script>
+<script>
+(function(){
+  var fmt = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+  function val(id){ var el=document.getElementById(id); var n=parseFloat(el.value); return isFinite(n)?n:0; }
+  var series=null;
+
+  function calc(){
+    var valor=val('valor'), aluguel=val('aluguel'), entrada=val('entrada');
+    var custosPct=val('custos'), prazo=Math.max(1,Math.round(val('prazo')));
+    var jurosA=val('juros'), dono=val('dono'), valA=val('valoriza'), rendA=val('rende'), reaj=val('reajuste');
+
+    var n=prazo*12;
+    var financiado=Math.max(0, valor-entrada);
+    var custosCompra=valor*custosPct/100;
+    var rmJuros=Math.pow(1+jurosA/100,1/12)-1;
+    var rmRend=Math.pow(1+rendA/100,1/12)-1;
+    var amort= n>0 ? financiado/n : 0;
+
+    var saldo=financiado;
+    var R=entrada+custosCompra; // quem aluga investe o que não gastou
+    var B=0;                    // sobra líquida de quem compra
+    var parcelaInicial=amort+financiado*rmJuros;
+
+    var snapBuy=[], snapRent=[], years=[];
+    // ano 0
+    years.push(0); snapBuy.push(valor - financiado); snapRent.push(entrada+custosCompra);
+
+    for(var m=1;m<=n;m++){
+      var anoIdx=Math.floor((m-1)/12);
+      var aluguelMes=aluguel*Math.pow(1+reaj/100,anoIdx);
+      var jurosMes=saldo*rmJuros;
+      var parcela=amort+jurosMes;
+      saldo=Math.max(0, saldo-amort);
+      var outBuy=parcela+dono;
+      var d=outBuy-aluguelMes;
+      if(d>=0){ R=R*(1+rmRend)+d; B=B*(1+rmRend); }
+      else { B=B*(1+rmRend)+(-d); R=R*(1+rmRend); }
+
+      if(m%12===0){
+        var ano=m/12;
+        var imovelAno=valor*Math.pow(1+valA/100,ano);
+        years.push(ano);
+        snapBuy.push(imovelAno - saldo + B);
+        snapRent.push(R);
+      }
+    }
+
+    var imovelFinal=valor*Math.pow(1+valA/100,prazo);
+    var patBuy=imovelFinal - saldo + B;
+    var patRent=R;
+
+    document.getElementById('parc').textContent=fmt.format(parcelaInicial);
+    document.getElementById('fin').textContent=fmt.format(financiado);
+    document.getElementById('imv').textContent=fmt.format(imovelFinal);
+    document.getElementById('patBuy').textContent=fmt.format(patBuy);
+    document.getElementById('patRent').textContent=fmt.format(patRent);
+
+    var v=document.getElementById('verdict');
+    var diff=Math.abs(patBuy-patRent);
+    if(patBuy>=patRent){
+      v.innerHTML='Em '+prazo+' anos, <span>comprar</span> te deixa com cerca de <span>'+fmt.format(diff)+'</span> a mais no bolso. E isso é <em>antes</em> de contar subsídio, Cheque Moradia e FGTS reais — que puxam ainda mais pro lado de comprar.';
+    } else {
+      v.innerHTML='Nestes números, <span>alugar e investir a diferença</span> termina com cerca de <span>'+fmt.format(diff)+'</span> a mais. Mas some subsídio, Cheque Moradia (R$ 10 mil) e FGTS no campo "entrada" e recalcule — o jogo costuma virar.';
+    }
+
+    series={years:years,buy:snapBuy,rent:snapRent};
+    document.getElementById('results').style.display='block';
+    drawChart();
+  }
+
+  function drawChart(){
+    if(!series) return;
+    var cv=document.getElementById('chart');
+    if(!cv || !cv.getContext) return;
+    var ctx=cv.getContext('2d');
+    var dpr=window.devicePixelRatio||1;
+    var cssW=cv.clientWidth||700, cssH=260;
+    cv.width=cssW*dpr; cv.height=cssH*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,cssW,cssH);
+
+    var padL=54,padR=14,padT=14,padB=26;
+    var w=cssW-padL-padR, h=cssH-padT-padB;
+    var xs=series.years, a=series.buy, b=series.rent;
+    var maxV=0,i;
+    for(i=0;i<a.length;i++){ if(a[i]>maxV)maxV=a[i]; if(b[i]>maxV)maxV=b[i]; }
+    if(!isFinite(maxV)||maxV<=0) maxV=1;
+    var maxX=xs[xs.length-1]||1;
+
+    function X(yr){ return padL + (maxX? (yr/maxX):0)*w; }
+    function Y(v){ return padT + h - (v/maxV)*h; }
+
+    // grid + y labels
+    ctx.strokeStyle='#e8edf3'; ctx.fillStyle='#8194a8'; ctx.lineWidth=1;
+    ctx.font='11px "Hanken Grotesk",sans-serif'; ctx.textBaseline='middle';
+    var steps=4;
+    for(i=0;i<=steps;i++){
+      var gv=maxV*i/steps, gy=Y(gv);
+      ctx.beginPath(); ctx.moveTo(padL,gy); ctx.lineTo(padL+w,gy); ctx.stroke();
+      var lbl = gv>=1000000 ? (gv/1000000).toFixed(1).replace('.',',')+'mi' : Math.round(gv/1000)+'k';
+      ctx.fillText('R$'+lbl, 6, gy);
+    }
+    // x labels (0, mid, end)
+    ctx.textBaseline='top'; ctx.textAlign='center';
+    var marks=[0,Math.round(maxX/2),maxX];
+    for(i=0;i<marks.length;i++){ ctx.fillText(marks[i]+'a', X(marks[i]), padT+h+7); }
+    ctx.textAlign='start';
+
+    function line(arr,color){
+      ctx.strokeStyle=color; ctx.lineWidth=2.5; ctx.beginPath();
+      for(var j=0;j<arr.length;j++){ var x=X(xs[j]), y=Y(arr[j]); if(j===0)ctx.moveTo(x,y); else ctx.lineTo(x,y); }
+      ctx.stroke();
+    }
+    line(b,'#1c3b66');
+    line(a,'#C8A84B');
+  }
+
+  document.getElementById('go').addEventListener('click',calc);
+  var ids=['valor','aluguel','entrada','custos','prazo','juros','dono','valoriza','rende','reajuste'];
+  ids.forEach(function(id){ document.getElementById(id).addEventListener('keydown',function(e){ if(e.key==='Enter')calc(); }); });
+  window.addEventListener('resize',drawChart);
+  calc();
+})();
+</script>
+</body>
+</html>
