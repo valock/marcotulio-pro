@@ -307,10 +307,12 @@
       .menu.open{display:flex;flex-direction:column;gap:6px;padding:8px 24px 20px;background:#fff;border-bottom:1px solid var(--nevoa)}
       .menu a{padding:12px 0;font-weight:600;color:var(--tinta);border-bottom:1px solid var(--fundo)}
     }
+    @view-transition{navigation:auto}
     @media(prefers-reduced-motion:reduce){
       *{scroll-behavior:auto!important}
       .js .reveal{opacity:1!important;transform:none!important;transition:none!important}
       .btn,.hub-card,.case,.post,.wa-float{transition:none!important}
+      ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
     }
   </style>
 <script defer src="/js/analytics.js"></script>

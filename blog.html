@@ -43,6 +43,20 @@
 .bcard:hover .more{color:var(--azul)}
 .bfeat{grid-column:1/-1}
 @media(min-width:760px){.bfeat{flex-direction:row}.bfeat .thumb{height:auto;width:46%;min-height:260px}.bfeat .bbody{width:54%;justify-content:center}.bfeat h2{font-size:1.7rem}}
+/* emoji thumbs padronizados (marca) */
+.bcard .thumb.emoji{background:linear-gradient(150deg,var(--azul) 0%,var(--azul-profundo) 55%,var(--tinta) 100%);position:relative}
+.bcard .thumb.emoji::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.10) 1.2px,transparent 1.2px);background-size:16px 16px;opacity:.6}
+.bcard .thumb.emoji span{position:relative;z-index:1;font-size:62px;filter:drop-shadow(0 6px 16px rgba(0,0,0,.35))}
+/* filtro de categorias */
+.blogfilter{display:none;flex-wrap:wrap;gap:10px;justify-content:center;max-width:1140px;margin:0 auto 30px;padding:0 24px}
+.js .blogfilter{display:flex}
+.fchip{font-family:var(--fbody);font-weight:600;font-size:.92rem;padding:9px 18px;border-radius:var(--r-pill);border:1px solid var(--nevoa);background:var(--superficie);color:var(--tinta-suave);cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease)}
+.fchip:hover{border-color:var(--azul);color:var(--azul);transform:translateY(-1px)}
+.fchip[aria-pressed="true"]{background:var(--azul);border-color:var(--azul);color:#fff}
+.bcard.hide{display:none}
+.bempty{display:none;text-align:center;color:var(--tinta-suave);margin:0 auto 40px;font-size:1.05rem}
+@view-transition{navigation:auto}
+@media(prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
 </style>
 <script type="application/ld+json">
 {
@@ -75,9 +89,17 @@
       <h1>O blog do Marco Túlio</h1>
       <p class="art-sub">Guias e análises sobre comprar a casa própria em Uberlândia — Minha Casa Minha Vida, financiamento Caixa, FGTS, empreendimentos e bairros. Tudo sem juridiquês.</p>
     </header>
+    <div class="blogfilter" role="group" aria-label="Filtrar artigos por categoria">
+      <button type="button" class="fchip" data-f="all" aria-pressed="true">Todos</button>
+      <button type="button" class="fchip" data-f="E" aria-pressed="false">Empreendimentos</button>
+      <button type="button" class="fchip" data-f="F" aria-pressed="false">Financiamento &amp; MCMV</button>
+      <button type="button" class="fchip" data-f="B" aria-pressed="false">Bairros &amp; regiões</button>
+      <button type="button" class="fchip" data-f="N" aria-pressed="false">Notícias</button>
+    </div>
+    <p class="bempty" id="bempty">Nenhum artigo nessa categoria por enquanto.</p>
     <div class="bgrid">
-      <a class="bcard bfeat" href="/blog/union-landscape-shopping-park-uberlandia">
-        <div class="thumb"><img src="/blog/images/union-landscape-uberlandia-capa.webp" alt="Union Landscape: apartamento de 2 quartos com suíte pronto para morar no Shopping Park, zona sul de Uberlândia" width="1456" height="819" fetchpriority="high"></div>
+      <a class="bcard bfeat" href="/blog/union-landscape-shopping-park-uberlandia" data-cat="E">
+        <div class="thumb"><img fetchpriority="high" src="/blog/images/union-landscape-uberlandia-capa.webp" alt="Union Landscape: apartamento de 2 quartos com suíte pronto para morar no Shopping Park, zona sul de Uberlândia" width="1456" height="819"></div>
         <div class="bbody">
           <div class="bcat">🏢 Pronto pra morar · Shopping Park · HLTS</div>
           <h2>Union Landscape: apartamento pronto, abaixo da avaliação da Caixa</h2>
@@ -86,7 +108,7 @@
           <span class="more">Ver o guia e visitar →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/union-vista-grand-ville-uberlandia">
+      <a class="bcard" href="/blog/union-vista-grand-ville-uberlandia" data-cat="E">
         <div class="thumb"><img src="/blog/images/union-vista-uberlandia-capa.webp" alt="Union Vista: apartamento de 2 quartos com suíte no Grand Ville, zona leste de Uberlândia" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🏢 Condomínio clube · Grand Ville · Zona Leste</div>
@@ -96,7 +118,7 @@
           <span class="more">Ver o guia e simular →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/union-vereda-tubalina-uberlandia">
+      <a class="bcard" href="/blog/union-vereda-tubalina-uberlandia" data-cat="E">
         <div class="thumb"><img src="/blog/images/union-vereda-uberlandia-capa.webp" alt="Union Vereda: apartamento de 2 quartos com suíte nas Chácaras Tubalina, zona oeste de Uberlândia" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🏢 Condomínio clube · Chácaras Tubalina · Zona Oeste</div>
@@ -106,8 +128,8 @@
           <span class="more">Ver o guia e simular →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/prime-clube-marileusa-uberlandia">
-        <div class="thumb"><img src="/blog/images/prime-clube-marileusa-uberlandia-capa.webp" alt="Prime Clube: condomínio clube do Minha Casa Minha Vida com 464 unidades no Granja Marileusa, Uberlândia" width="1456" height="819" fetchpriority="high"></div>
+      <a class="bcard bfeat" href="/blog/prime-clube-marileusa-uberlandia" data-cat="E">
+        <div class="thumb"><img src="/blog/images/prime-clube-marileusa-uberlandia-capa.webp" alt="Prime Clube: condomínio clube do Minha Casa Minha Vida com 464 unidades no Granja Marileusa, Uberlândia" width="1456" height="819"></div>
         <div class="bbody">
           <div class="bcat">🏢 MCMV · Granja Marileusa · cerca de 85% vendido</div>
           <h2>Prime Clube: o MCMV com 464 unidades, quase esgotado</h2>
@@ -116,8 +138,8 @@
           <span class="more">Ver o que ainda sobrou →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/enderecos-empreendimentos-uberlandia">
-        <div class="thumb"><img src="/blog/images/enderecos-empreendimentos-uberlandia-capa.webp" alt="Onde fica cada empreendimento de Uberlândia: guia de endereços por região" width="1456" height="819" fetchpriority="high"></div>
+      <a class="bcard bfeat" href="/blog/enderecos-empreendimentos-uberlandia" data-cat="B">
+        <div class="thumb"><img src="/blog/images/enderecos-empreendimentos-uberlandia-capa.webp" alt="Onde fica cada empreendimento de Uberlândia: guia de endereços por região" width="1456" height="819"></div>
         <div class="bbody">
           <div class="bcat">📍 Guia de localização · 40+ empreendimentos</div>
           <h2>Onde fica cada empreendimento de Uberlândia? Endereços e como visitar</h2>
@@ -126,7 +148,7 @@
           <span class="more">Encontrar um empreendimento →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/loft-pequis-uberlandia">
+      <a class="bcard bfeat" href="/blog/loft-pequis-uberlandia" data-cat="E">
         <div class="thumb"><img src="/blog/images/loft-pequis-uberlandia-capa.webp" alt="Loft Pequis: torres com elevador de apartamentos 1 quarto na zona oeste de Uberlândia" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🏢 Lançamento · Zona Oeste · a partir de R$ 165 mil</div>
@@ -136,7 +158,7 @@
           <span class="more">Ver o guia e simular →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/moradas-do-horizonte-sabara-uberlandia">
+      <a class="bcard bfeat" href="/blog/moradas-do-horizonte-sabara-uberlandia" data-cat="E">
         <div class="thumb"><img src="/blog/images/sabara-pacaembu-capa.webp" alt="Casa do Condomínio Sabará, Moradas do Horizonte da Pacaembu na região do EcoPark, Uberlândia" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🏡 Casas · Região do EcoPark · a 1ª fase esgotou</div>
@@ -146,7 +168,7 @@
           <span class="more">Ver o guia e simular →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/vila-vert-alvorada-uberlandia">
+      <a class="bcard bfeat" href="/blog/vila-vert-alvorada-uberlandia" data-cat="E">
         <div class="thumb"><img src="/blog/images/vila-vert-uberlandia-capa.webp" alt="Vila Vert Residencial: 3 torres com elevador no bairro Alvorada, zona leste de Uberlândia" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🏢 Reta final · Alvorada · abaixo da avaliação da Caixa</div>
@@ -156,7 +178,7 @@
           <span class="more">Ver a aula e simular →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/renault-zurique-uberlandia">
+      <a class="bcard" href="/blog/renault-zurique-uberlandia" data-cat="E">
         <div class="thumb"><img src="/blog/images/renault-zurique-uberlandia-capa.webp" alt="Renault Zurique: entrada em até 100x no Presidente Roosevelt, zona norte de Uberlândia" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🏢 Lançamento · Zona Norte · entrada em 100x</div>
@@ -166,7 +188,7 @@
           <span class="more">Ver o guia e simular →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/mcmv-juros-menores-renda-21-mil">
+      <a class="bcard" href="/blog/mcmv-juros-menores-renda-21-mil" data-cat="N">
         <div class="thumb"><img src="/blog/images/mcmv-juros-menores-renda-21-mil-capa.webp" alt="Proposta em análise: juros menores e renda até R$ 21 mil no Minha Casa Minha Vida" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">📰 Notícia · MCMV</div>
@@ -176,7 +198,7 @@
           <span class="more">Entender a proposta →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/copa-2026-comprar-imovel-uberlandia">
+      <a class="bcard" href="/blog/copa-2026-comprar-imovel-uberlandia" data-cat="F">
         <div class="thumb"><img src="/blog/images/copa-figurinhas-capa.webp" alt="Troca de figurinha dourada da Copa 2026 pela chave da casa própria em Uberlândia" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">⚽ Copa 2026 · Primeiro imóvel</div>
@@ -186,7 +208,7 @@
           <span class="more">Fazer a troca →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/assistir-copa-2026-casa-propria">
+      <a class="bcard" href="/blog/assistir-copa-2026-casa-propria" data-cat="F">
         <div class="thumb"><img src="/blog/images/copa-casa-propria-capa.webp" alt="Família assistindo à Copa do Mundo na sala da casa própria em Uberlândia" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">⚽ Copa 2026 · Sair do aluguel</div>
@@ -196,8 +218,8 @@
           <span class="more">Montar meu plano →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/622-casas-minha-casa-minha-vida-uberlandia">
-        <div class="thumb"><img src="/blog/images/622-casas-minha-casa-minha-vida-uberlandia-capa.webp" alt="622 casas do Minha Casa Minha Vida Faixa 1 em Uberlândia, Chamada Pública 001/2026" width="1456" height="819" fetchpriority="high"></div>
+      <a class="bcard bfeat" href="/blog/622-casas-minha-casa-minha-vida-uberlandia" data-cat="E">
+        <div class="thumb"><img src="/blog/images/622-casas-minha-casa-minha-vida-uberlandia-capa.webp" alt="622 casas do Minha Casa Minha Vida Faixa 1 em Uberlândia, Chamada Pública 001/2026" width="1456" height="819"></div>
         <div class="bbody">
           <div class="bcat">🏘️ Faixa 1 · Chamada Pública 001/2026</div>
           <h2>622 casas do Minha Casa Minha Vida Faixa 1 em Uberlândia: o guia completo</h2>
@@ -206,8 +228,8 @@
           <span class="more">Ver o guia e se preparar →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/gran-vic-uberlandia">
-        <div class="thumb"><img src="/blog/images/gran-vic-uberlandia-capa.webp" alt="Gran Vic da VIC Engenharia no EcoPark, zona sul de Uberlândia — pré-lançamento" width="1456" height="819" fetchpriority="high"></div>
+      <a class="bcard bfeat" href="/blog/gran-vic-uberlandia" data-cat="E">
+        <div class="thumb"><img src="/blog/images/gran-vic-uberlandia-capa.webp" alt="Gran Vic da VIC Engenharia no EcoPark, zona sul de Uberlândia — pré-lançamento" width="1456" height="819"></div>
         <div class="bbody">
           <div class="bcat">🚀 Pré-lançamento · VIC Engenharia · Zona Sul</div>
           <h2>Gran Vic: o lançamento da VIC no EcoPark, na zona sul de Uberlândia</h2>
@@ -216,7 +238,7 @@
           <span class="more">Ver tudo sobre o Gran Vic →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/alugar-ou-financiar-uberlandia">
+      <a class="bcard bfeat" href="/blog/alugar-ou-financiar-uberlandia" data-cat="F">
         <div class="thumb"><img src="/blog/images/alugar-ou-financiar-uberlandia-capa.webp" alt="Calculadora: alugar ou financiar em Uberlândia" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🧮 Ferramenta · MCMV 2026</div>
@@ -226,7 +248,7 @@
           <span class="more">Abrir a calculadora →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/quanto-de-entrada-financiamento-uberlandia">
+      <a class="bcard" href="/blog/quanto-de-entrada-financiamento-uberlandia" data-cat="F">
         <div class="thumb"><img src="/blog/images/quanto-de-entrada-financiamento-uberlandia-capa.webp" alt="Quanto de entrada para financiar um imóvel em Uberlândia pelo MCMV" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">💰 Financiamento · MCMV 2026</div>
@@ -236,7 +258,7 @@
           <span class="more">Descobrir minha entrada →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/como-usar-fgts-comprar-imovel-uberlandia">
+      <a class="bcard" href="/blog/como-usar-fgts-comprar-imovel-uberlandia" data-cat="F">
         <div class="thumb"><img src="/blog/images/como-usar-fgts-comprar-imovel-uberlandia-capa.webp" alt="Como usar o FGTS para comprar imóvel em Uberlândia" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🏦 Financiamento e FGTS</div>
@@ -246,7 +268,7 @@
           <span class="more">Ler o guia →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/financiar-imovel-autonomo-uberlandia">
+      <a class="bcard" href="/blog/financiar-imovel-autonomo-uberlandia" data-cat="F">
         <div class="thumb"><img src="/blog/images/financiar-imovel-autonomo-uberlandia-capa.webp" alt="Autônomo, MEI ou motorista de app financia imóvel em Uberlândia" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🚗 Financiamento · Renda informal</div>
@@ -256,8 +278,8 @@
           <span class="more">Ver como comprovar →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/cheque-moradia-uberlandia-minha-casa-minha-vida">
-        <div class="thumb"><span>🏛️</span></div>
+      <a class="bcard bfeat" href="/blog/cheque-moradia-uberlandia-minha-casa-minha-vida" data-cat="F">
+        <div class="thumb emoji"><span>🏛️</span></div>
         <div class="bbody">
           <div class="bcat">🏛️ Habita+ · Prefeitura de Uberlândia</div>
           <h2>Cheque Moradia Uberlândia: R$ 10 mil na entrada do seu apê</h2>
@@ -266,7 +288,7 @@
           <span class="more">Ver como funciona →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/minha-casa-minha-vida-nome-sujo-score">
+      <a class="bcard" href="/blog/minha-casa-minha-vida-nome-sujo-score" data-cat="F">
         <div class="thumb"><img src="/blog/images/minha-casa-minha-vida-nome-sujo-score-capa.webp" alt="Nome sujo consegue financiar pelo MCMV em Uberlândia — a verdade sobre score e Serasa" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🏠 Minha Casa Minha Vida</div>
@@ -276,7 +298,7 @@
           <span class="more">Ler a verdade →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/documentos-minha-casa-minha-vida-2026">
+      <a class="bcard" href="/blog/documentos-minha-casa-minha-vida-2026" data-cat="F">
         <div class="thumb"><img src="/blog/images/documentos-minha-casa-minha-vida-2026-capa.webp" alt="Checklist de documentos do Minha Casa Minha Vida 2026" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">📋 Financiamento · MCMV 2026</div>
@@ -286,8 +308,8 @@
           <span class="more">Ver o checklist →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/apartamentos-zona-sul-uberlandia">
-        <div class="thumb"><img src="/blog/images/apartamentos-zona-sul-capa.webp" alt="Entrada de condomínio de apartamentos na zona sul de Uberlândia ao pôr do sol" width="1456" height="819" fetchpriority="high"></div>
+      <a class="bcard bfeat" href="/blog/apartamentos-zona-sul-uberlandia" data-cat="B">
+        <div class="thumb"><img src="/blog/images/apartamentos-zona-sul-capa.webp" alt="Entrada de condomínio de apartamentos na zona sul de Uberlândia ao pôr do sol" width="1456" height="819"></div>
         <div class="bbody">
           <div class="bcat">🚗 Zona Sul · Anel Viário Sul liberado</div>
           <h2>Apartamentos na zona sul de Uberlândia: o que existe hoje — e o que vem por aí</h2>
@@ -296,8 +318,8 @@
           <span class="more">Ver o guia e entrar na lista →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/horizon-residencial-fruta-do-conde">
-        <div class="thumb"><img src="/blog/images/horizon-fruta-do-conde-capa.webp" alt="Horizon Residencial no Fruta do Conde, zona oeste de Uberlândia — lançamento MCMV" width="1456" height="971" fetchpriority="high"></div>
+      <a class="bcard bfeat" href="/blog/horizon-residencial-fruta-do-conde" data-cat="E">
+        <div class="thumb"><img src="/blog/images/horizon-fruta-do-conde-capa.webp" alt="Horizon Residencial no Fruta do Conde, zona oeste de Uberlândia — lançamento MCMV" width="1456" height="971"></div>
         <div class="bbody">
           <div class="bcat">🚀 Lançamento · Zona Oeste · MCMV + Habita+</div>
           <h2>Horizon Residencial no Fruta do Conde: o guia que a página oficial não mostra</h2>
@@ -306,8 +328,8 @@
           <span class="more">Ver o guia completo →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/jardim-holanda-uberlandia">
-        <div class="thumb"><img src="/blog/images/jardim-holanda-capa.webp" alt="Jardim Holanda, Uberlândia — clube APCEF e Leal Supermercados" width="1456" height="971" fetchpriority="high"></div>
+      <a class="bcard bfeat" href="/blog/jardim-holanda-uberlandia" data-cat="B">
+        <div class="thumb"><img src="/blog/images/jardim-holanda-capa.webp" alt="Jardim Holanda, Uberlândia — clube APCEF e Leal Supermercados" width="1456" height="971"></div>
         <div class="bbody">
           <div class="bcat">Guia de bairro · Zona Oeste</div>
           <h2>Jardim Holanda: o bairro que cresce — e onde o apartamento ainda cabe no bolso</h2>
@@ -316,8 +338,8 @@
           <span class="more">Ver o guia e simular →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/apartamento-araguari-perguntas-e-respostas">
-        <div class="thumb"><span>🏙️</span></div>
+      <a class="bcard" href="/blog/apartamento-araguari-perguntas-e-respostas" data-cat="B">
+        <div class="thumb emoji"><span>🏙️</span></div>
         <div class="bbody">
           <div class="bcat">Araguari · MCMV</div>
           <h2>Apartamento em Araguari: preço, MCMV e financiamento</h2>
@@ -326,8 +348,8 @@
           <span class="more">Ver as respostas →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/trabalha-em-araguari-sair-do-aluguel">
-        <div class="thumb"><span>🔑</span></div>
+      <a class="bcard" href="/blog/trabalha-em-araguari-sair-do-aluguel" data-cat="B">
+        <div class="thumb emoji"><span>🔑</span></div>
         <div class="bbody">
           <div class="bcat">Araguari · Sair do aluguel</div>
           <h2>Trabalha em Araguari? A conta do aluguel não fecha mais</h2>
@@ -336,7 +358,7 @@
           <span class="more">Fazer a conta →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/apartamento-morumbi-uberlandia">
+      <a class="bcard bfeat" href="/blog/apartamento-morumbi-uberlandia" data-cat="B">
         <div class="thumb"><img src="/blog/img/morumbi-uberlandia-bris-trez-solis-vista-aerea.jpg" alt="Apartamento no Morumbi, Uberlândia — vista aérea com Bris, Trez e Solis" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Guia do bairro · Morumbi</div>
@@ -346,7 +368,7 @@
           <span class="more">Comparar e escolher →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/aprovado-e-travado">
+      <a class="bcard" href="/blog/aprovado-e-travado" data-cat="F">
         <div class="thumb"><img src="/blog/img/aprovado-og.png" alt="Você foi aprovado e travou — a aprovação tem prazo de validade" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Financiamento</div>
@@ -356,7 +378,7 @@
           <span class="more">Entender o risco →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/nao-e-pra-voce">
+      <a class="bcard" href="/blog/nao-e-pra-voce" data-cat="F">
         <div class="thumb"><img src="/blog/img/indica-og.png" alt="Indique um corretor de confiança em Uberlândia" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Indicação</div>
@@ -366,8 +388,8 @@
           <span class="more">Ler a conversa →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/quanto-preciso-ganhar-financiar-uberlandia">
-        <div class="thumb"><img src="/blog/images/quanto-preciso-ganhar-capa.webp" loading="lazy" alt="Quanto preciso ganhar para financiar em Uberlândia" width="1456" height="816" fetchpriority="high"></div>
+      <a class="bcard bfeat" href="/blog/quanto-preciso-ganhar-financiar-uberlandia" data-cat="F">
+        <div class="thumb"><img src="/blog/images/quanto-preciso-ganhar-capa.webp" loading="lazy" alt="Quanto preciso ganhar para financiar em Uberlândia" width="1456" height="816"></div>
         <div class="bbody">
           <div class="bcat">Financiamento · MCMV 2026</div>
           <h2>Quanto preciso ganhar para financiar um apartamento em Uberlândia?</h2>
@@ -376,7 +398,7 @@
           <span class="more">Ver tabela e simular →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/carro-ou-casa-primeiro">
+      <a class="bcard" href="/blog/carro-ou-casa-primeiro" data-cat="F">
         <div class="thumb"><img src="/blog/img/carro-ou-casa-primeiro.jpg" alt="Carro ou casa primeiro? A ordem que pode custar seu imóvel" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Financiamento</div>
@@ -386,7 +408,7 @@
           <span class="more">Entender a regra dos 30% →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/jardim-sul-uberlandia-zona-sul">
+      <a class="bcard bfeat" href="/blog/jardim-sul-uberlandia-zona-sul" data-cat="B">
         <div class="thumb"><img src="/blog/img/jardim-sul-uberlandia-zona-sul.jpg" alt="Jardim Sul Uberlândia — apartamento MCMV 100% financiado na Zona Sul" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Zona Sul · MCMV 2026</div>
@@ -396,7 +418,7 @@
           <span class="more">Entender como funciona →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/feirao-torrano-junho-2026-uberlandia">
+      <a class="bcard bfeat" href="/blog/feirao-torrano-junho-2026-uberlandia" data-cat="N">
         <div class="thumb"><img src="/blog/img/feirao-casa-propria-torrano-27-junho-uberlandia.jpg" alt="Feirão da Casa Própria Torrano — Edição Junina 27 de junho Uberlândia" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🏠 Evento · Feirão da Casa Própria</div>
@@ -406,7 +428,7 @@
           <span class="more">Ver como funciona →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/feirao-torrano-prefeitura-habita-mais-uberlandia">
+      <a class="bcard" href="/blog/feirao-torrano-prefeitura-habita-mais-uberlandia" data-cat="N">
         <div class="thumb"><img src="/blog/img/feirao-torrano-habita-mais-caixa-construtoras.jpg" alt="Feirão Torrano com Habita+, Prefeitura e Caixa — 27 de junho, Uberlândia" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🏛️ Habitação · Prefeitura de Uberlândia</div>
@@ -416,7 +438,7 @@
           <span class="more">Entender o Habita+ →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/teto-minha-casa-minha-vida-uberlandia">
+      <a class="bcard" href="/blog/teto-minha-casa-minha-vida-uberlandia" data-cat="F">
         <div class="thumb"><img src="/blog/img/financiamento-mcmv-renda-alta-uberlandia.jpg" alt="Teto do Minha Casa Minha Vida em Uberlândia: quem ganha mais também leva — Faixa 4 Classe Média" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Minha Casa Minha Vida</div>
@@ -426,7 +448,7 @@
           <span class="more">Ler artigo →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/minha-casa-minha-vida-2026-novas-regras">
+      <a class="bcard bfeat" href="/blog/minha-casa-minha-vida-2026-novas-regras" data-cat="F">
         <div class="thumb"><img src="/blog/img/mcmv-2026-caixa.jpg" alt="MCMV 2026: novas regras e tabela (sem juridiquês)" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🔄 Minha Casa Minha Vida</div>
@@ -436,7 +458,7 @@
           <span class="more">Ver o que mudou →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/apartamentos-no-granja-marileusa-uberlandia">
+      <a class="bcard bfeat" href="/blog/apartamentos-no-granja-marileusa-uberlandia" data-cat="B">
         <div class="thumb"><img src="/blog/img/apartamentos-granja-marileusa-chelsea-mrv-prime-clube.jpg" alt="Apartamentos no Granja Marileusa: Chelsea MRV e Prime Clube — Uberlândia" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Dicas de Bairros</div>
@@ -446,7 +468,7 @@
           <span class="more">Comparar opções →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/comprar-apartamento-minha-casa-minha-vida-uberlandia">
+      <a class="bcard" href="/blog/comprar-apartamento-minha-casa-minha-vida-uberlandia" data-cat="F">
         <div class="thumb"><img src="/blog/img/comprar-apartamento-minha-casa-minha-vida-uberlandia.jpg" alt="Comprar apartamento pelo Minha Casa Minha Vida em Uberlândia" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Minha Casa Minha Vida</div>
@@ -456,7 +478,7 @@
           <span class="more">Ler o guia completo →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/apartamento-mrv-uberlandia">
+      <a class="bcard" href="/blog/apartamento-mrv-uberlandia" data-cat="E">
         <div class="thumb"><img src="/blog/img/apartamento-mrv-uberlandia.jpg" alt="Apartamento MRV em Uberlândia pelo MCMV" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Apartamentos</div>
@@ -466,7 +488,7 @@
           <span class="more">Ler artigo →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/financiamento-caixa-uberlandia">
+      <a class="bcard" href="/blog/financiamento-caixa-uberlandia" data-cat="F">
         <div class="thumb"><img src="/blog/img/financiamento-caixa-uberlandia.jpg" alt="Financiamento Caixa em Uberlândia pelo MCMV" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Financiamento Caixa</div>
@@ -476,8 +498,8 @@
           <span class="more">Ler artigo →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/shopping-park-minha-casa-minha-vida-uberlandia">
-        <div class="thumb"><span>🏘️</span></div>
+      <a class="bcard" href="/blog/shopping-park-minha-casa-minha-vida-uberlandia" data-cat="B">
+        <div class="thumb emoji"><span>🏘️</span></div>
         <div class="bbody">
           <div class="bcat">Minha Casa Minha Vida</div>
           <h2>Shopping Park Minha Casa Minha Vida: como comprar na região</h2>
@@ -486,8 +508,8 @@
           <span class="more">Ler artigo →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/casas-pacaembu-uberlandia">
-        <div class="thumb"><span>🏠</span></div>
+      <a class="bcard" href="/blog/casas-pacaembu-uberlandia" data-cat="E">
+        <div class="thumb emoji"><span>🏠</span></div>
         <div class="bbody">
           <div class="bcat">Minha Casa Minha Vida</div>
           <h2>Casas da Pacaembu em Uberlândia: guia da casa térrea no MCMV</h2>
@@ -496,8 +518,8 @@
           <span class="more">Ler artigo →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/casa-no-terreno-uberlandia">
-        <div class="thumb"><span>🏡</span></div>
+      <a class="bcard" href="/blog/casa-no-terreno-uberlandia" data-cat="F">
+        <div class="thumb emoji"><span>🏡</span></div>
         <div class="bbody">
           <div class="bcat">Minha Casa Minha Vida</div>
           <h2>Casa sozinha no terreno em Uberlândia: as opções no MCMV</h2>
@@ -506,8 +528,8 @@
           <span class="more">Ler artigo →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/casinha-da-prefeitura-uberlandia">
-        <div class="thumb"><span>🔑</span></div>
+      <a class="bcard" href="/blog/casinha-da-prefeitura-uberlandia" data-cat="F">
+        <div class="thumb emoji"><span>🔑</span></div>
         <div class="bbody">
           <div class="bcat">Minha Casa Minha Vida</div>
           <h2>Casinha da prefeitura em Uberlândia: como funciona de verdade</h2>
@@ -516,8 +538,8 @@
           <span class="more">Ler artigo →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/reserva-costa-do-sol-mrv-uberlandia">
-        <div class="thumb"><span>🏢</span></div>
+      <a class="bcard" href="/blog/reserva-costa-do-sol-mrv-uberlandia" data-cat="E">
+        <div class="thumb emoji"><span>🏢</span></div>
         <div class="bbody">
           <div class="bcat">MCMV & Mercado</div>
           <h2>Reserva Costa do Sol MRV: R$ 225 mil na Zona Oeste</h2>
@@ -526,8 +548,8 @@
           <span class="more">Ler artigo →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/soul-mrv-gavea-sul-uberlandia">
-        <div class="thumb"><span>🏢</span></div>
+      <a class="bcard" href="/blog/soul-mrv-gavea-sul-uberlandia" data-cat="E">
+        <div class="thumb emoji"><span>🏢</span></div>
         <div class="bbody">
           <div class="bcat">MCMV & Mercado</div>
           <h2>Soul MRV no Gávea Sul: lazer premium num econômico</h2>
@@ -536,7 +558,7 @@
           <span class="more">Ler artigo →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/solis-residence-morumbi-uberlandia">
+      <a class="bcard" href="/blog/solis-residence-morumbi-uberlandia" data-cat="E">
         <div class="thumb"><img src="/blog/img/solis-residence-morumbi.jpg" alt="Solis Residence no Morumbi, Uberlândia" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">MCMV & Mercado</div>
@@ -546,8 +568,8 @@
           <span class="more">Ver as oportunidades →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/bris-residence-morumbi-uberlandia">
-        <div class="thumb"><span>🏢</span></div>
+      <a class="bcard" href="/blog/bris-residence-morumbi-uberlandia" data-cat="E">
+        <div class="thumb emoji"><span>🏢</span></div>
         <div class="bbody">
           <div class="bcat">MCMV & Mercado</div>
           <h2>Bris Residence Morumbi: os 12 últimos térreos garden, com tabela</h2>
@@ -556,8 +578,8 @@
           <span class="more">Ver a tabela →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/trez-residence-morumbi-uberlandia">
-        <div class="thumb"><span>🏢</span></div>
+      <a class="bcard" href="/blog/trez-residence-morumbi-uberlandia" data-cat="E">
+        <div class="thumb emoji"><span>🏢</span></div>
         <div class="bbody">
           <div class="bcat">MCMV & Mercado</div>
           <h2>Trez Residence Morumbi: esgotou e virou prova de valorização</h2>
@@ -566,8 +588,8 @@
           <span class="more">Ler artigo →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/morumbi-uberlandia-mcmv">
-        <div class="thumb"><span>🏢</span></div>
+      <a class="bcard" href="/blog/morumbi-uberlandia-mcmv" data-cat="B">
+        <div class="thumb emoji"><span>🏢</span></div>
         <div class="bbody">
           <div class="bcat">Dicas de Bairros</div>
           <h2>Morumbi: o epicentro do MCMV em Uberlândia</h2>
@@ -589,6 +611,23 @@
 <a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco%20T%C3%BAlio!%20Vim%20pelo%20blog%20e%20quero%20falar%20sobre%20a%20casa%20pr%C3%B3pria." class="wa-float" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg></a>
 <script>
 (function(){var n=document.getElementById('nav');var f=function(){n.classList.toggle('scrolled',window.scrollY>10)};f();window.addEventListener('scroll',f,{passive:true});})();
+(function(){
+  var chips=[].slice.call(document.querySelectorAll('.fchip'));
+  var cards=[].slice.call(document.querySelectorAll('.bcard'));
+  var empty=document.getElementById('bempty');
+  if(!chips.length)return;
+  function apply(cat){
+    var shown=0;
+    cards.forEach(function(c){
+      var hit=(cat==='all'||c.getAttribute('data-cat')===cat);
+      c.classList.toggle('hide',!hit);
+      if(hit)shown++;
+    });
+    chips.forEach(function(ch){ch.setAttribute('aria-pressed',String(ch.getAttribute('data-f')===cat));});
+    if(empty)empty.style.display=shown?'none':'block';
+  }
+  chips.forEach(function(ch){ch.addEventListener('click',function(){apply(ch.getAttribute('data-f'));});});
+})();
 </script>
 </body>
 </html>
