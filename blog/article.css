@@ -174,7 +174,9 @@ footer{background:var(--tinta);color:rgba(255,255,255,.72);padding:48px 0 28px;m
   .prose>p,.prose>ul,.prose>ol{font-size:1.06rem}
   .prose .usecards,.prose .related{grid-template-columns:1fr}
 }
+@view-transition{navigation:auto}
 @media(prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important}
   .btn,.wa-float{transition:none!important}
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
 }
