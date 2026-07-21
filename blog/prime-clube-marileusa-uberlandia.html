@@ -53,6 +53,10 @@
 .imgfig{margin:22px 0}
 .imgfig img{width:100%;height:auto;border-radius:var(--r-lg);box-shadow:var(--lift)}
 .imgfig figcaption{font-size:.85rem;color:var(--tinta-suave);text-align:center;margin-top:8px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:24px 0}
+.gallery figure{margin:0}
+.gallery img{width:100%;height:auto;border-radius:var(--r-md);box-shadow:var(--lift);display:block}
+.gallery figcaption{font-size:.82rem;color:var(--tinta-suave);text-align:center;margin-top:6px}
 details{border:1px solid var(--nevoa);border-radius:var(--r-md);padding:16px 20px;margin-bottom:12px;background:var(--superficie)}
 summary{font-family:var(--fdisp);font-weight:700;color:var(--tinta);cursor:pointer;font-size:1.05rem}
 details p{margin:12px 0 4px;font-size:1rem}
@@ -80,7 +84,7 @@ details p{margin:12px 0 4px;font-size:1rem}
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Quanto custa um apartamento no Prime Clube?", "acceptedAnswer": {"@type": "Answer", "text": "As últimas unidades do Prime Clube partiam de cerca de R$ 238 mil, dentro do Minha Casa Minha Vida. Como o estoque está baixo, o valor exato depende da unidade disponível no momento e pode ter mudado. Confirme comigo o valor e a condição do dia antes de decidir."}},
+    {"@type": "Question", "name": "Quanto custa um apartamento no Prime Clube?", "acceptedAnswer": {"@type": "Answer", "text": "Pela tabela oficial de julho de 2026, a avaliação Caixa vai de cerca de R$ 214.300 (planta padrão de 40,02 m²) a R$ 223.800 (garden de 46,52 m²), dentro do Minha Casa Minha Vida. O sinal parte de cerca de R$ 874 por mês, parcelado em até 72 vezes, e 80% do valor é financiado pela Caixa. Como o estoque está baixo, o valor exato depende da unidade disponível. Confirme comigo o valor e a condição do dia antes de decidir."}},
     {"@type": "Question", "name": "O Prime Clube ainda tem unidades disponíveis?", "acceptedAnswer": {"@type": "Answer", "text": "Restam poucas. O empreendimento chegou a cerca de 85% vendido e a Realiza não confirmou reposição de estoque neste produto. Se ainda faz sentido pra você, o ideal é verificar em tempo real o que sobrou antes de se planejar em torno de uma unidade específica."}},
     {"@type": "Question", "name": "Dá para usar o FGTS no Prime Clube?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. O Prime Clube está dentro do Minha Casa Minha Vida, financiado pela Caixa, com subsídio do governo e uso do FGTS como parte da entrada, para quem cumpre os requisitos do programa."}},
     {"@type": "Question", "name": "A Realiza vai lançar um condomínio parecido em Araguari?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. A mesma construtora do Prime Clube está com um lançamento a caminho em Araguari, no mesmo formato de condomínio clube dentro do Minha Casa Minha Vida. A tabela oficial e as plantas ainda não foram liberadas por completo; assim que tiver os números confirmados, publico o guia completo do lançamento de Araguari."}}
@@ -130,6 +134,17 @@ details p{margin:12px 0 4px;font-size:1rem}
 
 <p class="lead">Sou o Marco Túlio, corretor em Uberlândia (parceiro da Torrano, CRECI/MG nº 7469). Acompanho o mercado de perto e o Prime Clube foi, sem exagero, um dos lançamentos que mais me surpreendeu nos últimos meses: um Minha Casa Minha Vida de mais de 460 unidades, dentro do bairro planejado mais valorizado da cidade, e que virou destaque de vendas no Megacon. Hoje conto os números, o que ainda resta e por que a mesma fórmula está prestes a chegar em Araguari.</p>
 
+<div class="resumo">
+  <h2>Resumo rápido</h2>
+  <ul>
+    <li><strong>O que é:</strong> Prime Clube, condomínio clube da Realiza no Granja Marileusa, Uberlândia, dentro do Minha Casa Minha Vida.</li>
+    <li><strong>Tamanho:</strong> 15 torres, 464 apartamentos de 2 quartos (40,02 m² e garden de 46,52 m²).</li>
+    <li><strong>Preço:</strong> avaliação Caixa de R$ 214.300 a R$ 223.800 (tabela de julho/2026), com sinal a partir de cerca de R$ 874 por mês em até 72x.</li>
+    <li><strong>Status:</strong> cerca de 85% vendido, sem reposição de estoque confirmada.</li>
+    <li><strong>Novidade:</strong> a mesma construtora está com um lançamento a caminho em Araguari.</li>
+  </ul>
+</div>
+
 <h2>Os números que fizeram o Prime Clube um <em>case de sucesso</em></h2>
 <div class="specs">
   <div class="spec"><div class="n">24.467 m²</div><div class="l">de terreno</div></div>
@@ -145,19 +160,26 @@ details p{margin:12px 0 4px;font-size:1rem}
   <li>Dentro do bairro planejado mais comentado da cidade, ao lado de empreendimentos de médio e alto padrão.</li>
 </ul>
 
-<h2>Plantas e condições</h2>
-<p>O Prime Clube tem duas tipologias, as duas de 2 quartos:</p>
+<h2>Plantas e condições (tabela oficial de <em>julho/2026</em>)</h2>
+<p>São <strong>464 unidades</strong> divididas em duas tipologias, as duas de 2 quartos:</p>
 <div class="table-wrap">
 <table>
-<thead><tr><th>Planta</th><th>Área</th><th>Perfil</th></tr></thead>
+<thead><tr><th>Planta</th><th>Área</th><th>Unidades</th><th>Avaliação Caixa</th></tr></thead>
 <tbody>
-<tr><td><strong>Padrão</strong></td><td>40,02 m²</td><td>Sala integrada, cozinha, área de serviço, 1 banheiro, 1 vaga. A porta de entrada mais objetiva.</td></tr>
-<tr><td><strong>Garden</strong></td><td>46,52 m²</td><td>Área privativa extra. A mais disputada, ideal pra quem tem pet, criança ou quer um "quintal".</td></tr>
+<tr><td><strong>Padrão</strong></td><td>40,02 m²</td><td>406</td><td>a partir de R$ 214.300</td></tr>
+<tr><td><strong>Garden</strong></td><td>46,52 m²</td><td>58</td><td>até R$ 223.800</td></tr>
 </tbody>
 </table>
 </div>
-<p>Nas últimas unidades, o valor partia de <strong>cerca de R$ 238 mil</strong>, com entrada em torno de 20%, parcelamento em até 72 vezes e correção pelo INCC durante a obra (depois IPCA + 1%). O financiamento é pela <strong>Caixa Econômica Federal</strong>, dentro do Minha Casa Minha Vida, com subsídio do governo, uso do <a href="/blog/como-usar-fgts-comprar-imovel-uberlandia">FGTS</a> como parte da entrada e prazo de até 35 anos.</p>
-<div class="aviso"><strong>Sobre o valor:</strong> com o estoque já reduzido, o preço e a condição exatos dependem da unidade que ainda estiver disponível no dia. Simule antes ou me chame que eu confirmo em tempo real o que sobrou e por qual valor.</div>
+<p>A planta padrão tem sala integrada, cozinha, área de serviço, 1 banheiro e 1 vaga. O garden acrescenta uma área privativa, ideal pra quem tem pet, criança ou quer um "quintal" no térreo (e é a unidade mais disputada).</p>
+<div class="specs">
+  <div class="spec"><div class="n">R$ 874/mês</div><div class="l">sinal a partir de, em até 72x</div></div>
+  <div class="spec"><div class="n">80%</div><div class="l">financiado pela Caixa</div></div>
+  <div class="spec"><div class="n">até 35 anos</div><div class="l">de prazo</div></div>
+  <div class="spec"><div class="n">FGTS</div><div class="l">pode entrar no negócio</div></div>
+</div>
+<p>O grande atrativo é o <strong>sinal parcelado</strong>: pela tabela de julho/2026, ele parte de cerca de <strong>R$ 874 por mês em até 72 vezes</strong>, com correção pelo INCC durante a obra. Os 80% restantes são financiados pela <strong>Caixa Econômica Federal</strong>, dentro do Minha Casa Minha Vida, com subsídio do governo e uso do <a href="/blog/como-usar-fgts-comprar-imovel-uberlandia">FGTS</a> como parte da entrada. Ou seja: dá pra entrar sem ter uma reserva grande de dinheiro parado.</p>
+<div class="aviso"><strong>Sobre os valores:</strong> os números acima são da tabela oficial de julho/2026 e mudam conforme a unidade (andar, posição, sol) e a disponibilidade. Com o estoque já reduzido, me chame que eu confirmo em tempo real o que sobrou e simulo a sua parcela.</div>
 
 <h2>Lazer completo, mesmo sendo <em>MCMV</em></h2>
 <p>Um dos motivos do sucesso é não parecer, na prática, um "MCMV básico":</p>
@@ -172,9 +194,20 @@ details p{margin:12px 0 4px;font-size:1rem}
   <li>Bicicletário e pomar</li>
 </ul>
 
+<div class="gallery">
+  <figure><img src="/blog/images/prime-clube-fachada.webp" alt="Fachada do Prime Clube, condomínio clube da Realiza no Granja Marileusa em Uberlândia" loading="lazy" width="1000" height="1000"><figcaption>Fachada do condomínio</figcaption></figure>
+  <figure><img src="/blog/images/prime-clube-piscina.webp" alt="Área de piscina com deck do Prime Clube no Granja Marileusa, Uberlândia" loading="lazy" width="1000" height="1000"><figcaption>Piscina e deck de lazer</figcaption></figure>
+  <figure><img src="/blog/images/prime-clube-academia.webp" alt="Academia Fitness Prime do condomínio Prime Clube em Uberlândia" loading="lazy" width="1000" height="1000"><figcaption>Academia equipada</figcaption></figure>
+  <figure><img src="/blog/images/prime-clube-quadra.webp" alt="Quadra poliesportiva do Prime Clube no Granja Marileusa, Uberlândia" loading="lazy" width="1000" height="1000"><figcaption>Quadra poliesportiva</figcaption></figure>
+  <figure><img src="/blog/images/prime-clube-cozinha.webp" alt="Cozinha de apartamento de 2 quartos do Prime Clube no Granja Marileusa, Uberlândia" loading="lazy" width="1000" height="1000"><figcaption>Cozinha do apartamento de 2 quartos</figcaption></figure>
+</div>
+<p class="fonte">Imagens ilustrativas do material oficial da Realiza Construtora (Prime Clube Uberlândia, RI R-05 272.169).</p>
+
 <div class="aviso"><strong>Se o Prime Clube é o seu plano, corra:</strong> com cerca de 85% das unidades vendidas, a Realiza ainda não confirmou reposição de estoque neste produto. As melhores plantas (garden, andar, posição) somem primeiro. Se quiser comparar com outra opção do mesmo bairro, veja o comparativo entre o <a href="/blog/apartamentos-no-granja-marileusa-uberlandia">Prime Clube e o Chelsea (MRV) no Marileusa</a>.</div>
 
 <a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco%20T%C3%BAlio!%20Quero%20saber%20o%20que%20ainda%20est%C3%A1%20dispon%C3%ADvel%20no%20Prime%20Clube." target="_blank" rel="noopener" class="jump">Ver o que ainda está disponível →</a>
+
+<p style="text-align:center;font-size:.95rem;margin:6px 0 22px">Prefere ver o material oficial? <a href="https://realizapp.com.br/lps/prime-clube-uberlandia/Marco-Tulio-Andrade-de-Freitas/82F4L6/" target="_blank" rel="noopener">Acesse a página do Prime Clube com o meu atendimento</a> (plantas, vídeo e simulação, com o seu contato direcionado direto pra mim).</p>
 
 <h2>A fórmula que deu certo aqui, a Realiza está repetindo em <em>Araguari</em></h2>
 <figure class="imgfig">
@@ -192,7 +225,7 @@ details p{margin:12px 0 4px;font-size:1rem}
 <h2>Perguntas <em>frequentes</em></h2>
 <details>
   <summary>Quanto custa um apartamento no Prime Clube?</summary>
-  <p>As últimas unidades partiam de cerca de R$ 238 mil, dentro do Minha Casa Minha Vida. Como o estoque está baixo, o valor exato depende da unidade disponível no momento e pode ter mudado. Confirme comigo o valor e a condição do dia antes de decidir.</p>
+  <p>Pela tabela oficial de julho de 2026, a avaliação Caixa vai de cerca de R$ 214.300 (planta padrão de 40,02 m²) a R$ 223.800 (garden de 46,52 m²), dentro do Minha Casa Minha Vida. O sinal parte de cerca de R$ 874 por mês, parcelado em até 72 vezes, e 80% do valor é financiado pela Caixa. Como o estoque está baixo, o valor exato depende da unidade disponível. Confirme comigo o valor e a condição do dia antes de decidir.</p>
 </details>
 <details>
   <summary>O Prime Clube ainda tem unidades disponíveis?</summary>
@@ -207,13 +240,14 @@ details p{margin:12px 0 4px;font-size:1rem}
   <p>Sim. A mesma construtora do Prime Clube está com um lançamento a caminho em Araguari, no mesmo formato de condomínio clube dentro do Minha Casa Minha Vida. A tabela oficial e as plantas ainda não foram liberadas por completo; assim que tiver os números confirmados, publico o guia completo do lançamento de Araguari.</p>
 </details>
 
-<p class="fonte">Condições de julho/2026, sujeitas a alteração e disponibilidade sem aviso. Dados econômicos sobre Araguari (CJ Selecta, IMEPAC) têm base em notícias públicas de 2025 e 2026. Este conteúdo não constitui oferta de crédito. Confirme sempre os valores do dia antes de decidir.</p>
+<p class="fonte">Valores da tabela oficial da Realiza de julho/2026, sujeitos a alteração e disponibilidade sem aviso. Imagens ilustrativas do material oficial da Realiza Construtora. Dados econômicos sobre Araguari (CJ Selecta, IMEPAC) têm base em notícias públicas de 2025 e 2026. Este conteúdo não constitui oferta de crédito. Confirme sempre os valores do dia antes de decidir.</p>
 
     </article>
     <aside class="art-cta">
       <h2>Quer saber o que ainda sobrou no Prime Clube?</h2>
       <p>Me chama no WhatsApp com o seu perfil (renda, se já tem FGTS) que eu verifico em tempo real a disponibilidade e simulo sua parcela, sem compromisso.</p>
       <a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco%20T%C3%BAlio!%20Quero%20saber%20o%20que%20ainda%20est%C3%A1%20dispon%C3%ADvel%20no%20Prime%20Clube." target="_blank" rel="noopener" class="btn btn-zap"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg> Ver disponibilidade agora</a>
+      <p style="margin:14px 0 0;font-size:.92rem"><a href="https://realizapp.com.br/lps/prime-clube-uberlandia/Marco-Tulio-Andrade-de-Freitas/82F4L6/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">Ou veja a página oficial do Prime Clube com o meu atendimento →</a></p>
     </aside>
     <div class="art-back"><a href="/blog">← Ver todos os artigos</a></div>
   </div>
