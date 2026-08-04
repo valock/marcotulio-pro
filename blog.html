@@ -9,19 +9,19 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#1A56DB">
-<title>Blog | Marco Túlio — Casa própria, MCMV e financiamento em Uberlândia</title>
+<title>Blog do Marco Túlio: casa própria, MCMV e financiamento em Uberlândia</title>
 <meta name="description" content="Guias e análises sobre comprar a casa própria em Uberlândia: Minha Casa Minha Vida, financiamento Caixa, FGTS, empreendimentos e bairros. Por um corretor que descomplica.">
 <meta name="author" content="Marco Túlio Andrade Freitas">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://marcotulio.pro/blog">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://marcotulio.pro/blog">
-<meta property="og:title" content="Blog | Marco Túlio — Casa própria e financiamento em Uberlândia">
+<meta property="og:title" content="Blog do Marco Túlio: casa própria e financiamento em Uberlândia">
 <meta property="og:description" content="Guias e análises sobre Minha Casa Minha Vida, financiamento Caixa, FGTS e o mercado imobiliário de Uberlândia.">
 <meta property="og:image" content="https://marcotulio.pro/og-image.jpg">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Blog | Marco Túlio — Uberlândia">
+<meta name="twitter:title" content="Blog do Marco Túlio | Uberlândia">
 <meta name="twitter:description" content="Guias sobre Minha Casa Minha Vida, financiamento Caixa e FGTS em Uberlândia.">
 <meta name="twitter:image" content="https://marcotulio.pro/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,6 +53,8 @@
 .fchip{font-family:var(--fbody);font-weight:600;font-size:.92rem;padding:9px 18px;border-radius:var(--r-pill);border:1px solid var(--nevoa);background:var(--superficie);color:var(--tinta-suave);cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease)}
 .fchip:hover{border-color:var(--azul);color:var(--azul);transform:translateY(-1px)}
 .fchip[aria-pressed="true"]{background:var(--azul);border-color:var(--azul);color:#fff}
+.fchip-link{text-decoration:none;display:inline-flex;align-items:center;color:var(--coral-profundo);border-color:#F3C9BD}
+.fchip-link:hover{background:var(--coral);border-color:var(--coral);color:#fff}
 .bcard.hide{display:none}
 .bempty{display:none;text-align:center;color:var(--tinta-suave);margin:0 auto 40px;font-size:1.05rem}
 @view-transition{navigation:auto}
@@ -87,45 +89,26 @@
     <header class="art-head" style="text-align:center;max-width:720px;margin:0 auto 40px">
       <span class="kicker">Blog</span>
       <h1>O blog do Marco Túlio</h1>
-      <p class="art-sub">Guias e análises sobre comprar a casa própria em Uberlândia — Minha Casa Minha Vida, financiamento Caixa, FGTS, empreendimentos e bairros. Tudo sem juridiquês.</p>
+      <p class="art-sub">Guias e análises sobre comprar a casa própria em Uberlândia, Minha Casa Minha Vida, financiamento Caixa, FGTS, empreendimentos e bairros. Tudo sem juridiquês.</p>
     </header>
     <div class="blogfilter" role="group" aria-label="Filtrar artigos por categoria">
       <button type="button" class="fchip" data-f="all" aria-pressed="true">Todos</button>
       <button type="button" class="fchip" data-f="E" aria-pressed="false">Empreendimentos</button>
       <button type="button" class="fchip" data-f="F" aria-pressed="false">Financiamento &amp; MCMV</button>
       <button type="button" class="fchip" data-f="B" aria-pressed="false">Bairros &amp; regiões</button>
-      <button type="button" class="fchip" data-f="N" aria-pressed="false">Notícias</button>
+      <a href="/noticias" class="fchip fchip-link">📰 Notícias</a>
     </div>
+    <noscript><p style="text-align:center;margin:0 auto 30px"><a href="/noticias">📰 Ver as notícias do mercado imobiliário</a></p></noscript>
     <p class="bempty" id="bempty">Nenhum artigo nessa categoria por enquanto.</p>
     <div class="bgrid">
-      <a class="bcard" href="/blog/fipezap-julho-2026-precos-imoveis" data-cat="N">
-        <div class="thumb emoji"><span>📈</span></div>
+      <a class="bcard bfeat" href="/blog/lancamento-opcao-uberlandia" data-cat="E">
+        <div class="thumb emoji"><span>🚀</span></div>
         <div class="bbody">
-          <div class="bcat">📰 Notícia · Preços e índices</div>
-          <h2>FipeZap de julho: imóveis sobem 0,46% no mês e 2,89% no ano</h2>
+          <div class="bcat">🚀 Lançamento · Construtora Opção</div>
+          <h2>Novo lançamento da Opção em Uberlândia: o que já dá pra adiantar</h2>
           <div class="meta">4 de agosto de 2026</div>
-          <p>O preço subiu quase oito vezes mais que a inflação do mês e está encostando no acumulado do ano. Veja o ranking das capitais e o custo real de ficar esperando.</p>
-          <span class="more">Ver os números →</span>
-        </div>
-      </a>
-      <a class="bcard" href="/blog/intencao-compra-recorde-imoveis-usados-2026" data-cat="N">
-        <div class="thumb emoji"><span>🏘️</span></div>
-        <div class="bbody">
-          <div class="bcat">📰 Notícia · Mercado imobiliário</div>
-          <h2>Intenção de compra bate recorde, mas a classe média migra para o usado</h2>
-          <div class="meta">4 de agosto de 2026</div>
-          <p>52% querem comprar, o maior nível já medido. Só que 70% dos financiamentos foram para imóveis usados. Por que isso acontece e por que em Uberlândia a conta é outra.</p>
-          <span class="more">Entender o cenário →</span>
-        </div>
-      </a>
-      <a class="bcard" href="/blog/reforma-casa-brasil-aporte-750-milhoes" data-cat="N">
-        <div class="thumb emoji"><span>🔨</span></div>
-        <div class="bbody">
-          <div class="bcat">📰 Notícia · Crédito para reforma</div>
-          <h2>Crédito para reforma pode parar em agosto: governo avalia R$ 750 milhões</h2>
-          <div class="meta">4 de agosto de 2026</div>
-          <p>O fundo que garante o Reforma Casa Brasil tem fôlego só até agosto. O que está em jogo e o que fazer se você pretende reformar a casa.</p>
-          <span class="more">Ler a notícia →</span>
+          <p>Informações oficiais sendo liberadas agora. Por que a tabela do primeiro dia é a menor do ciclo, o que a fase de lançamento costuma oferecer e os 5 passos pra chegar preparado e escolher a melhor unidade.</p>
+          <span class="more">Ver e receber em primeira mão →</span>
         </div>
       </a>
       <a class="bcard bfeat" href="/blog/dia-da-assinatura-caixa-contrato-magico" data-cat="F">
@@ -258,16 +241,6 @@
           <span class="more">Ver o guia e simular →</span>
         </div>
       </a>
-      <a class="bcard" href="/blog/mcmv-juros-menores-renda-21-mil" data-cat="N">
-        <div class="thumb"><img src="/blog/images/mcmv-juros-menores-renda-21-mil-capa.webp" alt="Proposta em análise: juros menores e renda até R$ 21 mil no Minha Casa Minha Vida" width="1456" height="819" loading="lazy"></div>
-        <div class="bbody">
-          <div class="bcat">📰 Notícia · MCMV</div>
-          <h2>Juros menores e renda até R$ 21 mil: o que pode mudar no MCMV</h2>
-          <div class="meta">18 de julho de 2026</div>
-          <p>Governo analisa cortar os juros das faixas 3 e 4 e ampliar o programa até imóveis de R$ 1,2 milhão. Os números, as chances e o que fazer agora.</p>
-          <span class="more">Entender a proposta →</span>
-        </div>
-      </a>
       <a class="bcard" href="/blog/copa-2026-comprar-imovel-uberlandia" data-cat="F">
         <div class="thumb"><img src="/blog/images/copa-figurinhas-capa.webp" alt="Troca de figurinha dourada da Copa 2026 pela chave da casa própria em Uberlândia" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
@@ -299,7 +272,7 @@
         </div>
       </a>
       <a class="bcard bfeat" href="/blog/gran-vic-uberlandia" data-cat="E">
-        <div class="thumb"><img src="/blog/images/gran-vic-uberlandia-capa.webp" alt="Gran Vic da VIC Engenharia no EcoPark, zona sul de Uberlândia — pré-lançamento" width="1456" height="819"></div>
+        <div class="thumb"><img src="/blog/images/gran-vic-uberlandia-capa.webp" alt="Gran Vic da VIC Engenharia no EcoPark, zona sul de Uberlândia, pré-lançamento" width="1456" height="819"></div>
         <div class="bbody">
           <div class="bcat">🚀 Pré-lançamento · VIC Engenharia · Zona Sul</div>
           <h2>Gran Vic: o lançamento da VIC no EcoPark, na zona sul de Uberlândia</h2>
@@ -324,7 +297,7 @@
           <div class="bcat">💰 Financiamento · MCMV 2026</div>
           <h2>Quanto de entrada preciso pra financiar em Uberlândia?</h2>
           <div class="meta">5 de julho de 2026</div>
-          <p>Menos do que você pensa. Como subsídio, FGTS e Cheque Moradia montam a entrada — e por que muitas vezes ela chega perto de zero.</p>
+          <p>Menos do que você pensa. Como subsídio, FGTS e Cheque Moradia montam a entrada, e por que muitas vezes ela chega perto de zero.</p>
           <span class="more">Descobrir minha entrada →</span>
         </div>
       </a>
@@ -354,17 +327,17 @@
           <div class="bcat">🏛️ Habita+ · Prefeitura de Uberlândia</div>
           <h2>Cheque Moradia Uberlândia: R$ 10 mil na entrada do seu apê</h2>
           <div class="meta">4 de julho de 2026</div>
-          <p>A prefeitura dá até R$ 10 mil na entrada — e dá pra somar com o subsídio federal, o FGTS e a isenção de ITBI e IPTU. Veja quem tem direito.</p>
+          <p>A prefeitura dá até R$ 10 mil na entrada, e dá pra somar com o subsídio federal, o FGTS e a isenção de ITBI e IPTU. Veja quem tem direito.</p>
           <span class="more">Ver como funciona →</span>
         </div>
       </a>
       <a class="bcard" href="/blog/minha-casa-minha-vida-nome-sujo-score" data-cat="F">
-        <div class="thumb"><img src="/blog/images/minha-casa-minha-vida-nome-sujo-score-capa.webp" alt="Nome sujo consegue financiar pelo MCMV em Uberlândia — a verdade sobre score e Serasa" width="1456" height="819" loading="lazy"></div>
+        <div class="thumb"><img src="/blog/images/minha-casa-minha-vida-nome-sujo-score-capa.webp" alt="Nome sujo consegue financiar pelo MCMV em Uberlândia, a verdade sobre score e Serasa" width="1456" height="819" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">🏠 Minha Casa Minha Vida</div>
           <h2>Minha Casa Minha Vida com nome sujo ou score baixo? A verdade</h2>
           <div class="meta">4 de julho de 2026</div>
-          <p>Nome negativado e score baixo não são a mesma coisa — e raramente é "impossível". O que trava de verdade e o plano de 5 passos.</p>
+          <p>Nome negativado e score baixo não são a mesma coisa, e raramente é "impossível". O que trava de verdade e o plano de 5 passos.</p>
           <span class="more">Ler a verdade →</span>
         </div>
       </a>
@@ -374,7 +347,7 @@
           <div class="bcat">📋 Financiamento · MCMV 2026</div>
           <h2>Documentos do Minha Casa Minha Vida 2026: checklist pra aprovar rápido</h2>
           <div class="meta">4 de julho de 2026</div>
-          <p>A aprovação trava por papel faltando, não por falta de direito. Checklist por CLT, autônomo e MEI — e os 3 erros que mais atrasam.</p>
+          <p>A aprovação trava por papel faltando, não por falta de direito. Checklist por CLT, autônomo e MEI, e os 3 erros que mais atrasam.</p>
           <span class="more">Ver o checklist →</span>
         </div>
       </a>
@@ -382,14 +355,14 @@
         <div class="thumb"><img src="/blog/images/apartamentos-zona-sul-capa.webp" alt="Entrada de condomínio de apartamentos na zona sul de Uberlândia ao pôr do sol" width="1456" height="819"></div>
         <div class="bbody">
           <div class="bcat">🚗 Zona Sul · Anel Viário Sul liberado</div>
-          <h2>Apartamentos na zona sul de Uberlândia: o que existe hoje — e o que vem por aí</h2>
+          <h2>Apartamentos na zona sul de Uberlândia: o que existe hoje, e o que vem por aí</h2>
           <div class="meta">3 de julho de 2026</div>
           <p>Com o Anel Viário Sul liberado, a região mais desejada da cidade ficou ainda mais conectada. Os apartamentos de Shopping Park e Gávea que dá pra comprar agora, com valores reais, e o Gran Vic chegando no EcoPark.</p>
           <span class="more">Ver o guia e entrar na lista →</span>
         </div>
       </a>
       <a class="bcard bfeat" href="/blog/horizon-residencial-fruta-do-conde" data-cat="E">
-        <div class="thumb"><img src="/blog/images/horizon-fruta-do-conde-capa.webp" alt="Horizon Residencial no Fruta do Conde, zona oeste de Uberlândia — lançamento MCMV" width="1456" height="971"></div>
+        <div class="thumb"><img src="/blog/images/horizon-fruta-do-conde-capa.webp" alt="Horizon Residencial no Fruta do Conde, zona oeste de Uberlândia, lançamento MCMV" width="1456" height="971"></div>
         <div class="bbody">
           <div class="bcat">🚀 Lançamento · Zona Oeste · MCMV + Habita+</div>
           <h2>Horizon Residencial no Fruta do Conde: o guia que a página oficial não mostra</h2>
@@ -399,12 +372,12 @@
         </div>
       </a>
       <a class="bcard bfeat" href="/blog/jardim-holanda-uberlandia" data-cat="B">
-        <div class="thumb"><img src="/blog/images/jardim-holanda-capa.webp" alt="Jardim Holanda, Uberlândia — clube APCEF e Leal Supermercados" width="1456" height="971"></div>
+        <div class="thumb"><img src="/blog/images/jardim-holanda-capa.webp" alt="Jardim Holanda, Uberlândia, clube APCEF e Leal Supermercados" width="1456" height="971"></div>
         <div class="bbody">
           <div class="bcat">Guia de bairro · Zona Oeste</div>
-          <h2>Jardim Holanda: o bairro que cresce — e onde o apartamento ainda cabe no bolso</h2>
+          <h2>Jardim Holanda: o bairro que cresce, e onde o apartamento ainda cabe no bolso</h2>
           <div class="meta">1º de julho de 2026</div>
-          <p>Clube de águas quentes, mercado e escolas dentro do bairro. Na planta a partir de R$ 215 mil (MRV) ou pronto para morar — com simulação real e as faixas do MCMV 2026.</p>
+          <p>Clube de águas quentes, mercado e escolas dentro do bairro. Na planta a partir de R$ 215 mil (MRV) ou pronto para morar, com simulação real e as faixas do MCMV 2026.</p>
           <span class="more">Ver o guia e simular →</span>
         </div>
       </a>
@@ -414,7 +387,7 @@
           <div class="bcat">Araguari · MCMV</div>
           <h2>Apartamento em Araguari: preço, MCMV e financiamento</h2>
           <div class="meta">29 de junho de 2026</div>
-          <p>Quanto custa, se o Minha Casa Minha Vida funciona, quanto de renda precisa e se vale a pena comprar em Araguari — as respostas diretas, sem enrolação.</p>
+          <p>Quanto custa, se o Minha Casa Minha Vida funciona, quanto de renda precisa e se vale a pena comprar em Araguari, as respostas diretas, sem enrolação.</p>
           <span class="more">Ver as respostas →</span>
         </div>
       </a>
@@ -424,25 +397,25 @@
           <div class="bcat">Araguari · Sair do aluguel</div>
           <h2>Trabalha em Araguari? A conta do aluguel não fecha mais</h2>
           <div class="meta">29 de junho de 2026</div>
-          <p>Quem trabalha na CJ Selecta, no IMEPAC ou na indústria e ainda paga aluguel: veja por que a parcela do MCMV pode custar quase o mesmo — e o imóvel ser seu.</p>
+          <p>Quem trabalha na CJ Selecta, no IMEPAC ou na indústria e ainda paga aluguel: veja por que a parcela do MCMV pode custar quase o mesmo, e o imóvel ser seu.</p>
           <span class="more">Fazer a conta →</span>
         </div>
       </a>
       <a class="bcard bfeat" href="/blog/apartamento-morumbi-uberlandia" data-cat="B">
-        <div class="thumb"><img src="/blog/img/morumbi-uberlandia-bris-trez-solis-vista-aerea.jpg" alt="Apartamento no Morumbi, Uberlândia — vista aérea com Bris, Trez e Solis" loading="lazy"></div>
+        <div class="thumb"><img src="/blog/img/morumbi-uberlandia-bris-trez-solis-vista-aerea.jpg" alt="Apartamento no Morumbi, Uberlândia, vista aérea com Bris, Trez e Solis" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Guia do bairro · Morumbi</div>
           <h2>Apartamento no Morumbi, Uberlândia: o guia honesto pra escolher o seu</h2>
           <div class="meta">29 de junho de 2026</div>
-          <p>Preços reais de novos e usados, comparativo direto dos lançamentos (Solis, Bris, Trez) e as 4 perguntas que definem a escolha certa — sem o papo de folder de construtora.</p>
+          <p>Preços reais de novos e usados, comparativo direto dos lançamentos (Solis, Bris, Trez) e as 4 perguntas que definem a escolha certa, sem o papo de folder de construtora.</p>
           <span class="more">Comparar e escolher →</span>
         </div>
       </a>
       <a class="bcard" href="/blog/aprovado-e-travado" data-cat="F">
-        <div class="thumb"><img src="/blog/img/aprovado-og.png" alt="Você foi aprovado e travou — a aprovação tem prazo de validade" loading="lazy"></div>
+        <div class="thumb"><img src="/blog/img/aprovado-og.png" alt="Você foi aprovado e travou, a aprovação tem prazo de validade" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Financiamento</div>
-          <h2>Você foi aprovado e travou — não perca a parte difícil parado</h2>
+          <h2>Você foi aprovado e travou, não perca a parte difícil parado</h2>
           <div class="meta">28 de junho de 2026</div>
           <p>A aprovação do financiamento tem prazo de validade. Por que adiar a decisão depois de aprovado pode custar o subsídio, a taxa e até o imóvel que você quer.</p>
           <span class="more">Entender o risco →</span>
@@ -452,9 +425,9 @@
         <div class="thumb"><img src="/blog/img/indica-og.png" alt="Indique um corretor de confiança em Uberlândia" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Indicação</div>
-          <h2>Não é pra você — mas pode ser pra alguém que você conhece</h2>
+          <h2>Não é pra você, mas pode ser pra alguém que você conhece</h2>
           <div class="meta">28 de junho de 2026</div>
-          <p>Não está comprando agora? Tudo bem. Mas você provavelmente conhece quem está — e pode ajudar essa pessoa a começar do jeito certo (e ser reconhecido por isso).</p>
+          <p>Não está comprando agora? Tudo bem. Mas você provavelmente conhece quem está, e pode ajudar essa pessoa a começar do jeito certo (e ser reconhecido por isso).</p>
           <span class="more">Ler a conversa →</span>
         </div>
       </a>
@@ -464,7 +437,7 @@
           <div class="bcat">Financiamento · MCMV 2026</div>
           <h2>Quanto preciso ganhar para financiar um apartamento em Uberlândia?</h2>
           <div class="meta">22 de junho de 2026</div>
-          <p>A tabela renda × faixa × subsídio do MCMV 2026 com exemplos reais — e o simulador que calcula o número exato para o seu perfil em 1 minuto.</p>
+          <p>A tabela renda × faixa × subsídio do MCMV 2026 com exemplos reais, e o simulador que calcula o número exato para o seu perfil em 1 minuto.</p>
           <span class="more">Ver tabela e simular →</span>
         </div>
       </a>
@@ -479,37 +452,17 @@
         </div>
       </a>
       <a class="bcard bfeat" href="/blog/jardim-sul-uberlandia-zona-sul" data-cat="B">
-        <div class="thumb"><img src="/blog/img/jardim-sul-uberlandia-zona-sul.jpg" alt="Jardim Sul Uberlândia — apartamento MCMV 100% financiado na Zona Sul" loading="lazy"></div>
+        <div class="thumb"><img src="/blog/img/jardim-sul-uberlandia-zona-sul.jpg" alt="Jardim Sul Uberlândia, apartamento MCMV 100% financiado na Zona Sul" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Zona Sul · MCMV 2026</div>
-          <h2>Jardim Sul Uberlândia: o MCMV que a Zona Sul esperava — e que financia 100%</h2>
+          <h2>Jardim Sul Uberlândia: o MCMV que a Zona Sul esperava, e que financia 100%</h2>
           <div class="meta">26 de junho de 2026</div>
-          <p>A Caixa avaliou o empreendimento acima do valor de tabela. Para quem compra o primeiro imóvel, ITBI e registro são pagos pela construtora — o ato pode ser a partir de R$ 500 e o resto 100% financiado.</p>
+          <p>A Caixa avaliou o empreendimento acima do valor de tabela. Para quem compra o primeiro imóvel, ITBI e registro são pagos pela construtora, o ato pode ser a partir de R$ 500 e o resto 100% financiado.</p>
           <span class="more">Entender como funciona →</span>
         </div>
       </a>
-      <a class="bcard bfeat" href="/blog/feirao-torrano-junho-2026-uberlandia" data-cat="N">
-        <div class="thumb"><img src="/blog/img/feirao-casa-propria-torrano-27-junho-uberlandia.jpg" alt="Feirão da Casa Própria Torrano — Edição Junina 27 de junho Uberlândia" loading="lazy"></div>
-        <div class="bbody">
-          <div class="bcat">🏠 Evento · Feirão da Casa Própria</div>
-          <h2>Feirão da Casa Própria Torrano: como funciona e quando é o próximo</h2>
-          <div class="meta">Atualizado em 28 de junho de 2026</div>
-          <p>A Edição Junina foi um sucesso — quase 60 agendamentos e vários atendimentos na porta. Veja como funciona o feirão e seja avisado da próxima edição em primeira mão.</p>
-          <span class="more">Ver como funciona →</span>
-        </div>
-      </a>
-      <a class="bcard" href="/blog/feirao-torrano-prefeitura-habita-mais-uberlandia" data-cat="N">
-        <div class="thumb"><img src="/blog/img/feirao-torrano-habita-mais-caixa-construtoras.jpg" alt="Feirão Torrano com Habita+, Prefeitura e Caixa — 27 de junho, Uberlândia" loading="lazy"></div>
-        <div class="bbody">
-          <div class="bcat">🏛️ Habitação · Prefeitura de Uberlândia</div>
-          <h2>Habita+ Uberlândia: ITBI e IPTU isentos no primeiro imóvel</h2>
-          <div class="meta">Atualizado em 28 de junho de 2026</div>
-          <p>Comprar o primeiro imóvel pelo MCMV em Uberlândia pode isentar o ITBI e o IPTU por 5 anos. Entenda o Habita+ e como começar no feirão da Torrano.</p>
-          <span class="more">Entender o Habita+ →</span>
-        </div>
-      </a>
       <a class="bcard" href="/blog/teto-minha-casa-minha-vida-uberlandia" data-cat="F">
-        <div class="thumb"><img src="/blog/img/financiamento-mcmv-renda-alta-uberlandia.jpg" alt="Teto do Minha Casa Minha Vida em Uberlândia: quem ganha mais também leva — Faixa 4 Classe Média" loading="lazy"></div>
+        <div class="thumb"><img src="/blog/img/financiamento-mcmv-renda-alta-uberlandia.jpg" alt="Teto do Minha Casa Minha Vida em Uberlândia: quem ganha mais também leva, Faixa 4 Classe Média" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Minha Casa Minha Vida</div>
           <h2>Teto do MCMV em Uberlândia: quem ganha mais também leva</h2>
@@ -524,12 +477,12 @@
           <div class="bcat">🔄 Minha Casa Minha Vida</div>
           <h2>O que mudou no Minha Casa Minha Vida em 2026 (antes × depois)</h2>
           <div class="meta">15 de junho de 2026</div>
-          <p>Renda maior, imóvel de até R$ 600 mil e a nova Faixa 4. A tabela comparativa do que mudou em abril de 2026 — e o link pro guia completo.</p>
+          <p>Renda maior, imóvel de até R$ 600 mil e a nova Faixa 4. A tabela comparativa do que mudou em abril de 2026, e o link pro guia completo.</p>
           <span class="more">Ver o que mudou →</span>
         </div>
       </a>
       <a class="bcard bfeat" href="/blog/apartamentos-no-granja-marileusa-uberlandia" data-cat="B">
-        <div class="thumb"><img src="/blog/img/apartamentos-granja-marileusa-chelsea-mrv-prime-clube.jpg" alt="Apartamentos no Granja Marileusa: Chelsea MRV e Prime Clube — Uberlândia" loading="lazy"></div>
+        <div class="thumb"><img src="/blog/img/apartamentos-granja-marileusa-chelsea-mrv-prime-clube.jpg" alt="Apartamentos no Granja Marileusa: Chelsea MRV e Prime Clube, Uberlândia" loading="lazy"></div>
         <div class="bbody">
           <div class="bcat">Dicas de Bairros</div>
           <h2>Apartamentos no Granja Marileusa: Chelsea MRV ou Prime Clube?</h2>
@@ -564,7 +517,7 @@
           <div class="bcat">Financiamento Caixa</div>
           <h2>Financiamento Caixa em Uberlândia: o guia completo de 2026</h2>
           <div class="meta">14 de junho de 2026</div>
-          <p>Como funciona o financiamento Caixa, como simular, faixas, FGTS, documentação e prazos — sem juridiquês.</p>
+          <p>Como funciona o financiamento Caixa, como simular, faixas, FGTS, documentação e prazos, sem juridiquês.</p>
           <span class="more">Ler artigo →</span>
         </div>
       </a>
@@ -604,7 +557,7 @@
           <div class="bcat">Minha Casa Minha Vida</div>
           <h2>Casinha da prefeitura em Uberlândia: como funciona de verdade</h2>
           <div class="meta">14 de junho de 2026</div>
-          <p>A "casinha da prefeitura" é a Faixa 1 do MCMV — via cadastro no eHABITA. Entenda como se cadastrar e as alternativas.</p>
+          <p>A "casinha da prefeitura" é a Faixa 1 do MCMV, via cadastro no eHABITA. Entenda como se cadastrar e as alternativas.</p>
           <span class="more">Ler artigo →</span>
         </div>
       </a>
@@ -614,7 +567,7 @@
           <div class="bcat">MCMV & Mercado</div>
           <h2>Reserva Costa do Sol MRV: R$ 225 mil na Zona Oeste</h2>
           <div class="meta">10 de junho de 2025</div>
-          <p>O menor ticket do econômico em Uberlândia em 2025: 41m², 2 quartos, MRV. Análise honesta do que cabe — e do que não cabe — nesse preço.</p>
+          <p>O menor ticket do econômico em Uberlândia em 2025: 41m², 2 quartos, MRV. Análise honesta do que cabe, e do que não cabe, nesse preço.</p>
           <span class="more">Ler artigo →</span>
         </div>
       </a>
@@ -644,7 +597,7 @@
           <div class="bcat">MCMV & Mercado</div>
           <h2>Bris Residence Morumbi: os 12 últimos térreos garden, com tabela</h2>
           <div class="meta">atualizado em 10 de julho de 2026</div>
-          <p>Tabela real: 12 unidades térreas com quintal privativo, 93 a 103 m², R$ 295 a 300 mil, até 100% financiado, entrega nov/2027 — com a posição do sol de cada final.</p>
+          <p>Tabela real: 12 unidades térreas com quintal privativo, 93 a 103 m², R$ 295 a 300 mil, até 100% financiado, entrega nov/2027, com a posição do sol de cada final.</p>
           <span class="more">Ver a tabela →</span>
         </div>
       </a>
@@ -664,7 +617,7 @@
           <div class="bcat">Dicas de Bairros</div>
           <h2>Morumbi: o epicentro do MCMV em Uberlândia</h2>
           <div class="meta">atualizado em 15 de junho de 2026</div>
-          <p>Nunca vi um bairro crescer tão rápido no segmento econômico. Trez (esgotado), Bris (reta final) e Solis (mais disponível), preços atualizados e lotes — veja por que olhar pro Morumbi agora.</p>
+          <p>Nunca vi um bairro crescer tão rápido no segmento econômico. Trez (esgotado), Bris (reta final) e Solis (mais disponível), preços atualizados e lotes, veja por que olhar pro Morumbi agora.</p>
           <span class="more">Ler artigo →</span>
         </div>
       </a>
@@ -675,14 +628,14 @@
   <div class="wrap foot-in">
     <div class="foot-logo">marco<b>tulio</b>.pro</div>
     <p>Corretor parceiro da Torrano Negócios Imobiliários LTDA · CRECI/MG nº 7469 · Uberlândia/MG</p>
-    <p><a href="/">Início</a> · <a href="/blog">Blog</a> · <a href="/sobre">Sobre</a> · <a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco%20T%C3%BAlio!%20Vim%20pelo%20blog%20e%20quero%20falar%20sobre%20a%20casa%20pr%C3%B3pria." target="_blank" rel="noopener">WhatsApp</a> · <a href="https://g.page/r/CUgmVOwgcLodEBI/review" target="_blank" rel="noopener">⭐ Avaliar no Google</a></p>
+    <p><a href="/">Início</a> · <a href="/blog">Blog</a> · <a href="/noticias">Notícias</a> · <a href="/sobre">Sobre</a> · <a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco%20T%C3%BAlio!%20Vim%20pelo%20blog%20e%20quero%20falar%20sobre%20a%20casa%20pr%C3%B3pria." target="_blank" rel="noopener">WhatsApp</a> · <a href="https://g.page/r/CUgmVOwgcLodEBI/review" target="_blank" rel="noopener">⭐ Avaliar no Google</a></p>
   </div>
 </footer>
 <a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco%20T%C3%BAlio!%20Vim%20pelo%20blog%20e%20quero%20falar%20sobre%20a%20casa%20pr%C3%B3pria." class="wa-float" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg></a>
 <script>
 (function(){var n=document.getElementById('nav');var f=function(){n.classList.toggle('scrolled',window.scrollY>10)};f();window.addEventListener('scroll',f,{passive:true});})();
 (function(){
-  var chips=[].slice.call(document.querySelectorAll('.fchip'));
+  var chips=[].slice.call(document.querySelectorAll('button.fchip'));
   var cards=[].slice.call(document.querySelectorAll('.bcard'));
   var empty=document.getElementById('bempty');
   if(!chips.length)return;
