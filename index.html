@@ -33,7 +33,7 @@
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Marco Túlio, corretor de imóveis em Uberlândia — Caixa, Minha Casa Minha Vida e FGTS">
+  <meta property="og:image:alt" content="Marco Túlio, corretor de imóveis em Uberlândia, Caixa, Minha Casa Minha Vida e FGTS">
   <meta property="og:locale" content="pt_BR">
 
   <!-- Twitter -->
@@ -78,7 +78,9 @@
       "https://www.facebook.com/marcotulio.pro/",
       "https://www.threads.com/@marcotulioandra",
       "https://www.tiktok.com/@marcotulioandrad",
-      "https://www.youtube.com/@marcotuliopro"
+      "https://www.youtube.com/@marcotuliopro",
+      "https://imoveis.marcotulio.pro",
+      "https://simulador.marcotulio.pro"
     ]
   }
   </script>
@@ -195,6 +197,35 @@
     .hub-card:hover .hub-link{color:var(--azul)}
     .hub-tag{align-self:flex-start;font-size:.72rem;font-weight:700;color:var(--coral-profundo);background:#FFEDE5;padding:4px 10px;border-radius:var(--r-pill);margin-bottom:14px}
 
+    /* portal de imóveis */
+    .pi-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--coral-profundo);background:#FFEDE5;padding:5px 12px;border-radius:var(--r-pill);margin-bottom:14px}
+    .pi-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-bottom:22px}
+    .pi-box{background:var(--superficie);border:1px solid var(--nevoa);border-radius:var(--r-lg);padding:clamp(22px,3vw,30px);box-shadow:var(--lift)}
+    .pi-box.alt{background:var(--azul-claro);border-color:#C9DBFB}
+    .pi-lab{font-family:var(--fdisp);font-weight:700;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;color:var(--tinta-suave);margin:0 0 10px}
+    .pi-chips+.pi-lab{margin-top:22px}
+    .pi-chips{display:flex;flex-wrap:wrap;gap:8px}
+    .pi-chip{display:inline-flex;align-items:center;background:var(--fundo);border:1px solid var(--nevoa);color:var(--tinta);font-size:.9rem;font-weight:600;padding:8px 14px;border-radius:var(--r-pill)}
+    .pi-box.alt .pi-chip{background:rgba(255,255,255,.85);border-color:#C9DBFB}
+    .pi-note{font-size:.86rem;color:var(--tinta-suave);line-height:1.5;margin:18px 0 0}
+    .pi-cta{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px}
+    .pi-steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 22px;padding:0;counter-reset:pi}
+    .pi-steps li{counter-increment:pi;background:var(--superficie);border:1px solid var(--nevoa);border-radius:var(--r-md);padding:20px 18px}
+    .pi-steps li::before{content:counter(pi);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--azul);color:#fff;font-family:var(--fdisp);font-weight:800;font-size:.92rem;margin-bottom:12px}
+    .pi-steps b{display:block;font-family:var(--fdisp);font-size:1rem;color:var(--tinta);margin-bottom:4px}
+    .pi-steps span{font-size:.88rem;color:var(--tinta-suave);line-height:1.45}
+    .pi-owner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(150deg,var(--tinta) 0%,var(--azul-profundo) 100%);border-radius:var(--r-lg);padding:clamp(22px,3.5vw,30px);color:#fff}
+    .pi-owner h3{color:#fff;font-size:1.22rem;margin:0 0 6px}
+    .pi-owner p{color:rgba(255,255,255,.9);font-size:.96rem;margin:0;max-width:56ch}
+    @media(max-width:900px){
+      .pi-grid{grid-template-columns:1fr}
+      .pi-steps{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:520px){
+      .pi-steps{grid-template-columns:1fr}
+      .pi-cta .btn{width:100%;justify-content:center}
+    }
+
     /* sobre */
     .sobre{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:center}
     .sobre-photo{aspect-ratio:1;border-radius:50%;background:var(--azul-claro);overflow:hidden;border:6px solid #fff;box-shadow:var(--lift)}
@@ -286,6 +317,10 @@
     .js .reveal.in{opacity:1;transform:none}
 
     /* responsive */
+    @media(max-width:960px){
+      .nav-links{display:none}
+      .nav-burger{display:grid;place-items:center}
+    }
     @media(max-width:900px){
       .hero-in{grid-template-columns:1fr;gap:36px;padding:48px 0 60px}
       .sobre{grid-template-columns:1fr;gap:28px}
@@ -326,6 +361,7 @@
     <a href="/" class="logo">marco<b>tulio</b>.pro</a>
     <nav class="nav-links" aria-label="Principal">
       <a href="#hub">Comece aqui</a>
+      <a href="#portal">Imóveis</a>
       <a href="#cases">Ferramentas</a>
       <a href="#sobre">Sobre</a>
       <a href="#faq">Dúvidas</a>
@@ -343,6 +379,7 @@
   </div>
   <nav class="menu" id="menu" aria-label="Menu mobile">
     <a href="#hub">Comece aqui</a>
+    <a href="#portal">Imóveis</a>
     <a href="#cases">Ferramentas</a>
     <a href="#sobre">Sobre</a>
     <a href="#faq">Dúvidas</a>
@@ -359,21 +396,21 @@
         <div class="hl-row">
           <img src="/img/caixa.png" alt="Caixa Econômica Federal" decoding="async">
           <img src="/img/mcmv.png" alt="Minha Casa Minha Vida" decoding="async">
-          <img src="/img/fgts.png" alt="FGTS — Fundo de Garantia do Tempo de Serviço" decoding="async">
+          <img src="/img/fgts.png" alt="FGTS, Fundo de Garantia do Tempo de Serviço" decoding="async">
         </div>
       </div>
       <h1>Corretor de imóveis em Uberlândia: realize o sonho da <em>casa própria</em></h1>
-      <p class="hero-sub">Eu te acompanho do primeiro contato à chave na mão: financiamento Caixa, Minha Casa Minha Vida e FGTS — sem juridiquês e com resposta rápida.</p>
+      <p class="hero-sub">Eu te acompanho do primeiro contato à chave na mão: financiamento Caixa, Minha Casa Minha Vida e FGTS, sem juridiquês e com resposta rápida.</p>
       <div class="hero-actions">
         <a href="https://wa.me/5534996778075?text=Olá Marco! Quero realizar o sonho da casa própria. Pode me ajudar?" target="_blank" rel="noopener" class="btn btn-zap">
           <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10zm5.5-7.5c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.5-.6-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.4 1.9.8 2.7.9 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
           Falar agora no WhatsApp
         </a>
-        <a href="https://simulador.marcotulio.pro" target="_blank" rel="noopener" class="btn btn-light">Simular financiamento</a>
+        <a href="#portal" class="btn btn-light">Ver imóveis</a>
       </div>
       <div class="hero-proof">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:18px;height:18px;flex:none"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        Especialista em Minha Casa Minha Vida — da experiência na Prefeitura de Uberlândia ao seu financiamento. Atendimento humano, do "oi" à mudança.
+        Especialista em Minha Casa Minha Vida, da experiência na Prefeitura de Uberlândia ao seu financiamento. Atendimento humano, do "oi" à mudança.
       </div>
     </div>
 
@@ -382,7 +419,7 @@
         <img class="lead-photo" src="/img/marco-600.webp" alt="Marco Túlio" width="60" height="60">
         <div>
           <p class="lead-title">Bora começar?</p>
-          <p class="lead-sub">Deixe seu nome e WhatsApp — eu te chamo agora.</p>
+          <p class="lead-sub">Deixe seu nome e WhatsApp, eu te chamo agora.</p>
         </div>
       </div>
       <div class="field">
@@ -407,21 +444,22 @@
   <div class="wrap">
     <div class="sec-head center reveal">
       <h2>Por onde você quer <em>começar?</em></h2>
-      <p class="sec-desc">Tudo o que eu ofereço, reunido num lugar só. Escolha um caminho — ou me chama no WhatsApp que eu te oriento.</p>
+      <p class="sec-desc">Tudo o que eu ofereço, reunido num lugar só. Escolha um caminho, ou me chama no WhatsApp que eu te oriento.</p>
     </div>
     <div class="hub">
+      <a href="#portal" class="hub-card reveal">
+        <span class="hub-tag">Portal renovado</span>
+        <div class="hub-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/></svg></div>
+        <h3>Procurar imóvel em Uberlândia</h3>
+        <p>Meu portal ficou novo: busca por tipo, quartos, faixa de preço e bairro, com simulador na mesma página.</p>
+        <span class="hub-link">começar a busca →</span>
+      </a>
       <a href="/blog/comprar-apartamento-minha-casa-minha-vida-uberlandia" class="hub-card reveal">
         <span class="hub-tag">Guia completo</span>
         <div class="hub-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 14l2 2 4-4"/></svg></div>
         <h3>Minha Casa Minha Vida em Uberlândia</h3>
         <p>O guia completo pra comprar seu apartamento pelo MCMV: requisitos, faixas, cadastro no eHABITA e passo a passo.</p>
         <span class="hub-link">ler o guia de MCMV em Uberlândia →</span>
-      </a>
-      <a href="https://imoveis.marcotulio.pro" target="_blank" rel="noopener" class="hub-card reveal">
-        <div class="hub-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/></svg></div>
-        <h3>Imóveis em Uberlândia</h3>
-        <p>Vitrine de imóveis com financiamento Caixa e MCMV descomplicado.</p>
-        <span class="hub-link">ver imóveis →</span>
       </a>
       <a href="https://simulador.marcotulio.pro" target="_blank" rel="noopener" class="hub-card reveal">
         <div class="hub-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h3"/></svg></div>
@@ -457,6 +495,78 @@
   </div>
 </section>
 
+<!-- PORTAL DE IMÓVEIS -->
+<section class="sec" id="portal" style="background:var(--superficie);border-top:1px solid var(--nevoa)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="pi-tag">Portal renovado</span>
+      <h2>Sua busca começa <em>aqui</em></h2>
+      <p class="sec-desc">Meu portal de imóveis ficou novo. Você filtra por tipo, quartos e faixa de preço, olha por bairro e já simula o financiamento na mesma página. E eu continuo do outro lado, pra resolver a parte chata.</p>
+    </div>
+
+    <div class="pi-grid">
+      <div class="pi-box reveal">
+        <p class="pi-lab">Tipo de imóvel</p>
+        <div class="pi-chips">
+          <span class="pi-chip">Casa</span>
+          <span class="pi-chip">Apartamento</span>
+          <span class="pi-chip">Terreno</span>
+          <span class="pi-chip">Comercial</span>
+        </div>
+        <p class="pi-lab">Quartos</p>
+        <div class="pi-chips">
+          <span class="pi-chip">1+</span>
+          <span class="pi-chip">2+</span>
+          <span class="pi-chip">3+</span>
+          <span class="pi-chip">4+</span>
+        </div>
+        <p class="pi-lab">Faixa de preço</p>
+        <div class="pi-chips">
+          <span class="pi-chip">até R$ 250 mil</span>
+          <span class="pi-chip">R$ 400 mil</span>
+          <span class="pi-chip">R$ 600 mil</span>
+          <span class="pi-chip">R$ 900 mil</span>
+          <span class="pi-chip">R$ 1,5 mi</span>
+        </div>
+        <div class="pi-cta">
+          <a href="https://imoveis.marcotulio.pro" target="_blank" rel="noopener" class="btn btn-zap">Abrir o portal e filtrar</a>
+          <a href="https://simulador.marcotulio.pro" target="_blank" rel="noopener" class="btn btn-light">Simular financiamento</a>
+        </div>
+      </div>
+
+      <div class="pi-box alt reveal">
+        <p class="pi-lab">Dá pra olhar por bairro</p>
+        <div class="pi-chips">
+          <span class="pi-chip">Santa Mônica</span>
+          <span class="pi-chip">Saraiva</span>
+          <span class="pi-chip">Jardim Karaíba</span>
+          <span class="pi-chip">Morada da Colina</span>
+          <span class="pi-chip">Granja Marileusa</span>
+          <span class="pi-chip">Fundinho</span>
+          <span class="pi-chip">Shopping Park</span>
+          <span class="pi-chip">Altamira</span>
+        </div>
+        <p class="pi-note">Uma coisa que eu faço questão de dizer: o catálogo que aparece no portal vem integrado do <strong>Chave7</strong>, portal parceiro. Os imóveis da minha carteira própria eu vou publicando lá conforme fecho as captações, e os lançamentos de construtora estão em negociação. Se você procura algo específico e não achar, me chama que eu busco na mão.</p>
+      </div>
+    </div>
+
+    <ol class="pi-steps reveal">
+      <li><b>Simulação gratuita</b><span>Descubra quanto você financia antes de se apaixonar por um imóvel.</span></li>
+      <li><b>Busca do imóvel</b><span>Filtra no portal e eu ajudo a separar o que cabe de verdade no seu bolso.</span></li>
+      <li><b>Aprovação de crédito</b><span>Eu monto a pasta com você e acompanho a análise na Caixa.</span></li>
+      <li><b>Chaves na mão</b><span>Assinatura, registro em cartório e mudança. Vou junto até o fim.</span></li>
+    </ol>
+
+    <div class="pi-owner reveal">
+      <div>
+        <h3>Tem um imóvel ou quer investir?</h3>
+        <p>O portal também tem uma porta pra quem está do outro lado do balcão. Se você quer vender, alugar ou colocar dinheiro em imóvel na cidade, dá uma olhada lá ou fala comigo direto.</p>
+      </div>
+      <a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco!%20Tenho%20um%20im%C3%B3vel%20ou%20quero%20investir%20em%20Uberl%C3%A2ndia." target="_blank" rel="noopener" class="btn btn-light">Falar sobre isso</a>
+    </div>
+  </div>
+</section>
+
 <!-- SOBRE -->
 <section class="sec" id="sobre" style="background:var(--superficie);border-top:1px solid var(--nevoa);border-bottom:1px solid var(--nevoa)">
   <div class="wrap sobre">
@@ -466,7 +576,7 @@
     <div class="reveal">
       <h2>Gente de verdade, do seu lado</h2>
       <div class="role">Marco Túlio Andrade Freitas · Corretor parceiro da Torrano Negócios Imobiliários · Uberlândia/MG</div>
-      <p>Sou <strong>corretor de imóveis em Uberlândia especialista em Minha Casa Minha Vida</strong>, com uma trajetória de relacionamento e atendimento construída no serviço público, na <strong>Prefeitura de Uberlândia</strong> e no <strong>Governo de Minas Gerais</strong>. Foi lá que aprendi a cuidar de gente e a descomplicar burocracia. Hoje uso essa bagagem pra resolver o que mais trava quem quer comprar: a confusão do financiamento — renda, FGTS, taxas, documentação.</p>
+      <p>Sou <strong>corretor de imóveis em Uberlândia especialista em Minha Casa Minha Vida</strong>, com uma trajetória de relacionamento e atendimento construída no serviço público, na <strong>Prefeitura de Uberlândia</strong> e no <strong>Governo de Minas Gerais</strong>. Foi lá que aprendi a cuidar de gente e a descomplicar burocracia. Hoje uso essa bagagem pra resolver o que mais trava quem quer comprar: a confusão do financiamento, renda, FGTS, taxas, documentação.</p>
       <p>Meu trabalho é tirar esse peso das suas costas. Eu explico cada etapa na sua língua, cuido da papelada com a Caixa e fico do seu lado até a chave na mão. Sério no processo, gente boa na conversa.</p>
       <a href="https://wa.me/5534996778075?text=Olá Marco! Quero tirar uma dúvida sobre financiamento." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:8px">Tirar uma dúvida agora</a>
       <a href="/sobre" class="btn btn-ghost" style="margin-top:8px;margin-left:8px">Minha história →</a>
@@ -491,7 +601,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Um corretor que <em>cria tecnologia</em></h2>
-      <p class="sec-desc">Pra atender melhor, eu desenvolvo minhas próprias ferramentas. Estão no ar, funcionando — e mostram como eu trabalho. (Esta seção é também meu portfólio para colegas corretores.)</p>
+      <p class="sec-desc">Pra atender melhor, eu desenvolvo minhas próprias ferramentas. Estão no ar, funcionando, e mostram como eu trabalho. (Esta seção é também meu portfólio para colegas corretores.)</p>
     </div>
     <div class="cases">
       <div class="case reveal">
@@ -515,13 +625,13 @@
       <div class="case reveal">
         <div class="case-top"><div class="case-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><span class="case-live">no ar</span></div>
         <h3>App de finanças</h3>
-        <p>Controle financeiro simples — uma das ferramentas que eu mesmo desenvolvo.</p>
+        <p>Controle financeiro simples, uma das ferramentas que eu mesmo desenvolvo.</p>
         <a href="https://fin.marcotulio.pro" target="_blank" rel="noopener" class="hub-link">ver o app →</a>
       </div>
       <div class="case reveal">
         <div class="case-top"><div class="case-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/></svg></div><span class="case-live">no ar</span></div>
         <h3>Portal de imóveis</h3>
-        <p>Minha vitrine de imóveis em Uberlândia, com busca e financiamento — imoveis.marcotulio.pro.</p>
+        <p>Recém-renovado: busca por tipo, quartos, preço e bairro, simulador embutido e o passo a passo do financiamento.</p>
         <a href="https://imoveis.marcotulio.pro" target="_blank" rel="noopener" class="hub-link">ver o portal →</a>
       </div>
     </div>
@@ -544,19 +654,19 @@
       </div>
       <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-q" itemprop="name" aria-expanded="false">Posso usar meu FGTS na compra? <span class="ic" aria-hidden="true">+</span></button>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text">Na maioria dos casos, sim — o FGTS pode entrar como parte da entrada, para abater o saldo devedor ou reduzir as parcelas, desde que você atenda às regras (tempo de carteira, não ter outro financiamento ativo no SFH, entre outras). Eu confiro sua situação e te digo exatamente como aproveitar.</div></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text">Na maioria dos casos, sim. O FGTS pode entrar como parte da entrada, para abater o saldo devedor ou reduzir as parcelas, desde que você atenda às regras (tempo de carteira, não ter outro financiamento ativo no SFH, entre outras). Eu confiro sua situação e te digo exatamente como aproveitar.</div></div>
       </div>
       <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-q" itemprop="name" aria-expanded="false">Qual renda eu preciso ter? <span class="ic" aria-hidden="true">+</span></button>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text">Depende do valor do imóvel e da faixa do programa, mas existem opções para diferentes rendas — inclusive renda informal, em vários casos. O melhor caminho é fazer uma simulação rápida: use o meu <a href="https://simulador.marcotulio.pro" target="_blank" rel="noopener" style="color:var(--azul-profundo);font-weight:600">simulador</a> ou me chama no WhatsApp que eu calculo com você.</div></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text">Depende do valor do imóvel e da faixa do programa, mas existem opções para diferentes rendas, inclusive renda informal, em vários casos. O melhor caminho é fazer uma simulação rápida: use o meu <a href="https://simulador.marcotulio.pro" target="_blank" rel="noopener" style="color:var(--azul-profundo);font-weight:600">simulador</a> ou me chama no WhatsApp que eu calculo com você.</div></div>
       </div>
       <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-q" itemprop="name" aria-expanded="false">Quais documentos eu vou precisar? <span class="ic" aria-hidden="true">+</span></button>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text">O básico costuma ser: documento de identidade, CPF, comprovante de renda, comprovante de residência e estado civil. Cada caso tem suas particularidades — não se preocupe em decorar nada. Eu te passo a lista certa para a sua situação e te ajudo a organizar tudo.</div></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text">O básico costuma ser: documento de identidade, CPF, comprovante de renda, comprovante de residência e estado civil. Cada caso tem suas particularidades, então não se preocupe em decorar nada. Eu te passo a lista certa para a sua situação e te ajudo a organizar tudo.</div></div>
       </div>
       <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-q" itemprop="name" aria-expanded="false">Quanto custa falar com você? <span class="ic" aria-hidden="true">+</span></button>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text">Nada. A consultoria para encontrar o imóvel e organizar seu financiamento é gratuita — é o meu trabalho como corretor. Me chama no WhatsApp sem compromisso e vamos conversar sobre o seu sonho.</div></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text">Nada. A consultoria para encontrar o imóvel e organizar seu financiamento é gratuita: é o meu trabalho como corretor. Me chama no WhatsApp sem compromisso e vamos conversar sobre o seu sonho.</div></div>
       </div>
     </div>
   </div>
@@ -616,7 +726,7 @@
     <div class="foot-grid">
       <div>
         <div class="foot-logo">marco<b>tulio</b>.pro</div>
-        <p>Corretor de imóveis em Uberlândia. Te acompanho do primeiro contato à chave na mão — Caixa, Minha Casa Minha Vida e FGTS sem juridiquês.</p>
+        <p>Corretor de imóveis em Uberlândia. Te acompanho do primeiro contato à chave na mão: Caixa, Minha Casa Minha Vida e FGTS sem juridiquês.</p>
         <a href="https://wa.me/5534996778075" target="_blank" rel="noopener" class="btn btn-zap">
           <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3z"/></svg>
           (34) 99677-8075
@@ -626,7 +736,8 @@
         <div class="foot-h">Navegação</div>
         <ul>
           <li><a href="#hub">Comece aqui</a></li>
-          <li><a href="https://imoveis.marcotulio.pro" target="_blank" rel="noopener">Imóveis</a></li>
+          <li><a href="#portal">Imóveis</a></li>
+          <li><a href="https://imoveis.marcotulio.pro" target="_blank" rel="noopener">Portal de imóveis</a></li>
           <li><a href="https://simulador.marcotulio.pro" target="_blank" rel="noopener">Simulador</a></li>
           <li><a href="#cases">Ferramentas</a></li>
           <li><a href="/blog">Blog</a></li>
