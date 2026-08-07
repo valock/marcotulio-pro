@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Ficha Cadastral, Tamboré Miranda | Marco Túlio</title>
+<meta name="description" content="Preencha e gere a ficha cadastral oficial do Tamboré Urbanismo (PF ou PJ) já preenchida, idêntica ao modelo original, pronta para baixar em PDF e assinar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="vendor/html2canvas.min.js"></script>
+<script src="vendor/jspdf.umd.min.js"></script>
+<style>
+  :root{
+    --brown:#7a4a12;--brown-2:#5c3810;--cell:#edead9;--cellborder:#70713f;
+    --cream:#f6f2e9;--ink:#221d16;--muted:#6f685b;--line:#d8cfba;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',Arial,sans-serif;background:#e8e2d4;color:var(--ink);overflow-x:hidden}
+
+  /* ===== TOOLBAR (não impressa) ===== */
+  .toolbar{position:sticky;top:0;z-index:50;background:var(--brown-2);color:#fff;padding:12px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;box-shadow:0 4px 20px rgba(0,0,0,.25)}
+  .toolbar .left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .toolbar a.back{color:#f0d9b6;font-size:13px;text-decoration:none;font-weight:500}
+  .toggle{display:inline-flex;background:rgba(255,255,255,.12);border-radius:30px;padding:4px;gap:4px}
+  .toggle button{border:none;background:transparent;color:#f3e6d2;padding:8px 20px;border-radius:26px;cursor:pointer;font-weight:600;font-size:14px;transition:.2s}
+  .toggle button.on{background:#fff;color:var(--brown-2)}
+  .actions{display:flex;gap:10px;flex-wrap:wrap}
+  .actions button{border:none;border-radius:8px;padding:10px 18px;font-weight:600;font-size:14px;cursor:pointer;transition:.2s}
+  .btn-pdf{background:#25a35a;color:#fff}
+  .btn-pdf:hover{background:#1f8b4d}
+  .btn-print{background:#fff;color:var(--brown-2)}
+  .btn-clear{background:rgba(255,255,255,.14);color:#fff}
+  .hint{max-width:1000px;margin:16px auto 0;padding:0 16px;color:#5c5344;font-size:13.5px;text-align:center}
+  .loading{position:fixed;inset:0;background:rgba(30,22,10,.55);display:none;align-items:center;justify-content:center;z-index:100;color:#fff;font-size:18px;font-weight:600}
+
+  /* ===== FOLHA A4 ===== */
+  .stage{padding:22px 12px 60px;display:flex;justify-content:center;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .stage>.sheet{flex:none}
+  @media(max-width:800px){.stage{justify-content:flex-start;padding-left:12px;padding-right:12px}}
+  .sheet{display:none;width:210mm;min-height:296mm;background:#fff;padding:12mm 11mm 8mm;box-shadow:0 10px 40px rgba(0,0,0,.25);font-size:8.4pt;color:#000;position:relative}
+  .sheet.active{display:block}
+
+  .sheet-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:9px}
+  .sheet-head h1{font-size:17pt;font-weight:700;color:#111;letter-spacing:.3px}
+  .sheet-head img{height:20mm;width:auto}
+
+  .section-title{font-weight:700;font-size:8.2pt;margin:9px 0 3px;letter-spacing:.2px;text-transform:uppercase;color:#111}
+
+  .row{display:flex;width:100%}
+  .cell{border:1px solid var(--cellborder);background:var(--cell);padding:2px 4px 3px;min-height:11mm;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden}
+  .cell.tall{min-height:13mm}
+  .cell.short{min-height:9mm}
+  .lbl{font-size:6.6pt;font-weight:600;color:#111;line-height:1.15;margin-bottom:1px;white-space:nowrap}
+  .lbl .req{color:#d12;font-weight:700}
+  .cell input{border:none;background:transparent;width:100%;font-family:'Inter',Arial,sans-serif;font-size:8.6pt;color:#111;outline:none;padding:0;line-height:1.25}
+  .cell input:focus{background:#fffef0}
+
+  /* opções com parênteses */
+  .opts{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:center;font-size:7.4pt;line-height:1.3;margin-top:1px}
+  .opt{cursor:pointer;user-select:none;white-space:nowrap;color:#111}
+  .opt .mark{font-family:'Courier New',monospace;font-weight:700}
+  .opt:hover{color:var(--brown)}
+
+  .lgpd{font-size:6.5pt;line-height:1.45;text-align:justify;border:1px solid var(--cellborder);padding:6px 8px;margin-top:12px;background:#fff;color:#111}
+  .sign{margin-top:16px;text-align:center;font-size:7.4pt}
+  .sign .ld{margin-bottom:22px}
+  .sign .two{display:flex;justify-content:space-around;margin-top:6px}
+  .sign .two div{width:46%}
+  .sign .line{border-top:1px solid #000;margin:0 6px 3px;padding-top:2px}
+  .foot{position:absolute;bottom:5mm;left:11mm;right:11mm;display:flex;justify-content:space-between;font-size:6.2pt;color:#333;border-top:0}
+
+  /* larguras utilitárias */
+  .w100{width:100%}.w50{width:50%}.w33{width:33.333%}.w25{width:25%}
+  .grow{flex:1}
+  @media print{
+    .toolbar,.hint,.loading{display:none !important}
+    body{background:#fff}
+    .stage{padding:0}
+    .sheet{box-shadow:none;width:auto;min-height:auto;padding:8mm}
+    .sheet.active{display:block}
+    @page{size:A4;margin:6mm}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="left">
+    <a class="back" href="/tambore-miranda">← Voltar ao site</a>
+    <div class="toggle">
+      <button id="tbPF" class="on" onclick="setTipo('PF')">Pessoa Física</button>
+      <button id="tbPJ" onclick="setTipo('PJ')">Pessoa Jurídica</button>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="btn-clear" onclick="limpar()">Limpar</button>
+    <button class="btn-print" onclick="window.print()">🖨️ Imprimir</button>
+    <button class="btn-pdf" onclick="gerarPDF()">⬇️ Baixar PDF</button>
+  </div>
+</div>
+<p class="hint">Preencha os campos diretamente na ficha abaixo. O que você digitar aparece exatamente como no PDF gerado, idêntico ao modelo oficial do Tamboré Urbanismo. Ao terminar, clique em <b>Baixar PDF</b> ou <b>Imprimir</b>.</p>
+
+<div class="loading" id="loading">Gerando PDF… aguarde um instante</div>
+
+<div class="stage">
+
+<!-- ================= FICHA PF ================= -->
+<div class="sheet active" id="sheetPF">
+  <div class="sheet-head">
+    <h1>Ficha Cadastral PF</h1>
+    <img src="data:image/png;base64,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" alt="Tamboré Urbanismo">
+  </div>
+
+  <!-- header -->
+  <div class="row">
+    <div class="cell short" style="width:38%"><span class="lbl"><span class="req">*</span>Empreendimento:</span><input value="Tamboré Miranda"></div>
+    <div class="cell short" style="width:34%"><span class="lbl"><span class="req">*</span>Edifício / Bloco</span><input></div>
+    <div class="cell short" style="width:28%"><span class="lbl"><span class="req">*</span>Unidade:</span><input></div>
+  </div>
+  <div class="row">
+    <div class="cell short" style="width:19%"><span class="lbl"><span class="req">*</span>Corretor:</span><input value="Marco Túlio"></div>
+    <div class="cell short" style="width:19%"><span class="lbl"><span class="req">*</span>CRECI:</span><input></div>
+    <div class="cell short" style="width:19%"><span class="lbl"><span class="req">*</span>Gerente:</span><input></div>
+    <div class="cell short" style="width:15%"><span class="lbl"><span class="req">*</span>CRECI:</span><input></div>
+    <div class="cell short" style="width:28%"><span class="lbl"><span class="req">*</span>Imobiliária:</span><input></div>
+  </div>
+
+  <!-- PRIMEIRO PROPONENTE -->
+  <div class="section-title">Informações Primeiro Proponente</div>
+  <div class="row">
+    <div class="cell" style="width:56%"><span class="lbl"><span class="req">*</span>Nome</span><input></div>
+    <div class="cell" style="width:24%"><span class="lbl"><span class="req">*</span>CPF</span><input></div>
+    <div class="cell" style="width:20%"><span class="lbl"><span class="req">*</span>Data de nascimento</span><input></div>
+  </div>
+  <div class="row">
+    <div class="cell" style="width:14%"><span class="lbl"><span class="req">*</span>Sexo</span>
+      <div class="opts" data-group="pf_sexo"><span class="opt"><span class="mark">( )</span> M</span><span class="opt"><span class="mark">( )</span> F</span></div></div>
+    <div class="cell" style="width:19%"><span class="lbl"><span class="req">*</span>Carteira de Identidade</span><input></div>
+    <div class="cell" style="width:15%"><span class="lbl"><span class="req">*</span>Órgão Expedidor</span><input></div>
+    <div class="cell" style="width:14%"><span class="lbl"><span class="req">*</span>Data de expedição</span><input></div>
+    <div class="cell" style="width:20%"><span class="lbl"><span class="req">*</span>Profissão</span><input></div>
+    <div class="cell" style="width:18%"><span class="lbl"><span class="req">*</span>Renda</span><input></div>
+  </div>
+  <div class="row">
+    <div class="cell" style="width:24%"><span class="lbl"><span class="req">*</span>Naturalidade</span><input></div>
+    <div class="cell" style="width:8%"><span class="lbl"><span class="req">*</span>UF</span><input></div>
+    <div class="cell" style="width:20%"><span class="lbl"><span class="req">*</span>Nacionalidade</span><input></div>
+    <div class="cell" style="width:48%"><span class="lbl"><span class="req">*</span>Tipo de comprovação de renda</span>
+      <div class="opts" data-group="pf_renda" data-multi="1"><span class="opt"><span class="mark">( )</span> Holerites</span><span class="opt"><span class="mark">( )</span> Declaração de Imposto de Renda</span><span class="opt"><span class="mark">( )</span> Extratos bancários</span></div></div>
+  </div>
+  <div class="row">
+    <div class="cell" style="width:26%"><span class="lbl"><span class="req">*</span>Estado Civil</span>
+      <div class="opts" data-group="pf_ec"><span class="opt"><span class="mark">( )</span> Solteiro</span><span class="opt"><span class="mark">( )</span> Casado</span><span class="opt"><span class="mark">( )</span> Divorciado</span><span class="opt"><span class="mark">( )</span> Viúvo</span></div></div>
+    <div class="cell" style="width:20%"><span class="lbl"><span class="req">*</span>Possui União Estável</span>
+      <div class="opts" data-group="pf_uniao"><span class="opt"><span class="mark">( )</span> Sim</span><span class="opt"><span class="mark">( )</span> Não</span></div></div>
+    <div class="cell" style="width:54%"><span class="lbl"><span class="req">*</span>Regime de bens</span>
+      <div class="opts" data-group="pf_regime"><span class="opt"><span class="mark">( )</span> Comunhão parcial</span><span class="opt"><span class="mark">( )</span> Comunhão total</span><span class="opt"><span class="mark">( )</span> Separação Total de Bens</span><span class="opt"><span class="mark">( )</span> Participação final nos aquestros</span></div></div>
+  </div>
+  <div class="row"><div class="cell short w100"><span class="lbl"><span class="req">*</span>Endereço residencial</span><input></div></div>
+  <div class="row">
+    <div class="cell" style="width:34%"><span class="lbl"><span class="req">*</span>Bairro</span><input></div>
+    <div class="cell" style="width:22%"><span class="lbl"><span class="req">*</span>CEP</span><input></div>
+    <div class="cell" style="width:34%"><span class="lbl"><span class="req">*</span>Cidade</span><input></div>
+    <div class="cell" style="width:10%"><span class="lbl"><span class="req">*</span>UF</span><input></div>
+  </div>
+  <div class="row">
+    <div class="cell short" style="width:60%"><span class="lbl"><span class="req">*</span>e-mail:</span><input></div>
+    <div class="cell short" style="width:40%"><span class="lbl"><span class="req">*</span>Telefone celular</span><input></div>
+  </div>
+
+  <div class="section-title">Informações profissionais para emissão de carta de crédito (se necessário):</div>
+  <div class="row">
+    <div class="cell short" style="width:62%"><span class="lbl"><span class="req">*</span>Nome da empresa</span><input></div>
+    <div class="cell short" style="width:38%"><span class="lbl"><span class="req">*</span>Data de admissão / Entrada em Sociedade</span><input></div>
+  </div>
+
+  <!-- SEGUNDO PROPONENTE -->
+  <div class="section-title">Informações do Segundo Proponente ou Cônjuge</div>
+  <div class="row">
+    <div class="cell" style="width:56%"><span class="lbl"><span class="req">*</span>Nome</span><input></div>
+    <div class="cell" style="width:24%"><span class="lbl"><span class="req">*</span>CPF</span><input></div>
+    <div class="cell" style="width:20%"><span class="lbl"><span class="req">*</span>Data de nascimento</span><input></div>
+  </div>
+  <div class="row">
+    <div class="cell" style="width:14%"><span class="lbl"><span class="req">*</span>Sexo</span>
+      <div class="opts" data-group="pf2_sexo"><span class="opt"><span class="mark">( )</span> M</span><span class="opt"><span class="mark">( )</span> F</span></div></div>
+    <div class="cell" style="width:19%"><span class="lbl"><span class="req">*</span>Carteira de Identidade</span><input></div>
+    <div class="cell" style="width:15%"><span class="lbl"><span class="req">*</span>Órgão Expedidor</span><input></div>
+    <div class="cell" style="width:14%"><span class="lbl"><span class="req">*</span>Data de expedição</span><input></div>
+    <div class="cell" style="width:20%"><span class="lbl"><span class="req">*</span>Profissão</span><input></div>
+    <div class="cell" style="width:18%"><span class="lbl"><span class="req">*</span>Renda</span><input></div>
+  </div>
+  <div class="row">
+    <div class="cell" style="width:24%"><span class="lbl"><span class="req">*</span>Naturalidade</span><input></div>
+    <div class="cell" style="width:8%"><span class="lbl"><span class="req">*</span>UF</span><input></div>
+    <div class="cell" style="width:20%"><span class="lbl"><span class="req">*</span>Nacionalidade</span><input></div>
+    <div class="cell" style="width:48%"><span class="lbl"><span class="req">*</span>Tipo de comprovação de renda</span>
+      <div class="opts" data-group="pf2_renda" data-multi="1"><span class="opt"><span class="mark">( )</span> Holerites</span><span class="opt"><span class="mark">( )</span> Declaração de Imposto de Renda</span><span class="opt"><span class="mark">( )</span> Extratos bancários</span></div></div>
+  </div>
+  <div class="row">
+    <div class="cell" style="width:26%"><span class="lbl"><span class="req">*</span>Estado Civil</span>
+      <div class="opts" data-group="pf2_ec"><span class="opt"><span class="mark">( )</span> Solteiro</span><span class="opt"><span class="mark">( )</span> Casado</span><span class="opt"><span class="mark">( )</span> Divorciado</span><span class="opt"><span class="mark">( )</span> Viúvo</span></div></div>
+    <div class="cell" style="width:20%"><span class="lbl"><span class="req">*</span>Possui União Estável</span>
+      <div class="opts" data-group="pf2_uniao"><span class="opt"><span class="mark">( )</span> Sim</span><span class="opt"><span class="mark">( )</span> Não</span></div></div>
+    <div class="cell" style="width:54%"><span class="lbl"><span class="req">*</span>Regime de bens</span>
+      <div class="opts" data-group="pf2_regime"><span class="opt"><span class="mark">( )</span> Comunhão parcial</span><span class="opt"><span class="mark">( )</span> Comunhão total</span><span class="opt"><span class="mark">( )</span> Separação Total de Bens</span><span class="opt"><span class="mark">( )</span> Participação final nos aquestros</span></div></div>
+  </div>
+  <div class="row"><div class="cell short w100"><span class="lbl"><span class="req">*</span>Endereço residencial</span><input></div></div>
+  <div class="row">
+    <div class="cell" style="width:34%"><span class="lbl"><span class="req">*</span>Bairro</span><input></div>
+    <div class="cell" style="width:22%"><span class="lbl"><span class="req">*</span>CEP</span><input></div>
+    <div class="cell" style="width:34%"><span class="lbl"><span class="req">*</span>Cidade</span><input></div>
+    <div class="cell" style="width:10%"><span class="lbl"><span class="req">*</span>UF</span><input></div>
+  </div>
+  <div class="row">
+    <div class="cell short" style="width:60%"><span class="lbl"><span class="req">*</span>e-mail:</span><input></div>
+    <div class="cell short" style="width:40%"><span class="lbl"><span class="req">*</span>Telefone celular</span><input></div>
+  </div>
+  <div class="section-title">Informações profissionais para emissão de carta de crédito (se necessário):</div>
+  <div class="row">
+    <div class="cell short" style="width:62%"><span class="lbl"><span class="req">*</span>Nome da empresa</span><input></div>
+    <div class="cell short" style="width:38%"><span class="lbl"><span class="req">*</span>Data de admissão / Entrada em Sociedade</span><input></div>
+  </div>
+
+  <div class="lgpd">Responsabilizo-me pela veracidade das informações prestadas, incluindo os Dados Pessoais conforme os critérios previstos na Lei 13.709/2018 Lei Geral de Proteção de Dados Pessoais (LGPD), autorizando sua utilização para fins de análise de crédito em bureaus e demais tratamentos necessários a procedimentos preliminares relacionados ao instrumento particular de promessa de compra e venda, quando assim aplicável. Comprometo-me a manter meus dados atualizados e informar à Tegra qualquer alteração de endereço, telefone, dentre outras informações necessárias.<br>Caso a negociação seja concretizada, declaro que o Corretor Autônomo e imobiliária acima mencionadas terão direito a comissão pela intermediação imobiliária.<br>O interesse nesta unidade tem validade de 15 dias. É válido por empreendimento e não por unidade. Deve ser assinado conforme documento de identidade.<br>Para que seja validado, além das regras anteriores, é necessário que tenha proposta cadastrada no VWEB.</div>
+
+  <div class="sign">
+    <div class="ld"><span style="display:inline-block;border-top:1px solid #000;width:60mm;margin-top:14px;padding-top:2px">Local / Data</span> &nbsp;&nbsp; ______/______/___________</div>
+    <div class="two">
+      <div><div class="line"></div>Assinatura primeiro proponente</div>
+      <div><div class="line"></div>Assinatura segundo proponente</div>
+    </div>
+  </div>
+  <div class="foot"><span>Versão 07/2025</span><span>Este documento é de uso exclusivo da Tegra Incorporadora S.A</span></div>
+</div>
+
+<!-- ================= FICHA PJ ================= -->
+<div class="sheet" id="sheetPJ">
+  <div class="sheet-head">
+    <h1>Ficha Cadastral PJ</h1>
+    <img src="data:image/png;base64,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" alt="Tamboré Urbanismo">
+  </div>
+
+  <div class="row">
+    <div class="cell short" style="width:38%"><span class="lbl"><span class="req">*</span>Empreendimento:</span><input value="Tamboré Miranda"></div>
+    <div class="cell short" style="width:34%"><span class="lbl"><span class="req">*</span>Edifício / Bloco</span><input></div>
+    <div class="cell short" style="width:28%"><span class="lbl"><span class="req">*</span>Unidade:</span><input></div>
+  </div>
+  <div class="row">
+    <div class="cell short" style="width:19%"><span class="lbl"><span class="req">*</span>Corretor:</span><input value="Marco Túlio"></div>
+    <div class="cell short" style="width:19%"><span class="lbl"><span class="req">*</span>CRECI:</span><input></div>
+    <div class="cell short" style="width:19%"><span class="lbl"><span class="req">*</span>Gerente:</span><input></div>
+    <div class="cell short" style="width:15%"><span class="lbl"><span class="req">*</span>CRECI:</span><input></div>
+    <div class="cell short" style="width:28%"><span class="lbl"><span class="req">*</span>Imobiliária:</span><input></div>
+  </div>
+
+  <div class="section-title">Informações da Pessoa Jurídica</div>
+  <div class="row">
+    <div class="cell" style="width:62%"><span class="lbl"><span class="req">*</span>Razão Social</span><input></div>
+    <div class="cell" style="width:38%"><span class="lbl"><span class="req">*</span>CNPJ</span><input></div>
+  </div>
+  <div class="row">
+    <div class="cell" style="width:50%"><span class="lbl"><span class="req">*</span>Nome Fantasia</span><input></div>
+    <div class="cell" style="width:25%"><span class="lbl"><span class="req">*</span>Inscrição Municipal</span><input></div>
+    <div class="cell" style="width:25%"><span class="lbl"><span class="req">*</span>Inscrição Estadual</span><input></div>
+  </div>
+  <div class="row">
+    <div class="cell" style="width:66%"><span class="lbl"><span class="req">*</span>Ramo de atividade</span><input></div>
+    <div class="cell" style="width:34%"><span class="lbl"><span class="req">*</span>Data de Constituição</span><input></div>
+  </div>
+  <div class="row">
+    <div class="cell tall" style="width:74%"><span class="lbl"><span class="req">*</span>Tipo</span>
+      <div class="opts" data-group="pj_tipo"><span class="opt"><span class="mark">( )</span> Autônomo / Firma Individual</span><span class="opt"><span class="mark">( )</span> Sociedade Simples</span><span class="opt"><span class="mark">( )</span> Sociedade Limitada</span><span class="opt"><span class="mark">( )</span> Sociedade Anônima</span><span class="opt"><span class="mark">( )</span> Empresa Individual de Responsabilidade Limitada (EIRELI)</span><span class="opt"><span class="mark">( )</span> Cooperativa / Associação / Fundação</span></div></div>
+    <div class="cell tall" style="width:26%"><span class="lbl"><span class="req">*</span>Faturamento Mensal R$</span><input></div>
+  </div>
+  <div class="row"><div class="cell short w100"><span class="lbl"><span class="req">*</span>Endereço Comercial</span><input></div></div>
+  <div class="row">
+    <div class="cell" style="width:34%"><span class="lbl"><span class="req">*</span>Bairro</span><input></div>
+    <div class="cell" style="width:22%"><span class="lbl"><span class="req">*</span>CEP</span><input></div>
+    <div class="cell" style="width:34%"><span class="lbl"><span class="req">*</span>Cidade</span><input></div>
+    <div class="cell" style="width:10%"><span class="lbl"><span class="req">*</span>UF</span><input></div>
+  </div>
+  <div class="row">
+    <div class="cell short" style="width:60%"><span class="lbl"><span class="req">*</span>e-mail:</span><input></div>
+    <div class="cell short" style="width:40%"><span class="lbl"><span class="req">*</span>Telefone celular</span><input></div>
+  </div>
+
+  <div class="section-title">Quadro de Sócios</div>
+  <div id="socios"></div>
+
+  <div class="lgpd">Responsabilizo-me pela veracidade das informações prestadas, incluindo os Dados Pessoais conforme os critérios previstos na Lei 13.709/2018 Lei Geral de Proteção de Dados Pessoais (LGPD), autorizando sua utilização para fins de análise de crédito em bureaus e demais tratamentos necessários a procedimentos preliminares relacionados ao instrumento particular de promessa de compra e venda, quando assim aplicável. Comprometo-me a manter meus dados atualizados e informar à Tegra qualquer alteração de endereço, telefone, dentre outras informações necessárias.<br>Caso a negociação seja concretizada, declaro que o Corretor Autônomo e imobiliária acima mencionadas terão direito a comissão pela intermediação imobiliária.<br>O interesse nesta unidade tem validade de 15 dias. É válido por empreendimento e não por unidade. Deve ser assinado conforme documento de identidade.<br>Para que seja validado, além das regras anteriores, é necessário que tenha proposta cadastrada no VWEB.</div>
+
+  <div class="sign">
+    <div class="ld"><span style="display:inline-block;border-top:1px solid #000;width:60mm;margin-top:14px;padding-top:2px">Local / Data</span> &nbsp;&nbsp; ______/______/___________</div>
+    <div class="two">
+      <div><div class="line"></div>Assinatura representante Legal</div>
+      <div><div class="line"></div>Assinatura representante Legal</div>
+    </div>
+  </div>
+  <div class="foot"><span>Versão 07/2025</span><span>Este documento é de uso exclusivo da Tegra Incorporadora S.A</span></div>
+</div>
+
+</div><!-- /stage -->
+
+<script>
+  // ---- Quadro de sócios (6 linhas) ----
+  (function(){
+    let h='';
+    for(let i=1;i<=6;i++){
+      h+='<div class="row">'+
+        '<div class="cell short" style="width:58%"><span class="lbl"><span class="req">*</span>Nome</span><input></div>'+
+        '<div class="cell short" style="width:26%"><span class="lbl"><span class="req">*</span>CPF</span><input></div>'+
+        '<div class="cell short" style="width:16%"><span class="lbl"><span class="req">*</span>Participação (%)</span><input></div>'+
+      '</div>';
+    }
+    document.getElementById('socios').innerHTML=h;
+  })();
+
+  // ---- marcação de opções (X) ----
+  document.querySelectorAll('.opts').forEach(function(g){
+    var multi=g.dataset.multi==='1';
+    g.querySelectorAll('.opt').forEach(function(o){
+      o.addEventListener('click',function(){
+        var m=o.querySelector('.mark');
+        var isOn=m.textContent.indexOf('X')>-1;
+        if(!multi){ g.querySelectorAll('.mark').forEach(function(x){x.textContent='( )';}); }
+        m.textContent=isOn && multi ? '( )' : (isOn ? '( )' : '(X)');
+      });
+    });
+  });
+
+  // ---- toggle PF/PJ ----
+  var tipo='PF';
+  function setTipo(t){
+    tipo=t;
+    document.getElementById('sheetPF').classList.toggle('active',t==='PF');
+    document.getElementById('sheetPJ').classList.toggle('active',t==='PJ');
+    document.getElementById('tbPF').classList.toggle('on',t==='PF');
+    document.getElementById('tbPJ').classList.toggle('on',t==='PJ');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  function limpar(){
+    var s=document.querySelector('.sheet.active');
+    s.querySelectorAll('input').forEach(function(i){
+      if(i.value==='Tamboré Miranda'||i.value==='Marco Túlio') return; // mantém defaults
+      i.value='';
+    });
+    s.querySelectorAll('.mark').forEach(function(m){m.textContent='( )';});
+  }
+
+  // ---- gerar PDF ----
+  async function gerarPDF(){
+    var overlay=document.getElementById('loading');
+    overlay.style.display='flex';
+    var sheet=document.querySelector('.sheet.active');
+    try{
+      // garante que inputs mostrem o valor no canvas: reflete value em atributo
+      sheet.querySelectorAll('input').forEach(function(i){ i.setAttribute('value', i.value); });
+      var canvas=await html2canvas(sheet,{scale:2.6,backgroundColor:'#ffffff',useCORS:true,logging:false,windowWidth:sheet.scrollWidth});
+      var img=canvas.toDataURL('image/jpeg',0.95);
+      var jsPDF=window.jspdf.jsPDF;
+      var pdf=new jsPDF('p','mm','a4');
+      var pw=210, ph=297;
+      // ajusta para caber SEMPRE em uma única página A4, centralizado
+      var ratio=canvas.width/canvas.height;
+      var iw=pw, ih=pw/ratio;
+      if(ih>ph){ ih=ph; iw=ph*ratio; }
+      var x=(pw-iw)/2, y=(ph-ih)/2;
+      pdf.addImage(img,'JPEG',x,y,iw,ih);
+      pdf.save('Ficha_Cadastral_'+tipo+'_Tambore_Miranda.pdf');
+    }catch(e){
+      alert('Não foi possível gerar o PDF automaticamente. Use o botão Imprimir e escolha "Salvar como PDF". Detalhe: '+e.message);
+    }finally{
+      overlay.style.display='none';
+    }
+  }
+</script>
+</body>
+</html>
