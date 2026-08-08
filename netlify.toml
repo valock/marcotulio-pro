@@ -21,6 +21,12 @@
     Cache-Control = "public, max-age=3600"
 
 [[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
   for = "/img/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
