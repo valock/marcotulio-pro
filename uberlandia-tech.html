@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.className="js";</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1220">
+<title>Uberlândia Tech: dados, IA e o efeito no território</title>
+<meta name="description" content="Leituras sobre tecnologia, IA e infraestrutura em Uberlândia, e o que isso faz com o mapa e o preço da cidade.">
+<meta name="keywords" content="tecnologia Uberlândia, inteligência artificial Uberlândia, data center Uberlândia, ecossistema de inovação Uberlândia, valorização de bairros Uberlândia, UFU tecnologia, Granja Marileusa">
+<meta name="author" content="Marco Túlio Andrade Freitas">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://marcotulio.pro/uberlandia-tech">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marcotulio.pro/uberlandia-tech">
+<meta property="og:title" content="Uberlândia Tech: dados, IA e o efeito no território">
+<meta property="og:description" content="Onde a tecnologia se instala, o metro quadrado muda. Leituras de dados públicos sobre Uberlândia, por um corretor formado em Gestão da Informação.">
+<meta property="og:image" content="https://marcotulio.pro/og-image.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Uberlândia Tech: dados, IA e o efeito no território">
+<meta name="twitter:description" content="Onde a tecnologia se instala, o metro quadrado muda. Leituras de dados públicos sobre Uberlândia.">
+<meta name="twitter:image" content="https://marcotulio.pro/og-image.jpg">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/bricolage.woff2" crossorigin>
+<style>@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;font-display:swap;src:url(/fonts/bricolage.woff2) format('woff2')}@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/hanken.woff2) format('woff2')}</style>
+<link rel="stylesheet" href="/blog/article.css">
+<script defer src="/js/analytics.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://marcotulio.pro/uberlandia-tech",
+      "name": "Uberlândia Tech",
+      "description": "Leituras sobre tecnologia, inteligência artificial e infraestrutura em Uberlândia, e o efeito disso no território e no preço dos bairros.",
+      "url": "https://marcotulio.pro/uberlandia-tech",
+      "inLanguage": "pt-BR",
+      "about": ["Inteligência artificial", "Tecnologia", "Uberlândia", "Desenvolvimento urbano"],
+      "author": {
+        "@type": "Person",
+        "name": "Marco Túlio Andrade Freitas",
+        "url": "https://marcotulio.pro/sobre",
+        "alumniOf": {"@type": "CollegeOrUniversity", "name": "Universidade Federal de Uberlândia"},
+        "knowsAbout": ["Gestão da Informação", "Administração", "Mercado imobiliário de Uberlândia"]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://marcotulio.pro/"},
+        {"@type": "ListItem", "position": 2, "name": "Uberlândia Tech", "item": "https://marcotulio.pro/uberlandia-tech"}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--tec:#0E9F8E;--tec-claro:#2AD4C0;--tec-fundo:#E6F7F5}
+.thero{background:linear-gradient(152deg,#0B1220 0%,#122A3A 58%,#0E4A46 100%);border-radius:var(--r-lg);padding:clamp(30px,5.5vw,58px);color:#fff;margin:8px 0 32px;position:relative;overflow:hidden}
+.thero::before{content:"";position:absolute;top:-90px;right:-70px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(42,212,192,.22),transparent 70%)}
+.thero>*{position:relative;z-index:2}
+.thero .kicker{background:rgba(42,212,192,.18);color:#8FF0E2}
+.thero h1{color:#fff;font-size:clamp(1.9rem,4.8vw,3rem);margin:14px 0 16px;max-width:19ch}
+.thero p{color:rgba(255,255,255,.93);font-size:clamp(1.04rem,2.3vw,1.2rem);line-height:1.55;max-width:58ch;margin:0}
+.tese{background:var(--tec-fundo);border-left:4px solid var(--tec);border-radius:var(--r-sm);padding:20px 24px;margin:0 0 30px;font-size:1rem;line-height:1.68}
+.tese b{color:#0B1220}
+.temas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:26px 0 34px}
+.tema{background:var(--superficie);border:1px solid var(--nevoa);border-radius:var(--r-md);padding:18px}
+.tema b{display:block;font-family:var(--fdisp);font-size:1rem;color:var(--tec);margin-bottom:6px}
+.tema span{font-size:.91rem;color:var(--tinta-suave);line-height:1.5}
+.posts{display:grid;gap:16px;margin:26px 0}
+.post-t{display:block;background:var(--superficie);border:1px solid var(--nevoa);border-radius:var(--r-lg);padding:24px 26px;text-decoration:none;box-shadow:var(--lift);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.post-t:hover{transform:translateY(-3px);box-shadow:var(--lift-h)}
+.post-t .tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--tec);background:var(--tec-fundo);padding:5px 9px;border-radius:var(--r-pill);margin-bottom:12px}
+.post-t h2{font-size:1.3rem;color:var(--tinta);margin:0 0 8px;line-height:1.25}
+.post-t p{font-size:.97rem;color:var(--tinta-suave);margin:0 0 12px;line-height:1.55}
+.post-t .meta{font-size:.85rem;color:var(--tenue,#7387A3)}
+.post-t .meta b{color:var(--tec);font-weight:700}
+.quem{background:linear-gradient(155deg,#0B1220,#0E4A46);border-radius:var(--r-lg);padding:clamp(24px,4vw,32px);color:#fff;margin:34px 0}
+.quem h2{color:#fff;margin:0 0 12px;font-size:1.3rem}
+.quem p{color:rgba(255,255,255,.9);line-height:1.68;margin:0 0 12px}
+.quem p:last-child{margin-bottom:0}
+.quem b{color:#8FF0E2}
+.vazio{border:2px dashed var(--nevoa);border-radius:var(--r-lg);padding:26px;text-align:center;color:var(--tinta-suave);font-size:.96rem;line-height:1.6}
+</style>
+</head>
+<body>
+<a href="#conteudo" class="skip">Pular para o conteúdo</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="/" class="logo">marco<b>tulio</b>.pro</a>
+    <div class="nav-right">
+      <a href="/" class="nav-back">← <span>Início</span></a>
+      <a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco!%20Vim%20pelo%20Uberl%C3%A2ndia%20Tech." target="_blank" rel="noopener" class="btn btn-zap"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg> WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo" class="article">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Trilha de navegação"><a href="/">Início</a> › <span>Uberlândia Tech</span></nav>
+
+    <div class="thero">
+      <span class="kicker">Seção separada · dados públicos</span>
+      <h1>Onde a tecnologia se instala, o metro quadrado muda</h1>
+      <p>Um espaço pra ler Uberlândia por outro ângulo: inteligência artificial, infraestrutura, universidade e investimento. Sem anúncio de apartamento no meio do texto.</p>
+    </div>
+
+    <div class="tese">
+      <b>A ideia é simples.</b> Tecnologia atrai emprego qualificado. Emprego atrai gente. Gente pressiona moradia. Moradia é preço. Essa fila leva anos pra acontecer e quase sempre só vira assunto quando já aconteceu. Aqui eu tento olhar pro começo dela, usando dado público e dizendo de onde tirei cada número.
+    </div>
+
+    <div class="temas">
+      <div class="tema"><b>Inteligência artificial</b><span>Quem faz IA em Uberlândia, o que está sendo construído e o que ainda falta.</span></div>
+      <div class="tema"><b>Infraestrutura</b><span>Data center, energia, fibra e capacidade de computação. O que pesa no território.</span></div>
+      <div class="tema"><b>Universidade</b><span>A UFU como motor: laboratórios, pesquisa aplicada e o efeito dos campi na cidade.</span></div>
+      <div class="tema"><b>Território e preço</b><span>Como investimento em tecnologia se traduz em bairro, deslocamento e valor de área.</span></div>
+    </div>
+
+    <h2>Publicações</h2>
+    <div class="posts">
+      <a class="post-t" href="/tech/observatorio-ia-uberlandia">
+        <span class="tag">Dados abertos</span>
+        <h2>Observatório de IA de Uberlândia: o que os dados dizem</h2>
+        <p>Baixei o CSV público do mapeamento de IA da cidade e li as 149 linhas. São 117 iniciativas únicas, 37 startups, 15 ligadas à UFU e apenas 2 de infraestrutura de computação. O caso corporativo mais forte da base fica dentro de um bairro que eu vendo.</p>
+        <span class="meta"><b>9 de agosto de 2026</b> · 7 min de leitura</span>
+      </a>
+    </div>
+
+    <div class="vazio">
+      Esta seção começou agora e cresce devagar, no ritmo de quando aparece dado que valha a pena ler.<br>
+      Se você trabalha com tecnologia em Uberlândia e tem um número que ninguém está olhando, <a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco!%20Tenho%20um%20dado%20sobre%20tecnologia%20em%20Uberl%C3%A2ndia%20que%20talvez%20renda%20um%20texto%20no%20Uberl%C3%A2ndia%20Tech." target="_blank" rel="noopener">me manda</a>.
+    </div>
+
+    <div class="quem">
+      <h2>Quem escreve, e por que isso não é fora de lugar</h2>
+      <p>Sou o <b>Marco Túlio</b>, corretor de imóveis em Uberlândia, parceiro da Torrano, CRECI/MG nº 7469. Antes disso me formei em <b>Administração pela FAGEN/UFU</b> e fiz <b>Gestão da Informação, também na UFU</b>.</p>
+      <p>Ler base de dados foi o que eu aprendi a fazer antes de aprender a ler tabela de construtora. Esta seção é o lugar onde essas duas formações se encontram, e onde eu escrevo sobre a cidade sem estar tentando te vender nada.</p>
+      <p>Se em algum texto eu tiver interesse comercial no assunto, eu digo isso dentro do próprio texto. Foi assim no primeiro e vai ser assim nos próximos.</p>
+    </div>
+
+    <p style="font-size:.9rem;color:var(--tinta-suave);line-height:1.6;margin:26px 0 10px">Procurando imóvel e caiu aqui por acaso? O conteúdo sobre apartamento, Minha Casa Minha Vida e financiamento fica no <a href="/blog">blog</a>, separado de propósito.</p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-logo">marco<b>tulio</b>.pro</div>
+    <p>Corretor parceiro da Torrano Negócios Imobiliários LTDA · CRECI/MG nº 7469 · Uberlândia/MG</p>
+    <p><a href="/">Início</a> · <a href="/blog">Blog</a> · <a href="/uberlandia-tech">Uberlândia Tech</a> · <a href="/noticias">Notícias</a> · <a href="/plantao">Plantão</a> · <a href="/indique">Indique e ganhe</a> · <a href="/sobre">Sobre</a></p>
+  </div>
+</footer>
+<a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco!%20Vim%20pelo%20Uberl%C3%A2ndia%20Tech." class="wa-float" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg></a>
+<script>
+(function(){var n=document.getElementById('nav');if(!n)return;var f=function(){n.classList.toggle('scrolled',window.scrollY>10)};f();window.addEventListener('scroll',f,{passive:true});})();
+</script>
+</body>
+</html>

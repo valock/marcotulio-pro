@@ -65,3 +65,9 @@
 /leal /plantao 301
 /feiralivre /plantao 301
 /plantaomcmv /plantao 301
+/tech /uberlandia-tech 301
+/uberlandiatech /uberlandia-tech 301
+/ia /uberlandia-tech 301
+/observatorio /tech/observatorio-ia-uberlandia 301
+/observatorioia /tech/observatorio-ia-uberlandia 301
+/uberlandia-ia /tech/observatorio-ia-uberlandia 301
