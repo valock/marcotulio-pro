@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.className="js";</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1220">
+<title>Observatório de IA de Uberlândia: o que os dados dizem</title>
+<meta name="description" content="Baixei o CSV do Observatório de IA de Uberlândia e li as 149 linhas. O que a cena de IA da cidade revela.">
+<meta name="keywords" content="Observatório de IA de Uberlândia, inteligência artificial Uberlândia, startups de IA Uberlândia, ecossistema de tecnologia Uberlândia, UFU inteligência artificial, Granja Marileusa tecnologia, data center Uberlândia">
+<meta name="author" content="Marco Túlio Andrade Freitas">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://marcotulio.pro/tech/observatorio-ia-uberlandia">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://marcotulio.pro/tech/observatorio-ia-uberlandia">
+<meta property="og:title" content="Observatório de IA de Uberlândia: o que os dados dizem">
+<meta property="og:description" content="117 iniciativas únicas, 37 startups e apenas 2 de infraestrutura. Li o CSV inteiro do Observatório e anotei o que achei.">
+<meta property="og:image" content="https://marcotulio.pro/og-image.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta property="article:published_time" content="2026-08-09">
+<meta property="article:modified_time" content="2026-08-09">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Observatório de IA de Uberlândia: o que os dados dizem">
+<meta name="twitter:description" content="117 iniciativas únicas, 37 startups e apenas 2 de infraestrutura própria de computação.">
+<meta name="twitter:image" content="https://marcotulio.pro/og-image.jpg">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/hanken.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/bricolage.woff2" crossorigin>
+<style>@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;font-display:swap;src:url(/fonts/bricolage.woff2) format('woff2')}@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/hanken.woff2) format('woff2')}</style>
+<link rel="stylesheet" href="/blog/article.css">
+<script defer src="/js/analytics.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://marcotulio.pro/tech/observatorio-ia-uberlandia"},
+  "headline": "Observatório de IA de Uberlândia: o que os dados dizem sobre a cidade",
+  "description": "Leitura do CSV público do Observatório de IA de Uberlândia: 117 iniciativas únicas, 37 startups, 15 ligadas à UFU e apenas 2 de infraestrutura de computação.",
+  "datePublished": "2026-08-09",
+  "dateModified": "2026-08-09",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Túlio Andrade Freitas",
+    "url": "https://marcotulio.pro/sobre",
+    "jobTitle": "Corretor de imóveis",
+    "alumniOf": {"@type": "CollegeOrUniversity", "name": "Universidade Federal de Uberlândia"},
+    "knowsAbout": ["Gestão da Informação", "Administração", "Mercado imobiliário de Uberlândia", "Inteligência artificial aplicada"]
+  },
+  "publisher": {"@type": "Person", "name": "Marco Túlio Andrade Freitas", "url": "https://marcotulio.pro"},
+  "articleSection": "Uberlândia Tech",
+  "inLanguage": "pt-BR",
+  "url": "https://marcotulio.pro/tech/observatorio-ia-uberlandia",
+  "isBasedOn": {
+    "@type": "Dataset",
+    "name": "Observatório de IA de Uberlândia",
+    "url": "https://uberland.ia.br/observatorio.html",
+    "description": "Painel público e aberto do mapeamento de iniciativas de inteligência artificial de Uberlândia"
+  },
+  "contentLocation": {"@type": "City", "name": "Uberlândia", "address": {"@type": "PostalAddress", "addressLocality": "Uberlândia", "addressRegion": "MG", "addressCountry": "BR"}},
+  "about": ["Inteligência artificial", "Uberlândia", "Ecossistema de tecnologia"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://marcotulio.pro/"},
+    {"@type": "ListItem", "position": 2, "name": "Uberlândia Tech", "item": "https://marcotulio.pro/uberlandia-tech"},
+    {"@type": "ListItem", "position": 3, "name": "Observatório de IA de Uberlândia", "item": "https://marcotulio.pro/tech/observatorio-ia-uberlandia"}
+  ]
+}
+</script>
+
+<style>
+:root{--tec:#0E9F8E;--tec-claro:#2AD4C0;--tec-fundo:#E6F7F5;--tec-tinta:#0B1220}
+.thero{background:linear-gradient(152deg,#0B1220 0%,#122A3A 58%,#0E4A46 100%);border-radius:var(--r-lg);padding:clamp(28px,5vw,54px);color:#fff;margin:8px 0 30px;position:relative;overflow:hidden}
+.thero::before{content:"";position:absolute;top:-90px;right:-70px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(42,212,192,.22),transparent 70%)}
+.thero>*{position:relative;z-index:2}
+.thero .kicker{background:rgba(42,212,192,.18);color:#8FF0E2}
+.thero h1{color:#fff;font-size:clamp(1.8rem,4.4vw,2.9rem);margin:14px 0 14px;max-width:20ch}
+.thero p{color:rgba(255,255,255,.92);font-size:clamp(1.02rem,2.2vw,1.16rem);line-height:1.55;max-width:58ch;margin:0}
+.credo{background:var(--tec-fundo);border-left:4px solid var(--tec);border-radius:var(--r-sm);padding:18px 22px;margin:26px 0;font-size:.97rem;line-height:1.65}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:28px 0}
+.num{background:var(--superficie);border:1px solid var(--nevoa);border-radius:var(--r-md);padding:18px;text-align:center;box-shadow:var(--lift)}
+.num .n{font-family:var(--fdisp);font-weight:800;font-size:1.75rem;color:var(--tec);line-height:1.05}
+.num .l{font-size:.85rem;color:var(--tinta-suave);margin-top:6px;line-height:1.4}
+.barras{margin:26px 0}
+.barras .linha{display:flex;align-items:center;gap:12px;margin:9px 0;font-size:.93rem}
+.barras .rot{flex:0 0 46%;color:var(--tinta)}
+.barras .trilho{flex:1;height:11px;background:var(--nevoa);border-radius:var(--r-pill);overflow:hidden}
+.barras .fill{height:100%;background:linear-gradient(90deg,var(--tec),var(--tec-claro));border-radius:var(--r-pill)}
+.barras .v{flex:0 0 34px;text-align:right;font-weight:800;color:var(--tec);font-variant-numeric:tabular-nums}
+@media(max-width:560px){.barras .rot{flex-basis:52%;font-size:.86rem}}
+.destaque-t{background:linear-gradient(155deg,#0B1220,#0E4A46);border-radius:var(--r-lg);padding:clamp(22px,4vw,30px);color:#fff;margin:28px 0}
+.destaque-t h2{color:#fff;margin:0 0 10px;font-size:1.28rem}
+.destaque-t p{color:rgba(255,255,255,.9);margin:0 0 10px;line-height:1.65}
+.destaque-t b{color:#8FF0E2}
+.destaque-t p:last-child{margin-bottom:0}
+.aviso{background:#FFF6E9;border-left:4px solid #E08A00;border-radius:var(--r-sm);padding:18px 20px;margin:26px 0;font-size:.96rem;line-height:1.65}
+.jump-t{display:block;background:var(--tec);color:#fff;border-radius:var(--r-lg);padding:24px 26px;margin:30px 0;text-decoration:none;box-shadow:var(--lift)}
+.jump-t:hover{background:#0B8578}
+.jump-t .t{font-family:var(--fdisp);font-weight:800;font-size:1.18rem;margin-bottom:7px;line-height:1.25}
+.jump-t .s{font-size:.95rem;opacity:.95;line-height:1.5}
+.fonte{font-size:.86rem;color:var(--tinta-suave);border-top:1px solid var(--nevoa);padding-top:16px;margin-top:34px;line-height:1.6}
+</style>
+</head>
+<body>
+<a href="#conteudo" class="skip">Pular para o conteúdo</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="/" class="logo">marco<b>tulio</b>.pro</a>
+    <div class="nav-right">
+      <a href="/uberlandia-tech" class="nav-back">← <span>Uberlândia Tech</span></a>
+      <a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco!%20Vim%20pelo%20texto%20sobre%20o%20Observat%C3%B3rio%20de%20IA%20de%20Uberl%C3%A2ndia." target="_blank" rel="noopener" class="btn btn-zap"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg> WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo" class="article">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Trilha de navegação"><a href="/">Início</a> › <a href="/uberlandia-tech">Uberlândia Tech</a> › <span>Observatório de IA</span></nav>
+
+    <div class="thero">
+      <span class="kicker">Uberlândia Tech · dados abertos</span>
+      <h1>Observatório de IA de Uberlândia: o que os dados dizem</h1>
+      <p>Alguém teve o trabalho de mapear a inteligência artificial da cidade e publicou tudo em um painel aberto, com CSV pra baixar. Eu baixei, li as 149 linhas e anotei o que achei. Tem coisa boa e tem um buraco que ninguém está olhando.</p>
+    </div>
+
+    <div class="art-meta">
+      <span class="who"><span class="av">MT</span> Marco Túlio · CRECI/MG 7469</span>
+      <span class="dot">·</span>
+      <time datetime="2026-08-09">9 de agosto de 2026</time>
+      <span class="dot">·</span>
+      <span>⏱ 7 min de leitura</span>
+    </div>
+
+    <article class="prose">
+
+<div class="credo">
+  <b>Por que um corretor de imóveis está escrevendo sobre isso.</b> Antes de vender apartamento eu fiz <b>Administração na FAGEN/UFU</b> e <b>Gestão da Informação, também na UFU</b>. Ler base de dados é o que eu aprendi a fazer antes de aprender a ler tabela de construtora. E as duas coisas se encontram num ponto só: <b>onde a tecnologia se instala, o metro quadrado muda</b>. Uberlândia está no meio dessa história e quase ninguém do meu mercado está prestando atenção.
+</div>
+
+<h2>O que é o <em>Observatório</em></h2>
+<p>O <a href="https://uberland.ia.br/observatorio.html" target="_blank" rel="noopener">Observatório de IA de Uberlândia</a> é um painel público que mapeia quem faz inteligência artificial na cidade: startups, produtos, laboratórios da universidade, casos dentro de empresas, cursos, comunidades e pessoas de referência. Os dados vêm de um formulário aberto, o painel se atualiza sozinho conforme as respostas chegam, e qualquer um pode baixar a base completa em CSV.</p>
+<p>Isso é raro e merece ser dito com todas as letras: <b>é a coisa mais próxima de um censo de tecnologia que Uberlândia já teve</b>, e está aberto. Não é relatório pago de consultoria, não é press release. É planilha na mesa.</p>
+<p>Quando peguei os dados, o painel marcava <b>186 iniciativas mapeadas</b>, 62% da meta que eles mesmos estabeleceram, distribuídas em 24 categorias ativas.</p>
+
+<h2>O que eu encontrei ao ler a base</h2>
+<p>Baixei o CSV no dia 9 de agosto de 2026. Ele veio com <b>149 linhas</b>. Ao conferir os nomes, 12 deles aparecem repetidos e somam 44 linhas, o que deixa <b>117 iniciativas únicas</b> nesse recorte. Trabalhei com esse número em tudo o que vem a seguir.</p>
+
+<div class="nums">
+  <div class="num"><div class="n">117</div><div class="l">iniciativas únicas no recorte que baixei</div></div>
+  <div class="num"><div class="n">37</div><div class="l">startups de IA</div></div>
+  <div class="num"><div class="n">15</div><div class="l">com vínculo direto com a UFU</div></div>
+  <div class="num"><div class="n">55</div><div class="l">vendem para empresas</div></div>
+  <div class="num"><div class="n">60</div><div class="l">abertas a parceria ou troca</div></div>
+  <div class="num"><div class="n">2</div><div class="l">de infraestrutura, dados ou GPU</div></div>
+</div>
+
+<h3>Como as iniciativas se distribuem</h3>
+<div class="barras">
+  <div class="linha"><span class="rot">Solução ou serviço com IA</span><span class="trilho"><span class="fill" style="width:100%"></span></span><span class="v">52</span></div>
+  <div class="linha"><span class="rot">Produto de IA</span><span class="trilho"><span class="fill" style="width:98%"></span></span><span class="v">51</span></div>
+  <div class="linha"><span class="rot">Startup de IA</span><span class="trilho"><span class="fill" style="width:71%"></span></span><span class="v">37</span></div>
+  <div class="linha"><span class="rot">Case de uso em empresa</span><span class="trilho"><span class="fill" style="width:40%"></span></span><span class="v">21</span></div>
+  <div class="linha"><span class="rot">Pesquisa acadêmica</span><span class="trilho"><span class="fill" style="width:40%"></span></span><span class="v">21</span></div>
+  <div class="linha"><span class="rot">Algoritmo ou modelo próprio</span><span class="trilho"><span class="fill" style="width:35%"></span></span><span class="v">18</span></div>
+  <div class="linha"><span class="rot">Curso ou capacitação</span><span class="trilho"><span class="fill" style="width:25%"></span></span><span class="v">13</span></div>
+  <div class="linha"><span class="rot">Pessoa de referência</span><span class="trilho"><span class="fill" style="width:25%"></span></span><span class="v">13</span></div>
+  <div class="linha"><span class="rot">Infraestrutura, dados ou GPU</span><span class="trilho"><span class="fill" style="width:4%"></span></span><span class="v">2</span></div>
+</div>
+<p class="fonte" style="border:0;padding:0;margin:-8px 0 22px">Contagem própria sobre o CSV de 09/08/2026, com nomes duplicados agrupados. Uma iniciativa pode estar em mais de uma categoria.</p>
+
+<h2>O buraco que ninguém está olhando</h2>
+<p>Repara na última barra. A cidade tem <b>37 startups de IA</b>, 51 produtos e 21 casos rodando dentro de empresas. E tem <b>duas</b> iniciativas na categoria de infraestrutura, dados ou GPU.</p>
+<p>Traduzindo: Uberlândia está criando bastante coisa que <em>consome</em> inteligência artificial e quase nada que <em>sustenta</em> inteligência artificial. O processamento acontece em servidor de outra cidade, quase sempre de outro país. É a diferença entre ter muita gente dirigindo e não ter posto de gasolina.</p>
+<p>Não estou dizendo que isso é um defeito da cena local. É o retrato de quase todo o Brasil. Mas é exatamente onde mora a oportunidade grande, e é a variável que eu ficaria de olho nos próximos anos: <b>data center e capacidade de computação são infraestrutura pesada, e infraestrutura pesada muda o mapa da cidade onde ela se instala.</b> Consome energia, consome fibra, consome terreno grande com acesso viário, e traz junto emprego qualificado.</p>
+
+<div class="aviso">
+<b>Um cuidado que eu faço questão de registrar:</b> não existe, até onde eu apurei, anúncio confirmado de data center de grande porte em Uberlândia. Estou falando de mecanismo, não de projeto. Se e quando aparecer, esse é o tipo de notícia que muda preço de área muito antes de virar manchete de caderno de imóveis, e é por isso que eu leio essa base.
+</div>
+
+<h2>A UFU é a espinha dorsal, e isso tem endereço</h2>
+<p>De 117 iniciativas, <b>15 têm vínculo direto com a Universidade Federal de Uberlândia</b>: laboratórios da Faculdade de Computação, grupos de pesquisa interdisciplinares, professores com produção na área, projetos aplicados em soldagem, agro e saúde.</p>
+<p>Isso não é dado abstrato pra quem trabalha com imóvel. Universidade forte em uma área concentra gente na volta dela. O campus Santa Mônica e o Umuarama não são endereço qualquer nesse cenário: é onde estudante mora, onde pesquisador aluga, onde o hospital universitário puxa profissional de fora. Não é coincidência que o produto de studios que a Opção lançou este ano tenha escolhido <a href="/blog/opcao-studios-campus-umuarama-uberlandia">ficar ao lado do HC-UFU</a>.</p>
+
+<div class="destaque-t">
+  <h2>O caso número 1 do Observatório fica dentro de um bairro que eu vendo</h2>
+  <p>A primeira entrada da lista é o framework de IA implantado na <b>Algar</b>: mais de 250 mil horas economizadas, R$ 48 milhões de Ebitda em dois anos e 125 agentes em operação. É, disparado, o caso corporativo mais robusto da base.</p>
+  <p>E a Algar é quem desenvolveu o <b>Granja Marileusa</b>, o bairro planejado que hoje reúne cerca de 30 grandes empresas e o ecossistema de tecnologia da cidade. Ou seja: o caso de IA mais forte de Uberlândia acontece dentro do bairro que a mesma empresa construiu para se morar perto de onde se trabalha.</p>
+  <p>Se você quiser ver o que existe pra comprar lá, eu escrevi o <a href="/blog/apartamentos-no-granja-marileusa-uberlandia" style="color:#8FF0E2;text-decoration:underline">comparativo dos apartamentos do Granja Marileusa</a>. Mas o ponto aqui não é vender apartamento. É mostrar que essas duas conversas, tecnologia e território, são a mesma conversa.</p>
+</div>
+
+<h2>O que eu devolvo pra quem fez o Observatório</h2>
+<p>Duas observações que só apareceram porque eu li a base linha por linha, e que eu ofereço de graça porque o projeto merece:</p>
+<ul>
+<li><b>Nomes duplicados.</b> 12 iniciativas aparecem repetidas no CSV e somam 44 das 149 linhas. Isso infla as contagens por categoria. Agrupar por nome antes de somar deixaria os indicadores do painel mais precisos.</li>
+<li><b>URLs com protocolo duplicado.</b> Existe pelo menos um registro cujos links foram salvos como <code>https://Https://dominio</code>. O navegador lê isso como um host chamado <code>Https</code>, que não existe, e o link morre no clique. Uma normalização simples no formulário resolveria. Ironicamente, o registro com esse problema é o meu, e eu já avisei.</li>
+</ul>
+
+<a class="jump-t" href="https://uberland.ia.br/observatorio.html" target="_blank" rel="noopener">
+  <div class="t">Vai lá ver o painel, e se você faz alguma coisa com IA em Uberlândia, entra no mapa</div>
+  <div class="s">É gratuito, leva poucos minutos e vale mais pela cidade do que pela sua empresa. Quanto mais completo o mapa, mais fácil fica pra qualquer um enxergar o que já existe aqui.</div>
+</a>
+
+<h2>Por que isso vai continuar aparecendo aqui</h2>
+<p>Eu abri um espaço separado no site, o <a href="/uberlandia-tech">Uberlândia Tech</a>, justamente pra não misturar esse tipo de leitura com as páginas de empreendimento. Quem entra aqui procurando apartamento não precisa tropeçar em análise de dados, e quem procura dado sobre a cidade não precisa levar anúncio na cara.</p>
+<p>Mas as duas coisas conversam, e é essa conversa que eu quero registrar: tecnologia atrai emprego, emprego atrai gente, gente pressiona moradia, e moradia é preço. Quem enxerga o começo dessa fila decide melhor do que quem só vê o fim.</p>
+
+<p class="fonte">Fonte dos dados: Observatório de IA de Uberlândia, painel público disponível em uberland.ia.br. Números do painel consultados em 08/08/2026 e base em CSV baixada em 09/08/2026, com 149 linhas e 117 nomes únicos. As contagens por categoria neste texto são cálculo próprio sobre essa base, com registros duplicados agrupados, e por isso podem diferir dos totais exibidos no painel ao vivo. Não tenho vínculo comercial com o Observatório e não fui pago para escrever isto. Sou corretor parceiro da Torrano Negócios Imobiliários LTDA, CRECI/MG nº 7469.</p>
+
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-logo">marco<b>tulio</b>.pro</div>
+    <p>Corretor parceiro da Torrano Negócios Imobiliários LTDA · CRECI/MG nº 7469 · Uberlândia/MG</p>
+    <p><a href="/">Início</a> · <a href="/blog">Blog</a> · <a href="/uberlandia-tech">Uberlândia Tech</a> · <a href="/noticias">Notícias</a> · <a href="/plantao">Plantão</a> · <a href="/indique">Indique e ganhe</a> · <a href="/sobre">Sobre</a></p>
+  </div>
+</footer>
+<a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco!%20Vim%20pelo%20Uberl%C3%A2ndia%20Tech." class="wa-float" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg></a>
+<script>
+(function(){var n=document.getElementById('nav');if(!n)return;var f=function(){n.classList.toggle('scrolled',window.scrollY>10)};f();window.addEventListener('scroll',f,{passive:true});})();
+</script>
+</body>
+</html>
