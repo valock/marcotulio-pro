@@ -10,8 +10,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#1A56DB">
 <title>Torrano Negócios Imobiliários: a casinha do Centro</title>
-<meta name="description" content="A Torrano lançou site novo. Conheça a imobiliária da Benjamin Constant, 56, e o time do qual eu faço parte.">
-<meta name="keywords" content="Torrano Negócios Imobiliários, Torrano Uberlândia, imobiliária Uberlândia, Benjamin Constant 56 Uberlândia, corretor Torrano, campeã de vendas Uberlândia, imobiliária centro Uberlândia">
+<meta name="description" content="A Torrano lançou site novo. Conheça a imobiliária da Benjamin Constant, 56, líder de vendas da Pacaembu em Uberlândia, e o time do qual eu faço parte.">
+<meta name="keywords" content="Torrano Negócios Imobiliários, Torrano Uberlândia, imobiliária Uberlândia, Benjamin Constant 56 Uberlândia, corretor Torrano, campeã de vendas Uberlândia, imobiliária centro Uberlândia, Pacaembu Uberlândia imobiliária, comprar casa Pacaembu Uberlândia, cheque moradia Uberlândia, Leandro Rabelo Torrano, Flávio Torrano">
 <meta name="author" content="Marco Túlio Andrade Freitas">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://marcotulio.pro/torrano">
@@ -56,6 +56,11 @@
       "sameAs": [
         "https://torrano.com.br/",
         "https://www.instagram.com/torrano.negocios/"
+      ],
+      "foundingDate": "2022",
+      "founder": [
+        {"@type": "Person", "name": "Leandro Rabelo"},
+        {"@type": "Person", "name": "Flávio Torrano"}
       ],
       "employee": {
         "@type": "Person",
@@ -113,6 +118,20 @@
 .galeria figcaption{font-size:.85rem;color:var(--tinta-suave);margin-top:8px;line-height:1.5}
 .marcas{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
 .marcas span{background:var(--azul-claro);color:var(--azul-profundo);font-size:.85rem;font-weight:700;padding:7px 13px;border-radius:var(--r-pill)}
+.socios{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:26px 0}
+.socio{background:var(--superficie);border:1px solid var(--nevoa);border-left:3px solid var(--azul);border-radius:var(--r-md);padding:20px;box-shadow:var(--lift)}
+.socio b{display:block;font-family:var(--fdisp);font-size:1.06rem;color:var(--azul-profundo);margin-bottom:7px}
+.socio span{font-size:.95rem;color:var(--tinta-suave);line-height:1.55}
+.lider{background:linear-gradient(158deg,#0C2E1D 0%,#12603A 100%);border-radius:var(--r-lg);padding:clamp(24px,4vw,34px);color:#fff;margin:30px 0}
+.lider h2{color:#fff;margin:0 0 10px;font-size:1.3rem}
+.lider>p{color:rgba(255,255,255,.93);line-height:1.68;margin:0 0 18px}
+.lider .selos{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin:0 0 18px}
+.lider .selo3{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:var(--r-md);padding:16px 18px}
+.lider .selo3 .n{font-family:var(--fdisp);font-weight:800;font-size:1.02rem;color:#F3CD6B;line-height:1.25;margin-bottom:6px}
+.lider .selo3 .d{font-size:.9rem;color:rgba(255,255,255,.88);line-height:1.5}
+.lider .frase{font-family:var(--fdisp);font-weight:800;font-size:clamp(1.1rem,3vw,1.35rem);color:#fff;line-height:1.3;margin:0 0 12px}
+.lider a{color:#F3CD6B;text-decoration:underline}
+.lider .rod{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.55;margin:0}
 .destaque{background:linear-gradient(158deg,var(--tinta) 0%,var(--azul-profundo) 100%);border-radius:var(--r-lg);padding:clamp(24px,4vw,34px);color:#fff;margin:30px 0}
 .destaque h2{color:#fff;margin:0 0 12px;font-size:1.3rem}
 .destaque p{color:rgba(255,255,255,.92);line-height:1.68;margin:0 0 12px}
@@ -120,7 +139,7 @@
 .destaque b{color:#F3CD6B}
 .mapwrap{position:relative;padding-bottom:56%;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--lift);margin:26px 0}
 .mapwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.jump{display:block;background:var(--coral);color:#fff;border-radius:var(--r-lg);padding:26px 28px;margin:30px 0;text-decoration:none;box-shadow:var(--lift)}
+.jump,.prose a.jump{display:block;background:var(--coral);color:#fff;border-radius:var(--r-lg);padding:26px 28px;margin:30px 0;text-decoration:none;box-shadow:var(--lift)}
 .jump:hover{background:var(--coral-profundo)}
 .jump .t{font-family:var(--fdisp);font-weight:800;font-size:clamp(1.14rem,3vw,1.38rem);line-height:1.25;margin-bottom:8px}
 .jump .s{font-size:.97rem;opacity:.95;line-height:1.5}
@@ -188,18 +207,56 @@
 <div class="galeria">
   <figure>
     <img src="/img/torrano-trofeus-a-v1.webp" width="900" height="1200" alt="Parede de troféus da Torrano Negócios Imobiliários, com prêmios de campeã de vendas de várias construtoras de Uberlândia" loading="lazy" decoding="async">
-    <figcaption>Cinco prateleiras de premiação de construtora, acumuladas ao longo dos anos.</figcaption>
+    <figcaption>Cinco prateleiras de premiação de construtora, acumuladas em quatro anos de casa aberta.</figcaption>
   </figure>
   <figure>
     <img src="/img/torrano-trofeus-b-v1.webp" width="1200" height="700" alt="Detalhe dos troféus de vendas da Torrano com marcas de construtoras como Vitta, MRV, HLTS, INC e Opção" loading="lazy" decoding="async">
     <figcaption>Cada peça dessa é um ranking de vendas ganho na disputa com todas as outras imobiliárias da cidade.</figcaption>
     <div class="marcas">
-      <span>Vitta</span><span>MRV&amp;CO</span><span>HLTS</span><span>INC</span><span>Opção</span><span>MOR</span><span>Rummo</span><span>Tecnova</span><span>Marca Residence</span>
+      <span>Barbosa Amorim</span><span>Casa Helton</span><span>HLTS</span><span>INC</span><span>ITV</span><span>L7</span><span>LM</span><span>Manzan</span><span>Marca Registrada</span><span>MOR</span><span>MRV&amp;CO</span><span>Opção</span><span>Pacaembu</span><span>Petra</span><span>Realiza</span><span>Renault Diniz</span><span>Rojel</span><span>Rummo</span><span>S Freitas</span><span>Sarkis</span><span>Tamboré</span><span>Tecnova</span><span>Trust</span><span>Vertex</span><span>Vitta</span><span>Vivamus</span><span>WCC</span>
     </div>
   </figure>
 </div>
 
 <p>É por causa dessa parede que eles se apresentam, com todas as letras, como <strong>a imobiliária campeã de todas as construtoras de Uberlândia</strong>. A frase é deles, está lá na primeira linha do site novo, e eu reproduzo aqui porque quem trabalha lá dentro sabe de onde ela vem.</p>
+
+<div class="lider">
+  <h2>Quando o assunto é Pacaembu, a liderança é nossa</h2>
+  <p>A Pacaembu Construtora chegou em Uberlândia para erguer casa com quintal em escala. Desde o primeiro mês de operação da construtora na cidade, tem uma imobiliária que não saiu do topo.</p>
+  <div class="selos">
+    <div class="selo3">
+      <div class="n">Campeã de vendas em todos os meses</div>
+      <div class="d">Não foi um mês bom nem um pico isolado. Foi o primeiro lugar em vendas da Pacaembu em Uberlândia, mês após mês, desde o começo.</div>
+    </div>
+    <div class="selo3">
+      <div class="n">1º contrato assinado na Caixa</div>
+      <div class="d">A primeira venda de casa Pacaembu na cidade a virar contrato de financiamento assinado na Caixa Econômica Federal saiu pelas nossas mãos.</div>
+    </div>
+    <div class="selo3">
+      <div class="n">1º cheque moradia entregue</div>
+      <div class="d">E o primeiro cheque moradia usado na compra de uma casa Pacaembu em Uberlândia também foi de cliente nosso.</div>
+    </div>
+  </div>
+  <p class="frase">Somos os líderes quando o assunto é Pacaembu.</p>
+  <p class="rod">Quer entender o que a Pacaembu está construindo aqui e por que isso mudou o jogo da casa própria em Uberlândia? Escrevi a matéria completa em <a href="/blog/uberlandia-saf-pacaembu-mercado-imobiliario">Uberlândia SAF, Série C e Pacaembu</a>.</p>
+</div>
+
+<h2>Quem está por trás da casinha</h2>
+
+<p>A Torrano tem quatro anos de porta aberta. Quem olha a parede de troféus e faz a conta costuma estranhar, e a explicação está em quem abriu a casa.</p>
+
+<div class="socios">
+  <div class="socio">
+    <b>Leandro Rabelo</b>
+    <span>Sócio fundador. Mais de doze anos de mercado imobiliário em Uberlândia, com a trajetória começando dentro do time comercial da MRV.</span>
+  </div>
+  <div class="socio">
+    <b>Flávio Torrano</b>
+    <span>Sócio fundador. Também com mais de doze anos de rua, e também formado no time comercial da MRV antes de montar a própria operação.</span>
+  </div>
+</div>
+
+<p>Os dois vieram da escola mais dura que existe no nosso mercado: <strong>vender MRV no volume que a MRV exige</strong>. Quem passa por ali aprende funil, aprende crédito e aprende a não prometer o que a Caixa não aprova. Foi essa régua que eles trouxeram para dentro da casinha quando abriram a Torrano, e é por isso que a empresa é nova mas a prateleira já está cheia.</p>
 
 <h2>O contrato mágico</h2>
 
@@ -235,7 +292,7 @@
   <h2>Onde eu entro nessa história</h2>
   <p>Eu sou o <b>corretor tecnológico</b> do time. É o apelido que pegou lá dentro e eu assumo com gosto.</p>
   <p>Antes de vender imóvel eu me formei em <b>Administração pela FAGEN/UFU</b> e em <b>Gestão da Informação, também na UFU</b>. Sozinho, com inteligência artificial, eu construí este site com mais de 100 mil palavras documentando os empreendimentos de Uberlândia com endereço e preço, um <a href="https://simulador.marcotulio.pro" target="_blank" rel="noopener" style="color:#F3CD6B;text-decoration:underline">simulador de financiamento</a>, um <a href="https://imoveis.marcotulio.pro" target="_blank" rel="noopener" style="color:#F3CD6B;text-decoration:underline">portal de busca</a> e um gerador de ficha cadastral em PDF.</p>
-  <p>A Torrano traz a parede de troféus e trinta anos de rua. Eu trago a parte que quase nenhuma imobiliária do interior tem: <b>dado, conteúdo e ferramenta própria</b>. Um não substitui o outro, e é justamente a soma dos dois que faz o cliente chegar informado e sair decidido.</p>
+  <p>A Torrano traz a parede de troféus e mais de doze anos de rua dos sócios. Eu trago a parte que quase nenhuma imobiliária do interior tem: <b>dado, conteúdo e ferramenta própria</b>. Um não substitui o outro, e é justamente a soma dos dois que faz o cliente chegar informado e sair decidido.</p>
 </div>
 
 <h2>Se você está pensando em comprar</h2>
@@ -249,7 +306,7 @@
   <div class="s">Me chama no WhatsApp. Em poucos minutos você sabe quanto a Caixa aprova pra você e o que cabe nesse valor em Uberlândia.</div>
 </a>
 
-<p class="fonte">Sou Marco Túlio Andrade Freitas, corretor parceiro da Torrano Negócios Imobiliários LTDA, CRECI/MG nº 7469. Esta página é de minha autoria e não é material oficial da Torrano. A expressão "a imobiliária campeã de todas as construtoras de Uberlândia" é como a própria empresa se apresenta em seu site. As marcas de construtora citadas pertencem aos seus respectivos titulares e aparecem aqui apenas como registro das premiações recebidas pela imobiliária. Endereço e telefone conforme divulgados pela empresa em agosto de 2026.</p>
+<p class="fonte">Sou Marco Túlio Andrade Freitas, corretor parceiro da Torrano Negócios Imobiliários LTDA, CRECI/MG nº 7469. Esta página é de minha autoria e não é material oficial da Torrano. A expressão "a imobiliária campeã de todas as construtoras de Uberlândia" é como a própria empresa se apresenta em seu site. Os marcos citados no bloco sobre a Pacaembu, liderança de vendas mês a mês, primeiro contrato assinado na Caixa e primeiro cheque moradia entregue, são registros internos da operação da Torrano em Uberlândia. As marcas de construtora citadas pertencem aos seus respectivos titulares e aparecem aqui apenas como registro das parcerias e premiações da imobiliária. Endereço e telefone conforme divulgados pela empresa em agosto de 2026.</p>
 
   </article>
 </div>
