@@ -10,12 +10,6 @@
     Cache-Control = "public, max-age=3600"
 
 [[headers]]
-  for = "/painel-mt-x9k4v2/*"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
-    Cache-Control = "no-store"
-
-[[headers]]
   for = "*.html"
   [headers.values]
     Cache-Control = "public, max-age=3600"
@@ -50,3 +44,13 @@
   for = "/blog/article.css"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.md"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/LICENSE"
+  [headers.values]
+    X-Robots-Tag = "noindex"

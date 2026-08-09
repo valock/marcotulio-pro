@@ -1,0 +1,86 @@
+LICENÇA DUPLA
+=============
+
+Este repositório contém duas coisas com regras diferentes: o código que faz o
+site funcionar e o conteúdo editorial publicado nele.
+
+
+1. CÓDIGO — Licença MIT
+-----------------------
+
+Aplica-se a todo o HTML estrutural, CSS, JavaScript e arquivos de configuração
+(netlify.toml, _redirects, sitemap.xml).
+
+Copyright (c) 2026 Marco Túlio Andrade Freitas
+
+É concedida permissão, livre de encargos, a qualquer pessoa que obtenha uma
+cópia deste software e dos arquivos de documentação associados (o "Software"),
+para negociar o Software sem restrição, incluindo, sem limitação, os direitos
+de usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou
+vender cópias do Software, e para permitir que as pessoas a quem o Software é
+fornecido o façam, sujeito às seguintes condições:
+
+O aviso de copyright acima e este aviso de permissão devem ser incluídos em
+todas as cópias ou partes substanciais do Software.
+
+O SOFTWARE É FORNECIDO "COMO ESTÁ", SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU
+IMPLÍCITA, INCLUINDO, MAS NÃO SE LIMITANDO A, GARANTIAS DE COMERCIALIZAÇÃO,
+ADEQUAÇÃO A UM DETERMINADO FIM E NÃO VIOLAÇÃO. EM NENHUM CASO OS AUTORES OU
+TITULARES DE DIREITOS AUTORAIS SERÃO RESPONSÁVEIS POR QUALQUER REIVINDICAÇÃO,
+DANOS OU OUTRA RESPONSABILIDADE, SEJA EM AÇÃO DE CONTRATO, DELITO OU DE OUTRA
+FORMA, DECORRENTE DE, OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS
+NEGOCIAÇÕES NO SOFTWARE.
+
+
+2. CONTEÚDO EDITORIAL — Todos os direitos reservados
+----------------------------------------------------
+
+Copyright (c) 2026 Marco Túlio Andrade Freitas. Todos os direitos reservados.
+
+Aplica-se a todo o texto redacional, guias, análises de empreendimento,
+descrições de bairro, perguntas e respostas, imagens, fotografias, plantas,
+tabelas de preço e dados de mercado publicados neste repositório e no site
+marcotulio.pro.
+
+Esse material é obra intelectual protegida pela Lei nº 9.610, de 19 de
+fevereiro de 1998, e não está coberto pela licença MIT acima.
+
+É vedado, sem autorização prévia e por escrito do autor:
+
+  a) reproduzir, no todo ou em parte, os textos e imagens;
+  b) reescrever, parafrasear ou processar o conteúdo por meio de ferramentas
+     de inteligência artificial com o fim de republicá-lo;
+  c) republicar em outro site, portal imobiliário, rede social ou material
+     impresso;
+  d) utilizar o material para treinar modelos comerciais de linguagem.
+
+É permitido, e incentivado:
+
+  a) citar trechos curtos com atribuição de autoria e link para a página de
+     origem;
+  b) compartilhar o link das páginas;
+  c) usar as informações para tomar a própria decisão de compra.
+
+
+3. Bibliotecas de terceiros
+---------------------------
+
+O diretório vendor/ contém software de terceiros, distribuído sob as licenças
+dos respectivos autores:
+
+  - html2canvas 1.4.1 — Licença MIT, copyright Niklas von Hertzen
+  - jsPDF 2.5.1 — Licença MIT, copyright James Hall e colaboradores
+
+As fontes Bricolage Grotesque e Hanken Grotesk, em fonts/, são distribuídas
+sob a SIL Open Font License 1.1.
+
+
+4. Contato
+----------
+
+Dúvida sobre uso, pedido de autorização ou proposta de parceria:
+
+Marco Túlio Andrade Freitas
+CRECI/MG nº 7469
+https://marcotulio.pro
+https://wa.me/5534996778075
