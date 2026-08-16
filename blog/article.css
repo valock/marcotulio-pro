@@ -70,6 +70,9 @@ img{max-width:100%;display:block}
    e pintava o botão de azul sublinhado. Estes dois restauram o texto branco. */
 .prose a.jump,.prose a.jump-t{color:#fff;text-decoration:none}
 .prose a.jump:hover,.prose a.jump-t:hover{color:#fff;text-decoration:none}
+/* Mesma armadilha do .jump: .prose a vence .btn pela especificidade e pintava
+   o botao de azul sublinhado. As duas variantes sao texto branco sobre cor. */
+.prose a.btn,.prose a.btn:hover{color:#fff;text-decoration:none}
 .prose blockquote{margin:28px 0;padding:20px 24px;background:var(--azul-claro);border-radius:var(--r-md);font-size:1.18rem;color:var(--azul-profundo);font-weight:500}
 .prose .callout{margin:28px 0;padding:22px 24px;background:var(--superficie);border:1px solid var(--nevoa);border-radius:var(--r-lg);box-shadow:var(--lift)}
 .prose .callout strong{color:var(--azul-profundo)}
