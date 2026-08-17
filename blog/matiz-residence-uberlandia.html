@@ -382,7 +382,42 @@ details p{margin:12px 0 4px;font-size:1rem}
 
 <p class="fonte">Valores e condições de pagamento de referência (tabela de vendas), sujeitos a alteração e disponibilidade sem aviso; confirme sempre a tabela atualizada. Imagens meramente ilustrativas. Este conteúdo não constitui oferta de crédito; o financiamento está sujeito à análise da Caixa, que exige nome limpo e renda comprovada. Metragens aproximadas, a conferir no memorial de incorporação. Incorporação sob responsabilidade da Udi 229 Vitta Residencial SPE LTDA.</p>
 
-    </article>
+<style>
+.vblk{border:1px solid var(--nevoa);border-radius:var(--r-lg);background:var(--superficie);box-shadow:var(--lift);padding:clamp(18px,3vw,26px);margin:28px 0}
+.vblk>h3{margin:0 0 4px;font-size:1.16rem}
+.vblk>p.vsub{margin:0 0 18px;font-size:.94rem;color:var(--tinta-suave);line-height:1.5}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.ytf{min-width:0}
+.ytf-b{display:block;width:100%;padding:0;border:0;background:#000;border-radius:var(--r-md);overflow:hidden;position:relative;cursor:pointer;aspect-ratio:9/16;line-height:0}
+.ytf-b img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s var(--ease),opacity .2s}
+.ytf-b:hover img{transform:scale(1.04);opacity:.88}
+.ytf-b::after{content:"";position:absolute;left:50%;top:50%;width:56px;height:56px;transform:translate(-50%,-50%);border-radius:50%;background:rgba(0,0,0,.62);backdrop-filter:blur(2px);border:2px solid rgba(255,255,255,.9)}
+.ytf-b::before{content:"";position:absolute;left:calc(50% + 3px);top:50%;transform:translate(-50%,-50%);border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #fff;z-index:2}
+.ytf-b:focus-visible{outline:3px solid var(--azul);outline-offset:3px}
+.ytf iframe{width:100%;aspect-ratio:9/16;border:0;border-radius:var(--r-md);display:block}
+.ytf-t{margin:9px 0 0;font-size:.88rem;line-height:1.45;color:var(--tinta);font-weight:600}
+.vblk .vcanal{margin:18px 0 0;font-size:.88rem}
+</style>
+<div class="vblk">
+<h3>O Matíz por dentro, em vídeo</h3>
+<p class="vsub">Gravei no local. Dá pra ver o acabamento, a metragem real e a região antes de marcar visita.</p>
+<div class="vgrid"><div class="ytf"><button type="button" class="ytf-b" data-yt="_dm3Et5gpOQ" data-t="Apartamento no Matíz Residence, na zona norte de Uberlândia" aria-label="Assistir o vídeo: Apartamento no Matíz Residence, na zona norte de Uberlândia"><img src="/blog/images/yt-dm3Et5gpOQ-v1.webp" alt="" width="540" height="960" loading="lazy" decoding="async"></button><p class="ytf-t">O apartamento e a região, na prática</p></div></div>
+<p class="vcanal">Mais vídeos curtos de Uberlândia no meu canal, <a href="https://www.youtube.com/@marcotuliopro" target="_blank" rel="noopener me">Marco Túlio Andrade · Casa de Bolso</a>.</p>
+</div>
+<script>
+(function(){
+  document.querySelectorAll('.ytf-b').forEach(function(b){
+    b.addEventListener('click',function(){
+      var id=b.getAttribute('data-yt'), t=b.getAttribute('data-t')||'';
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';
+      f.title=t; f.loading='lazy'; f.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share';
+      f.setAttribute('allowfullscreen','');
+      b.replaceWith(f);
+    });
+  });
+})();
+</script>    </article>
     <aside class="art-cta">
       <h2>Quer conhecer o Matíz Residence?</h2>
       <p>Me chama no WhatsApp com o seu perfil (renda e se já tem FGTS) que eu te mando a tabela atualizada, mostro as unidades ainda disponíveis, simulo sua parcela e te levo pra conhecer a obra, sem compromisso.</p>

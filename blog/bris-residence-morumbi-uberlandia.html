@@ -253,7 +253,42 @@
       <p>O Trez já esgotou. O Bris tem só os 12 térreos garden (93 a 103 m², R$ 295 a 300 mil) e entrega em novembro de 2027. O Solis tem mais disponibilidade: apartamentos de 60,92 m² a partir de R$ 260.000 e também 8 térreos garden (93 m² por R$ 293 mil e 103 m² por R$ 304 mil), com entrega em janeiro de 2029. No garden de 103 m², o Bris é R$ 4 mil mais barato e entrega 14 meses antes; no garden menor, o Solis é R$ 2 mil mais barato. Se o critério é prazo, o Bris ganha; se é ticket de entrada menor ou variedade, o Solis.</p>
     
 <p class="ver-zona" style="background:var(--superficie);border:1px solid var(--nevoa);border-left:4px solid var(--azul);border-radius:var(--r-md);padding:16px 20px;margin:26px 0;font-size:.97rem;line-height:1.6">🧭 <a href="/blog/apartamentos-zona-leste-uberlandia"><strong>Veja todos os lançamentos da zona leste de Uberlândia</strong></a>, com preço, construtora e entrega de cada um numa tabela só.</p>
-</article>
+<style>
+.vblk{border:1px solid var(--nevoa);border-radius:var(--r-lg);background:var(--superficie);box-shadow:var(--lift);padding:clamp(18px,3vw,26px);margin:28px 0}
+.vblk>h3{margin:0 0 4px;font-size:1.16rem}
+.vblk>p.vsub{margin:0 0 18px;font-size:.94rem;color:var(--tinta-suave);line-height:1.5}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.ytf{min-width:0}
+.ytf-b{display:block;width:100%;padding:0;border:0;background:#000;border-radius:var(--r-md);overflow:hidden;position:relative;cursor:pointer;aspect-ratio:9/16;line-height:0}
+.ytf-b img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s var(--ease),opacity .2s}
+.ytf-b:hover img{transform:scale(1.04);opacity:.88}
+.ytf-b::after{content:"";position:absolute;left:50%;top:50%;width:56px;height:56px;transform:translate(-50%,-50%);border-radius:50%;background:rgba(0,0,0,.62);backdrop-filter:blur(2px);border:2px solid rgba(255,255,255,.9)}
+.ytf-b::before{content:"";position:absolute;left:calc(50% + 3px);top:50%;transform:translate(-50%,-50%);border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #fff;z-index:2}
+.ytf-b:focus-visible{outline:3px solid var(--azul);outline-offset:3px}
+.ytf iframe{width:100%;aspect-ratio:9/16;border:0;border-radius:var(--r-md);display:block}
+.ytf-t{margin:9px 0 0;font-size:.88rem;line-height:1.45;color:var(--tinta);font-weight:600}
+.vblk .vcanal{margin:18px 0 0;font-size:.88rem}
+</style>
+<div class="vblk">
+<h3>O Bris em vídeo, com a área privativa</h3>
+<p class="vsub">A metragem das unidades com quintal é o que mais surpreende quem visita. Gravei para você ver antes de ir.</p>
+<div class="vgrid"><div class="ytf"><button type="button" class="ytf-b" data-yt="Zwy8GVIEN0A" data-t="Apartamento com área privativa no Bris Residence, no Morumbi, em Uberlândia" aria-label="Assistir o vídeo: Apartamento com área privativa no Bris Residence, no Morumbi, em Uberlândia"><img src="/blog/images/yt-Zwy8GVIEN0A-v1.webp" alt="" width="540" height="960" loading="lazy" decoding="async"></button><p class="ytf-t">Apartamento com quintal, no Morumbi</p></div></div>
+<p class="vcanal">Mais vídeos curtos de Uberlândia no meu canal, <a href="https://www.youtube.com/@marcotuliopro" target="_blank" rel="noopener me">Marco Túlio Andrade · Casa de Bolso</a>.</p>
+</div>
+<script>
+(function(){
+  document.querySelectorAll('.ytf-b').forEach(function(b){
+    b.addEventListener('click',function(){
+      var id=b.getAttribute('data-yt'), t=b.getAttribute('data-t')||'';
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';
+      f.title=t; f.loading='lazy'; f.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share';
+      f.setAttribute('allowfullscreen','');
+      b.replaceWith(f);
+    });
+  });
+})();
+</script></article>
     <aside class="art-cta">
       <h2>Quer realizar o sonho da casa própria em Uberlândia?</h2>
       <p>Me chama no WhatsApp com a sua renda aproximada. Eu simulo, confirmo sua faixa e te mostro o que cabe no seu bolso, sem compromisso.</p>
