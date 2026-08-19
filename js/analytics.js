@@ -1,4 +1,4 @@
-/* Google Analytics 4 + rastreamento de clique no WhatsApp — marcotulio.pro */
+/* Google Analytics 4 e rastreamento de clique no WhatsApp, marcotulio.pro */
 (function () {
   var ID = 'G-HHXMC3T24V';
   var g = document.createElement('script');
@@ -19,7 +19,7 @@
     if (a.closest('.art-cta')) pos = 'cta_final';
     else if (a.closest('.wa-float')) pos = 'botao_flutuante';
     else if (a.closest('.midcta')) pos = 'cta_meio';
-    else if (a.closest('.leadbox') || a.classList.contains('wa-inline')) pos = 'lista_espera';
+    else if (a.closest('.leadbox') || a.classList.contains('wa-inline')) pos = 'cadastro_prioridade';
     else if (a.closest('header.nav') || a.closest('.nav')) pos = 'menu';
     else if (a.closest('footer')) pos = 'rodape';
     else if (a.closest('.prose')) pos = 'texto';
