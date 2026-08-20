@@ -8,7 +8,7 @@ Diferente do `CHANGELOG.md`, que registra o que já entrou no ar, aqui fica só 
 que está por vir. Quando um item é entregue, ele sai deste arquivo e vira uma
 entrada no changelog.
 
-Última revisão: 17 de agosto de 2026.
+Última revisão: 20 de agosto de 2026.
 
 ---
 
@@ -19,32 +19,15 @@ e a que mais destrava trabalho.
 
 | Preciso de | Destrava | Urgência |
 |---|---|---|
-| Preço correto do Matíz, R$ 235 mil ou R$ 252 mil | Corrigir a divergência entre 3 páginas | Alta |
-| Horário de encerramento do Feirão Canaã | Fechar o `endDate` do schema de evento | Alta |
-| Data de publicação dos 3 vídeos no site | Schema `VideoObject` nas 3 páginas | Média |
-| URLs dos posts de Instagram e LinkedIn | Blocos de embed com fachada | Média |
 | Preços de Prime Clube, Reserva Costa do Sol, Park Jardim do Sol e Jardim Mansour | Resolver divergências antigas de tabela | Média |
-| Tabela vigente do BIT, no Martins | Página do BIT | Média |
-| Origem dos índices INCC e IPCA, e qual série o contrato usa | Calculadora de evolução de obras | Alta |
+| Qual índice cada construtora usa no contrato, INCC-DI ou INCC-M | Calculadora de evolução de obras | Alta |
+| Tabela de preço vigente do Sabará e lista de itens de lazer do condomínio, direto com a Pacaembu | Post grande do Moradas do Horizonte | Média |
 
-### A divergência do Matíz, em detalhe
-
-Três páginas do site dizem coisas diferentes sobre o mesmo produto:
-
-- `/blog/matiz-residence-uberlandia` diz **a partir de R$ 235 mil**, em título,
-  descrição, H1, FAQ e schema.
-- `/blog/apartamentos-zona-norte-uberlandia` e `/cabe-na-minha-renda` dizem
-  **a partir de cerca de R$ 252 mil** para as unidades de 42 e 43 m² de dois
-  quartos.
-
-A hipótese é que os dois estejam certos para unidades diferentes, o R$ 235 mil
-para uma tipologia de um dormitório ou de outra torre. Enquanto não confirmar,
-nenhum dos dois muda, porque a regra é perguntar antes de mexer em preço
-publicado.
-
-Ficou mais urgente porque a página do Matíz agora tem um vídeo cujo título diz
-"R$ 235 MIL". Se o número certo for outro, a contradição está visível em dois
-lugares na mesma tela.
+Resolvido desde a última revisão: preço do Matíz, horário do Feirão Canaã,
+datas de publicação dos 3 vídeos, tabela do Bit 580, e a origem dos índices
+para a calculadora de obras (INCC, IPCA, TR e Selic, todos pelo Banco Central).
+Instagram e LinkedIn saíram da lista a pedido do Marco, em 19 de agosto:
+seguram por enquanto.
 
 ---
 
@@ -69,11 +52,11 @@ Duas coisas, na mesma tela:
 1. **Uma calculadora.** A pessoa informa o valor do contrato, o mês de
    assinatura, o mês previsto de entrega e o que já pagou. A calculadora projeta
    a correção do saldo devedor e das parcelas até a entrega.
-2. **Um painel de índices atualizados.** INCC-DI e INCC-M da Fundação Getulio
-   Vargas, que é o índice da fase de obra na maioria dos contratos, e IPCA do
-   IBGE, usado em parte dos contratos e na fase pós-chaves. Variação do mês,
-   acumulado em 12 meses e acumulado no ano, com a data da última divulgação
-   visível.
+2. **Um painel de índices atualizados.** INCC-DI, IPCA, TR e a Selic meta,
+   todos pelo SGS do Banco Central, que serve as quatro séries pela mesma API
+   pública, sem chave: INCC-DI é a série 192, IPCA é a 433, TR é a 226 e a
+   Selic meta é a 432. Variação do mês, acumulado em 12 meses e acumulado no
+   ano, com a data da última divulgação visível.
 
 ### A rotina semanal, que é o ponto
 
@@ -92,17 +75,17 @@ Requisitos que isso impõe ao layout:
 - A data da última atualização precisa estar visível no bloco. Story sem data
   vira story reciclado, e o seguidor percebe.
 
-### O que precisa ser decidido antes de começar
+### O que ainda falta decidir
 
-- **De onde vêm os índices.** O IBGE tem API pública e estável para o IPCA. A
-  FGV não tem API aberta equivalente para o INCC, então ele provavelmente entra
-  por atualização manual mensal, com data e fonte declaradas na página. Isso
-  muda a arquitetura: API significa página dinâmica, manual significa um JSON
-  versionado no repositório.
-- **Qual índice cada contrato usa.** INCC-DI e INCC-M não são a mesma série e
-  os contratos das construtoras não usam todos o mesmo. A calculadora deve
-  deixar o usuário escolher, com um texto explicando onde encontrar isso no
-  contrato dele.
+- **INCC-DI ou INCC-M por contrato.** As duas séries existem e não são iguais;
+  os contratos das construtoras não usam todas a mesma. Confirmado que o
+  contrato do Bit 580 usa INCC-DI. Falta confirmar os demais. A calculadora
+  deve deixar o usuário escolher, com um texto explicando onde encontrar isso
+  no contrato dele.
+- **Arquitetura de atualização.** Com os quatro índices vindo do SGS do Banco
+  Central por API pública, a atualização pode ser feita no build, buscando as
+  quatro séries e gravando um JSON versionado no repositório, sem depender de
+  digitação manual mensal.
 - **Onde a página fica.** Recomendação: `marcotulio.pro/obras`, no raiz, com
   redirecionamentos de `/incc`, `/evolucao-de-obras` e `/correcao-parcela`.
 
@@ -119,7 +102,7 @@ Requisitos que isso impõe ao layout:
 
 ### Pronto quando
 
-Calculadora funcionando com INCC-DI, INCC-M e IPCA, painel com data e fonte,
+Calculadora funcionando com INCC-DI, IPCA, TR e Selic, painel com data e fonte,
 bloco desenhado para print de story com URL e CRECI embutidos, schema
 `WebApplication` e `BreadcrumbList`, FAQ visível casada com o JSON-LD,
 redirecionamentos, entrada no sitemap e link a partir da home, do
@@ -131,7 +114,9 @@ redirecionamentos, entrada no sitemap e link a partir da home, do
 
 Descoberto na marra em 16 de agosto: o card do plantão na home ficou uma semana
 anunciando a ação anterior, no endereço errado, porque `/plantao` e `index.html`
-são dois arquivos independentes e só um foi atualizado.
+são dois arquivos independentes e só um foi atualizado. Já corrigido daquela
+vez, mas o risco estrutural continua: nada impede o mesmo erro na próxima
+agenda.
 
 O `/plantao` é a página de maior prioridade do sitemap e a agenda muda toda
 semana. Errar ali manda gente para o lugar errado num sábado.
@@ -150,24 +135,52 @@ build.
 
 ---
 
-## P1 · Página do BIT, no Martins
+## P1 · Post grande sobre o Moradas do Horizonte, os dois condomínios
 
-Primeiro produto fora do espectro econômico, na região central norte. Depende
-da tabela vigente.
+Já existe `/blog/moradas-do-horizonte-sabara-uberlandia`, publicada em 18 de
+julho, cobrindo a segunda fase, o Sabará, e citando o Ouro Preto (primeira
+fase, 100% vendida) como prova de demanda. O que falta é o post grande que o
+Marco pediu em 19 de agosto: uma peça central que trata o Moradas do Horizonte
+como o que ele é, um empreendimento de duas fases lançadas pela Pacaembu
+Construtora, não dois lançamentos avulsos.
 
-Ângulo proposto: investidor e locação, não primeiro imóvel, porque o perfil de
-busca do Martins é diferente do resto da carteira.
+Fatos confirmados pelo Marco para este post, que ainda não estão explícitos na
+página atual:
 
-Pendente de decisão: publicar como página de empreendimento ou como comparativo
-com o Matíz, já que os dois disputam o mesmo comprador na região norte.
+- São **2 condomínios já lançados**, Ouro Preto e Sabará, ambos da Pacaembu.
+- Ficam **no fim do EcoPark**, zona sul. A página atual já fala da região do
+  EcoPark de forma geral; falta a localização mais específica dentro dela.
+- Casas **isoladas no próprio lote**, não geminadas. Isso já está dito no
+  Sabará ("casa térrea... não geminada"), mas precisa aparecer com o mesmo peso
+  no post grande, porque é um diferencial real frente aos condomínios de casa
+  geminada que dominam a zona oeste.
+- **Lazer completo** dentro do condomínio. A página do Sabará ainda não detalha
+  a lista de itens de lazer, célula que precisa ser preenchida com o material
+  da construtora antes de publicar.
+
+O que o post grande faz que a página atual não faz:
+
+- Trata os dois condomínios lado a lado, com o que cada um tem de disponível
+  hoje (o Ouro Preto esgotado vira prova social, não é o produto à venda).
+- Detalha o lazer completo do condomínio, com lista conferida no material da
+  Pacaembu, não em termos genéricos.
+- Fecha a localização exata dentro do EcoPark, com mapa.
+- Linka com o cluster de casas Pacaembu já publicado e com o Gran Vic, que é o
+  outro grande lançamento da mesma região.
+
+Falta receber da Pacaembu, antes de escrever: tabela de preço vigente do
+Sabará (a página atual não publica preço), lista de itens de lazer do
+condomínio, e confirmação se o Ouro Preto tem alguma unidade em revenda que
+valha mencionar.
 
 ---
 
 ## P1 · Casa ou apartamento, o comparativo
 
 Cluster que ainda não existe e que aproveita conteúdo já publicado sobre casas
-da Pacaembu, casa no terreno próprio e os condomínios de casa da zona oeste.
-A busca por "casa ou apartamento" é constante e hoje o site não responde.
+da Pacaembu, casa no terreno próprio, os condomínios de casa da zona oeste e,
+depois de escrito, o post grande do Moradas do Horizonte. A busca por "casa ou
+apartamento" é constante e hoje o site não responde.
 
 ---
 
@@ -176,7 +189,9 @@ A busca por "casa ou apartamento" é constante e hoje o site não responde.
 O simulador vive em `simulador.marcotulio.pro` e não tem propriedade própria no
 Search Console, então o tráfego dele é invisível. Todo CTA de número do site
 aponta para lá, ou seja, o destino final da jornada é justamente o que ninguém
-mede.
+mede. Ficou mais urgente com a campanha paga rodando: o site principal está
+ligado ao Analytics, mas o subdomínio de destino final não tem propriedade
+própria.
 
 Recomendação: criar como propriedade de prefixo de URL,
 `https://simulador.marcotulio.pro/`, e não como domínio, para separar limpo do
@@ -186,28 +201,29 @@ site principal.
 
 ## P1 · Sitemap segmentado
 
-Um sitemap único com 82 URLs mistura páginas, artigos, empreendimentos e guias
+Um sitemap único com 84 URLs mistura páginas, artigos, empreendimentos e guias
 de região, e isso dificulta ler a cobertura por tipo no Search Console.
 Segmentar em `sitemap-paginas.xml`, `sitemap-artigos.xml`,
 `sitemap-empreendimentos.xml` e `sitemap-regioes.xml`, com um índice.
 
 ---
 
-## P1 · Embeds de Instagram e LinkedIn
+## P2 · Embeds de Instagram e LinkedIn
 
-O componente de fachada já existe e está rodando nas três páginas com vídeo.
-Falta só apontar para os posts.
+Em espera a pedido do Marco desde 19 de agosto. O componente de fachada já
+existe e está rodando nas três páginas com vídeo do YouTube; quando retomar,
+basta apontar para os posts certos.
 
-O padrão é o mesmo: capa local em WebP, botão de play em CSS, e o iframe do
-terceiro só entra depois do clique. Embed cru de Instagram pesa de 800 KB a
-1 MB por post e derrubaria o desempenho móvel que hoje está em 100.
+O padrão é o mesmo usado nos vídeos: capa local em WebP, botão de play em CSS,
+e o iframe do terceiro só entra depois do clique. Embed cru de Instagram pesa
+de 800 KB a 1 MB por post e derrubaria o desempenho móvel que hoje está em 100.
 
-Critério de escolha do post: só entra o que **prova** alguma coisa, como
-entrega de chave, plantão cheio, antes e depois de obra. Carrossel de feed
-genérico é enfeite e não vale o peso.
+Critério de escolha do post, para quando voltar: só entra o que **prova**
+alguma coisa, como entrega de chave, plantão cheio, antes e depois de obra.
+Carrossel de feed genérico é enfeite e não vale o peso.
 
-O X fica de fora por enquanto. O widget é o mais frágil dos três e o perfil
-ainda tem pouca atividade.
+O X fica de fora do embed por enquanto. O widget é o mais frágil dos três e o
+perfil ainda tem pouca atividade.
 
 ---
 
@@ -259,9 +275,17 @@ Sai daqui quando virar entrada no changelog.
 
 - `/cabe-na-minha-renda`, com as seis faixas e os 29 empreendimentos
 - Guias das quatro zonas da cidade
-- Comparação Gran Toro e Bella Vita
-- Redes sociais visíveis com ícone nas 84 páginas
+- Comparação Gran Toro e Bella Vita, incluindo a correção das construtoras
+  (Marca Registrada e Urbani, não Vitta e Pacaembu)
+- Página do Bit 580, no Martins, primeiro produto fora do econômico
+- Divergência de preço do Matíz resolvida (R$ 235 mil confere, com a tipologia
+  certa em cada página)
+- Horário do Feirão Canaã fechado no schema de evento
+- `VideoObject` nos 3 vídeos embutidos no blog
+- `/privacidade`, com os prazos reais de retenção do Analytics
+- Link do simulador nos 11 artigos do cluster de financiamento que não tinham
+- FAQPage sincronizado com o texto visível em 11 páginas
+- Redes sociais visíveis com ícone nas 85 páginas
 - `/links`, página de bio, `noindex` e `follow`
 - CNPJ no rodapé e como `taxID` no schema
-- Vídeos do canal com fachada de clique em 3 páginas
 - Correção do card do plantão na home
