@@ -22,6 +22,7 @@ e a que mais destrava trabalho.
 | Preços de Prime Clube, Reserva Costa do Sol, Park Jardim do Sol e Jardim Mansour | Resolver divergências antigas de tabela | Média |
 | Qual índice cada construtora usa no contrato, INCC-DI ou INCC-M | Calculadora de evolução de obras | Alta |
 | Tabela de preço vigente do Sabará e lista de itens de lazer do condomínio, direto com a Pacaembu | Post grande do Moradas do Horizonte | Média |
+| Tabela oficial, data de lançamento e plantas do Gran Vic Essenza, quando a VIC divulgar | Trocar as condições preliminares da página pelos dados oficiais | Alta |
 
 Resolvido desde a última revisão: preço do Matíz, horário do Feirão Canaã,
 datas de publicação dos 3 vídeos, tabela do Bit 580, e a origem dos índices
@@ -165,8 +166,8 @@ O que o post grande faz que a página atual não faz:
 - Detalha o lazer completo do condomínio, com lista conferida no material da
   Pacaembu, não em termos genéricos.
 - Fecha a localização exata dentro do EcoPark, com mapa.
-- Linka com o cluster de casas Pacaembu já publicado e com o Gran Vic, que é o
-  outro grande lançamento da mesma região.
+- Linka com o cluster de casas Pacaembu já publicado e com o Gran Vic Essenza,
+  que é o outro lançamento grande da mesma região.
 
 Falta receber da Pacaembu, antes de escrever: tabela de preço vigente do
 Sabará (a página atual não publica preço), lista de itens de lazer do
@@ -273,6 +274,10 @@ disso, porque a alternativa seria inventar dado.
 
 Sai daqui quando virar entrada no changelog.
 
+- `/blog/gran-vic-essenza-uberlandia`, com o nome oficial do lançamento da VIC,
+  a ficha preliminar completa e as condições de pré-lançamento marcadas como
+  preliminares. A URL antiga `/blog/gran-vic-uberlandia` virou 301 para ela,
+  em vez de virar uma segunda página competindo pelo mesmo termo
 - `/cabe-na-minha-renda`, com as seis faixas e os 29 empreendimentos
 - Guias das quatro zonas da cidade
 - Comparação Gran Toro e Bella Vita, incluindo a correção das construtoras
