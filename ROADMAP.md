@@ -23,6 +23,7 @@ e a que mais destrava trabalho.
 | Qual índice cada construtora usa no contrato, INCC-DI ou INCC-M | Calculadora de evolução de obras | Alta |
 | Tabela de preço vigente do Sabará e lista de itens de lazer do condomínio, direto com a Pacaembu | Post grande do Moradas do Horizonte | Média |
 | Tabela oficial, data de lançamento e plantas do Gran Vic Essenza, quando a VIC divulgar | Trocar as condições preliminares da página pelos dados oficiais | Alta |
+| Tabela do Liberty Residence e as condições de recursos próprios, que a Barbosa Amorim solta no início de setembro | Publicar preço na página do Liberty, que hoje sai sem preço de propósito | Alta |
 
 Resolvido desde a última revisão: preço do Matíz, horário do Feirão Canaã,
 datas de publicação dos 3 vídeos, tabela do Bit 580, e a origem dos índices
@@ -274,6 +275,11 @@ disso, porque a alternativa seria inventar dado.
 
 Sai daqui quando virar entrada no changelog.
 
+- `/blog/liberty-residence-monte-hebron-uberlandia`, o lançamento da Barbosa
+  Amorim no Monte Hebron, publicado antes do lançamento e de propósito sem
+  preço, porque a tabela só sai em setembro. Grafia do bairro conferida nos
+  Correios e na Prefeitura: Monte Hebron com N, e a variante Hebrom entra
+  como palavra-chave e no `alternateName` do schema
 - `/blog/gran-vic-essenza-uberlandia`, com o nome oficial do lançamento da VIC,
   a ficha preliminar completa e as condições de pré-lançamento marcadas como
   preliminares. A URL antiga `/blog/gran-vic-uberlandia` virou 301 para ela,
