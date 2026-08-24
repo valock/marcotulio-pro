@@ -55,6 +55,7 @@
 .leadbox button:hover{transform:translateY(-2px);background:var(--coral-profundo)}
 .leadbox .privacy{font-size:.75rem;color:var(--tinta-suave);text-align:center;margin-top:12px}
 .okmsg{display:none;background:#E7F6EC;color:var(--verde-zap);border:1px solid #BEE7CB;border-radius:var(--r-md);padding:18px;text-align:center;font-weight:700;margin-top:16px}
+.errmsg{display:none;background:#FFF7E6;color:#8A5B04;border:1px solid #F1DDAF;border-radius:var(--r-md);padding:18px;text-align:center;font-weight:700;margin-top:16px;line-height:1.55}.errmsg a{color:#8A5B04;text-decoration:underline}
 .wa-inline{display:block;text-align:center;background:var(--verde-zap);color:#fff;font-weight:700;font-size:1.02rem;text-decoration:none;padding:15px 22px;border-radius:var(--r-pill);margin:18px auto 0;max-width:560px;box-shadow:var(--lift);transition:transform .15s var(--ease)}
 .prose a.wa-inline{color:#fff;text-decoration:none}
 .wa-inline:hover{transform:translateY(-2px)}
@@ -216,6 +217,8 @@ details p{margin:12px 0 4px;font-size:1rem}
   <p class="sub">Seja o primeiro a receber os detalhes do novo lançamento da zona sul.</p>
   <form id="leadForm" name="lead-zona-sul" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return enviarLead(event)">
     <input type="hidden" name="form-name" value="lead-zona-sul">
+    <input type="hidden" name="pagina" id="f_pagina">
+    <input type="hidden" name="enviado_em" id="f_quando">
     <p style="display:none"><label>Não preencha: <input name="bot-field"></label></p>
     <label for="nome">Nome</label>
     <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
@@ -239,9 +242,10 @@ details p{margin:12px 0 4px;font-size:1rem}
     <p class="privacy">Seus dados são usados apenas para eu te avisar sobre este lançamento. Sem spam.</p>
   </form>
   <div class="okmsg" id="okmsg">✅ Pronto! Vou te chamar no WhatsApp assim que os detalhes forem oficiais. Você está na frente.</div>
+  <div class="errmsg" id="errmsg">⚠️ Não consegui registrar o seu cadastro aqui no site. Mas eu abri o WhatsApp com os seus dados preenchidos: <b>é só apertar enviar naquela conversa</b> que eu recebo do mesmo jeito. Se não abriu, <a href="https://wa.me/5534996778075" target="_blank" rel="noopener">clique para falar comigo</a>.</div>
 </div>
 
-<a class="wa-inline" href="https://wa.me/5534996778075?text=Oi%20Marco!%20Quero%20entrar%20na%20lista%20de%20espera%20do%20novo%20lan%C3%A7amento%20da%20zona%20sul%20de%20Uberl%C3%A2ndia." target="_blank" rel="noopener">💬 Prefiro entrar na lista direto pelo WhatsApp</a>
+<a class="wa-inline" href="https://wa.me/5534996778075?text=Oi%20Marco!%20Quero%20ser%20avisado%20em%20primeira%20m%C3%A3o%20do%20novo%20lan%C3%A7amento%20da%20zona%20sul%20de%20Uberl%C3%A2ndia." target="_blank" rel="noopener">💬 Prefiro entrar na lista direto pelo WhatsApp</a>
 
 <h2>Como eu te ajudo a <em>comprar certo</em></h2>
 
@@ -308,15 +312,25 @@ details p{margin:12px 0 4px;font-size:1rem}
 (function(){var n=document.getElementById('nav');if(!n)return;var f=function(){n.classList.toggle('scrolled',window.scrollY>10)};f();window.addEventListener('scroll',f,{passive:true});})();
 function enviarLead(e){
   e.preventDefault();
+  var f=document.getElementById('leadForm');
   var nome=encodeURIComponent(document.getElementById('nome').value);
   var whats=encodeURIComponent(document.getElementById('whats').value);
   var renda=encodeURIComponent(document.getElementById('renda').value||'não informada');
   var obj=encodeURIComponent(document.getElementById('obj').value);
-  try{fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(document.getElementById('leadForm'))).toString()});}catch(err){}
-  document.getElementById('leadForm').style.display='none';
-  document.getElementById('okmsg').style.display='block';
-  var msg='Nova%20lista%20de%20espera%20ZONA%20SUL%3A%20'+nome+'%20%7C%20'+whats+'%20%7C%20Renda%3A%20'+renda+'%20%7C%20'+obj;
+  document.getElementById('f_pagina').value=location.pathname;
+  document.getElementById('f_quando').value=new Date().toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'});
+  var msg='Novo%20cadastro%20ZONA%20SUL%3A%20'+nome+'%20%7C%20'+whats+'%20%7C%20Renda%3A%20'+renda+'%20%7C%20'+obj;
   window.open('https://wa.me/5534996778075?text='+msg,'_blank');
+  f.style.display='none';
+  var ok=document.getElementById('okmsg'), err=document.getElementById('errmsg');
+  ok.style.display='block';
+  var falhou=function(){ok.style.display='none';err.style.display='block';};
+  try{
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams(new FormData(f)).toString()})
+      .then(function(r){if(!r.ok){falhou();}})
+      .catch(falhou);
+  }catch(e2){falhou();}
   return false;
 }
 </script>
