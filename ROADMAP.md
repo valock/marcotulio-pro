@@ -24,6 +24,7 @@ e a que mais destrava trabalho.
 | Tabela de preço vigente do Sabará e lista de itens de lazer do condomínio, direto com a Pacaembu | Post grande do Moradas do Horizonte | Média |
 | Tabela oficial, data de lançamento e plantas do Gran Vic Essenza, quando a VIC divulgar | Trocar as condições preliminares da página pelos dados oficiais | Alta |
 | Tabela do Liberty Residence e as condições de recursos próprios, que a Barbosa Amorim solta no início de setembro | Publicar preço na página do Liberty, que hoje sai sem preço de propósito | Alta |
+| Confirmação na Caixa do teto de Uberlândia (R$ 260 mil) e das regras de imóvel usado em 2026 | Fechar os números do cluster MCMV com fonte primária, hoje conferidos em fonte secundária e no Ministério das Cidades | Alta |
 
 Resolvido desde a última revisão: preço do Matíz, horário do Feirão Canaã,
 datas de publicação dos 3 vídeos, tabela do Bit 580, e a origem dos índices
@@ -229,6 +230,22 @@ perfil ainda tem pouca atividade.
 
 ---
 
+## P1 · Reexecutar a análise de termos de busca
+
+A campanha de agosto gerou 118 termos com demanda provada e virou três artigos.
+O documento pede para refazer isso a cada 30 dias de veiculação: termo de
+pesquisa novo é pauta nova com demanda já comprovada, e sai mais barato que
+qualquer ferramenta de keyword.
+
+Próxima leitura sugerida: fim de setembro. O que olhar:
+
+- Termos que apareceram e não têm artigo, como aconteceu com faixas e subsídio
+- Se `faixa minha casa minha vida` e `subsidio minha casa minha vida` passaram
+  a aparecer no Search Console pelo orgânico
+- Se os artigos novos reduziram a dependência de mídia paga nessas dúvidas
+
+---
+
 ## P2 · Radar imobiliário de Uberlândia
 
 Página de mercado atualizada periodicamente, com FipeZap, lançamentos do
@@ -275,6 +292,15 @@ disso, porque a alternativa seria inventar dado.
 
 Sai daqui quando virar entrada no changelog.
 
+- Cluster de conteúdo do MCMV a partir de dados reais de busca do Google Ads
+  (campanha de 18 a 24 de agosto, 118 termos coletados, R$ 72,31 investidos).
+  Três artigos novos, todos no formato de resposta direta: `/faixas`, com a
+  maior lacuna do site (35 impressões e zero cliques), `/subsidio`, que teve o
+  maior CTR da conta com 33%, e `/lista-mcmv`, que reposiciona quem procura
+  sorteio sem humilhar ninguém
+- Correção do teto do MCMV em Uberlândia: 26 ocorrências de R$ 275 mil viraram
+  R$ 260 mil em 6 páginas. O teto das Faixas 1 e 2 varia por porte de município
+  e R$ 275 mil é o número de região metropolitana, não o de Uberlândia
 - `/blog/liberty-residence-monte-hebron-uberlandia`, o lançamento da Barbosa
   Amorim no Monte Hebron, publicado antes do lançamento e de propósito sem
   preço, porque a tabela só sai em setembro. Grafia do bairro conferida nos
