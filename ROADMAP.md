@@ -247,7 +247,7 @@ Conde, Morumbi, Novo Mundo, Granja Marileusa, Alvorada, Tibery, Grand Ville,
 Presidente Roosevelt, Flamboyant e Martins.
 
 Falta descrever, da zona sul: Shopping Park, Gávea Sul, Jardim Sul, Jardim
-Espanha, Parque Espanha e Eco Park.
+Espanha, Jardim Espanha e Eco Park.
 
 **Construtoras.** Vem depois de bairros, por decisão do Marco. O site já cita
 mais de 20 construtoras espalhadas pelas páginas de empreendimento e pela
@@ -261,10 +261,11 @@ doorway e derruba o site inteiro.
 
 ---
 
-## P1 · Indexador do Marco
+## P0 · Indexador do Marco (próximo)
 
 O Marco está construindo um indexador e vai mandar o conteúdo dele para
-integrar ao site.
+integrar ao site. Confirmado por ele em 28/08/2026 como a próxima frente de
+trabalho, e a de maior impacto.
 
 Quando chegar, decidir com ele:
 
