@@ -230,6 +230,55 @@ perfil ainda tem pouca atividade.
 
 ---
 
+## P1 · Páginas mestras de bairros e de construtoras
+
+A mestra de zonas já está no ar em `/apartamentos`, reunindo os 42
+empreendimentos nas quatro regiões. Faltam as outras duas camadas.
+
+**Bairros.** Os guias de zona oeste, leste e norte já têm a seção "os bairros
+da zona, um por um", com 18 bairros descritos. O da zona sul é o único sem
+essa seção, então o primeiro passo é escrevê-la. Depois disso a mestra de
+bairros é praticamente montagem: reunir os bairros das quatro zonas num índice
+único, com quantos empreendimentos cada um tem e a faixa de preço.
+
+Bairros já descritos: Jardim Holanda, Chácaras Tubalina e Quartel, Pequis,
+Planalto, Mansour, Luizote de Freitas, Jardim Patrícia, Monte Hebron, Fruta do
+Conde, Morumbi, Novo Mundo, Granja Marileusa, Alvorada, Tibery, Grand Ville,
+Presidente Roosevelt, Flamboyant e Martins.
+
+Falta descrever, da zona sul: Shopping Park, Gávea Sul, Jardim Sul, Jardim
+Espanha, Parque Espanha e Eco Park.
+
+**Construtoras.** Vem depois de bairros, por decisão do Marco. O site já cita
+mais de 20 construtoras espalhadas pelas páginas de empreendimento e pela
+tabela de endereços. A mestra reuniria cada uma com os empreendimentos dela na
+cidade, o que também resolve a busca por nome de construtora, que hoje cai em
+página de empreendimento solto.
+
+Guardrail que vale para as duas: página de bairro ou de construtora só existe
+se tiver conteúdo próprio de verdade. Página que troca só o nome do bairro é
+doorway e derruba o site inteiro.
+
+---
+
+## P1 · Indexador do Marco
+
+O Marco está construindo um indexador e vai mandar o conteúdo dele para
+integrar ao site.
+
+Quando chegar, decidir com ele:
+
+- O que o indexador indexa e com que frequência atualiza
+- Se o conteúdo entra como página nova, como dado dentro das páginas que já
+  existem, ou como fonte para manter as tabelas atualizadas sozinhas
+- Se ele resolve o problema recorrente de preço divergente entre páginas, que
+  hoje é conferido na mão
+- Onde ele mora: dentro do marcotulio.pro, no subdomínio do simulador, ou fora
+
+Enquanto o conteúdo não chega, não dá para especificar mais que isso.
+
+---
+
 ## P1 · Reexecutar a análise de termos de busca
 
 A campanha de agosto gerou 118 termos com demanda provada e virou três artigos.
