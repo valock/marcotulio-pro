@@ -261,6 +261,35 @@ doorway e derruba o site inteiro.
 
 ---
 
+## Entregue · Primeira peça do indexador (29/08/2026)
+
+A primeira peça do indexador do Marco foi ao ar em
+`/blog/apartamento-perto-de-supermercado-uberlandia`: distância de cada
+empreendimento até a unidade mais próxima de Super Maxi, D'Ville e ABC,
+calculada sobre coordenadas do OpenStreetMap, com método aberto na página.
+
+O que ficou pronto e serve de base para as próximas peças:
+
+- Rotina de geocodificação dos empreendimentos com trava de conferência
+  (casamento do nome da rua e distância até o centroide do bairro), que
+  descarta o que não passa em vez de publicar número duvidoso.
+- Base de coordenadas de 18 lojas e de 24 empreendimentos.
+- Padrão de página de indicador: método visível, fontes datadas e uma
+  seção dizendo o que ficou de fora e por quê.
+
+O que falta decidir com o Marco:
+
+- Se o indexador vira rotina automática (recalcular e republicar sozinho)
+  ou continua manual a cada rodada.
+- Quais outros equipamentos entram: escola, unidade de saúde, ponto de
+  ônibus, farmácia, parque.
+- Se a distância entra como linha na ficha de cada empreendimento, além
+  da página do indicador.
+- Se ele resolve o problema recorrente de preço divergente entre páginas,
+  que hoje é conferido na mão.
+
+---
+
 ## P0 · Indexador do Marco (próximo)
 
 O Marco está construindo um indexador e vai mandar o conteúdo dele para
