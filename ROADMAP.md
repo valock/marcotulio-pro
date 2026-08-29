@@ -8,7 +8,8 @@ Diferente do `CHANGELOG.md`, que registra o que já entrou no ar, aqui fica só 
 que está por vir. Quando um item é entregue, ele sai deste arquivo e vira uma
 entrada no changelog.
 
-Última revisão: 20 de agosto de 2026.
+Última revisão: 29 de agosto de 2026, depois da leitura dos últimos 12 meses
+de Search Console.
 
 ---
 
@@ -31,6 +32,124 @@ datas de publicação dos 3 vídeos, tabela do Bit 580, e a origem dos índices
 para a calculadora de obras (INCC, IPCA, TR e Selic, todos pelo Banco Central).
 Instagram e LinkedIn saíram da lista a pedido do Marco, em 19 de agosto:
 seguram por enquanto.
+
+---
+
+## O que o Search Console diz (12 meses até 27/08/2026)
+
+Números do relatório: **147 cliques, 4.941 impressões, CTR de 2,98%,
+posição média 7,3**. Celular responde por 100 dos 147 cliques.
+
+A evolução por período conta a história inteira:
+
+| Período | Impressões por dia | Cliques | CTR | Posição média |
+|---|---|---|---|---|
+| 14 a 30 de junho | 31,8 | 25 | 4,6% | 6,6 |
+| Julho | 58,8 | 50 | 2,7% | 7,4 |
+| 1 a 14 de agosto | 90,3 | 40 | 3,2% | 6,6 |
+| 15 a 27 de agosto | 101,1 | 32 | 2,4% | 7,9 |
+
+**As impressões triplicaram em dois meses e os cliques não acompanharam.** O
+site passou a aparecer muito mais e a ser clicado proporcionalmente menos. Isso
+inverte a prioridade do roadmap: o gargalo deixou de ser produzir página nova e
+passou a ser **fazer a página que já aparece ser clicada**.
+
+### O padrão que funciona
+
+Página de empreendimento com nome próprio tem o melhor CTR do site:
+
+| Página | Cliques | Impressões | CTR |
+|---|---|---|---|
+| Solis Residence | 25 | 234 | 10,7% |
+| Lançamento Opção | 11 | 114 | 9,7% |
+| Feirão Torrano de junho | 6 | 52 | 11,5% |
+| Gran Vic Essenza | 4 | 26 | 15,4% |
+| Opção Studios Campus | 4 | 23 | 17,4% |
+
+### O padrão que não funciona
+
+Muita impressão e quase nenhum clique. Estas sete páginas somam **2.283
+impressões e 12 cliques**, um CTR de 0,5%:
+
+| Página | Impressões | Cliques | CTR |
+|---|---|---|---|
+| Trez Residence | 867 | 11 | 1,3% |
+| Matíz Residence | 483 | 3 | 0,6% |
+| Home | 327 | 3 | 0,9% |
+| FipeZAP de julho | 177 | 0 | 0% |
+| Morumbi MCMV | 163 | 2 | 1,2% |
+| Comprar apartamento MCMV | 162 | 3 | 1,9% |
+| Carro ou casa primeiro | 143 | 1 | 0,7% |
+
+---
+
+## P0 · Reescrever title e description das sete páginas de maior desperdício
+
+O item de maior retorno do roadmap, e o mais barato. Não exige página nova,
+nem dado do Marco, nem imagem.
+
+### O diagnóstico, caso a caso
+
+**Trez Residence** é o maior volume do site e o maior desperdício. As consultas
+mostram por quê: "rua silhao 419" traz 130 impressões e zero clique, "rua
+silhão 419" traz 65 e zero, "rua silhão 419 morumbi" traz 63 e um clique. São
+**258 impressões procurando o endereço** e o title não responde ao endereço.
+Quem digita a rua quer saber o que existe naquele número.
+
+**Matíz Residence** repete o caso: "matiz residence" (158), "matiz residence
+uberlandia" (65), "matriz residence" (14, com o erro de digitação que as
+pessoas cometem) e "condominio matiz" (1). São 238 impressões e 2 cliques.
+
+**FipeZAP de julho** tem 177 impressões e zero clique, e é conteúdo datado que
+envelheceu. Ou ganha atualização mensal com data no title, ou sai do ar.
+
+### O que fazer
+
+- Reescrever `<title>` e `<meta name="description">` das sete, começando pelo
+  Trez e pelo Matíz, colocando no title **o que a pessoa digitou**: endereço,
+  bairro, preço, "o que existe hoje".
+- Levar para o title os números que a página já tem, porque número em resultado
+  de busca é o que ganha o clique de quem compara.
+- Medir de novo em 30 dias, com o mesmo relatório, e comparar só o CTR dessas
+  sete.
+
+### Pronto quando
+
+As sete reescritas, publicadas, e uma nova leitura do Search Console 30 dias
+depois registrada aqui.
+
+---
+
+## P0 · As páginas de zona não ranqueiam para o termo da zona
+
+Descoberto no mesmo relatório e é um problema estrutural, não de texto.
+
+As consultas "uberlandia zona sul", "zona sul uberlandia" e "zona sul de
+uberlandia" aparecem nas posições **53,2, 48,0 e 52,7**. O guia da zona sul
+está na posição média 15,8 com 68 impressões. As outras três zonas somam 15
+impressões: oeste 12, norte 2, leste 1.
+
+Ou seja: existem quatro guias de região publicados e eles praticamente não
+existem para o Google. Precisa entender se é falta de links internos, se as
+quatro páginas competem entre si, ou se o conteúdo não responde ao que a
+pessoa procura quando digita "zona sul uberlandia".
+
+Investigar antes de reescrever. Não adianta mexer no texto se o problema é de
+arquitetura.
+
+---
+
+## P1 · Investigar as consultas de polpa de fruta
+
+O relatório traz "polpas de frutas", "polpa de fruta congelada", "polpa de
+frutas congeladas", "polpa de fruta direto da fábrica", "polpas" e "polpa",
+somando 12 impressões, todas em posição de 5 a 27. Também aparecem "corretora
+náutica em uberlândia" e "corretora de barcos em uberlândia".
+
+Nenhuma dessas buscas tem a ver com o site. Vale descobrir qual página o Google
+está associando a elas e por quê. Pode ser texto residual, pode ser confusão do
+buscador com a palavra "corretor". É pouco tráfego, mas é sinal de que o Google
+ainda não entendeu com clareza do que o site trata, e isso atrapalha tudo.
 
 ---
 
@@ -316,12 +435,24 @@ O documento pede para refazer isso a cada 30 dias de veiculação: termo de
 pesquisa novo é pauta nova com demanda já comprovada, e sai mais barato que
 qualquer ferramenta de keyword.
 
-Próxima leitura sugerida: fim de setembro. O que olhar:
+Leitura de 29 de agosto feita, e está resumida na seção "O que o Search
+Console diz", no topo. O cluster MCMV publicado em agosto ainda não aparece no
+relatório dos 12 meses, porque é recente demais: as páginas de faixas, subsídio
+e lista foram ao ar depois do corte.
 
-- Termos que apareceram e não têm artigo, como aconteceu com faixas e subsídio
-- Se `faixa minha casa minha vida` e `subsidio minha casa minha vida` passaram
-  a aparecer no Search Console pelo orgânico
-- Se os artigos novos reduziram a dependência de mídia paga nessas dúvidas
+Próxima leitura: fim de setembro. O que olhar, nesta ordem:
+
+- **O CTR das sete páginas do P0**, comparado com o de agora. É a única métrica
+  que diz se a reescrita de title funcionou.
+- Se `faixa minha casa minha vida`, `subsidio minha casa minha vida` e
+  `apartamento perto de supermercado uberlandia` passaram a aparecer.
+- Se as páginas de zona saíram das posições 48 a 53 para os termos de zona.
+- Termos que apareceram e não têm artigo, que é como nasceram as páginas de
+  faixas e de subsídio.
+- Se os artigos novos reduziram a dependência de mídia paga nessas dúvidas.
+
+Guardar o xlsx de cada leitura, para poder comparar período a período em vez de
+olhar só o número do momento.
 
 ---
 
