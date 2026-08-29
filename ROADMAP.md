@@ -83,6 +83,66 @@ impressões e 12 cliques**, um CTR de 0,5%:
 
 ---
 
+## O que o Search Console diz sobre o Instagram e o X (23/07 a 27/08)
+
+As duas propriedades novas só têm dado desde 23 de julho, então a comparação
+justa é nessa janela de 36 dias:
+
+| Propriedade | Cliques | Impressões | CTR | Posição média |
+|---|---|---|---|---|
+| marcotulio.pro | 95 | 3.350 | 2,84% | 7,4 |
+| Instagram | 11 | 201 | **5,47%** | 7,4 |
+| X (Twitter) | 0 | 18 | 0% | 16,7 |
+
+O Instagram traz **10,4% dos cliques com 5,6% das impressões**. Na mesma
+posição média do site, ele converte quase o dobro. Faz sentido: resultado de
+perfil de rede social num resultado de busca tem cara de gente, e o do site tem
+cara de página.
+
+### O que o Instagram captura e o site não
+
+As consultas que levam ao perfil são de empreendimento, as mesmas em que o site
+compete: `residencial novo holanda` (3 impressões), `trez residence` (2),
+`place arbi` (2), `bris residence` (1), `pacaembu construtora uberlandia` (1).
+
+Duas delas apontam buraco de conteúdo: **`residencial novo holanda` e
+`place arbi` não têm página no site**, só menção em tabela. O Instagram está
+sendo achado por uma busca que o site não responde.
+
+### O ponto fraco: reel não é clicado
+
+O relatório separa o aspecto "Vídeos": **72 impressões e 1 clique, CTR de 1,4%,
+posição 10,1**. Os posts estáticos vão muito melhor: os dois melhores têm 10% e
+11,1% de CTR, nas posições 3,9 e 4,89.
+
+Ou seja, no Google, reel aparece bastante e não é clicado. Post estático
+aparece menos e converte. Isso vale para a decisão de formato, e vale só para
+busca: dentro do próprio Instagram a lógica é outra e não é medida aqui.
+
+### Sobre o X: o instrumento está errado
+
+**18 impressões em 36 dias, zero clique, em 7 dias com qualquer aparição.** Uma
+única consulta, o nome do Marco. Um único endereço indexado, a página de perfil:
+nenhum post individual aparece.
+
+Isso não significa que o X não sirva para nada. Significa que **o Search
+Console é o instrumento errado para medir o X**, porque a plataforma restringe
+o rastreamento pelo Google. O que dá para afirmar com honestidade é só isto: o
+X não traz tráfego de busca do Google, e não deve ser cobrado por isso. Se ele
+tiver valor, o valor está dentro da própria rede, e precisa ser medido lá.
+
+### O que fazer com isso
+
+- **Não abandonar o X por causa deste número**, e também não esperar tráfego de
+  busca vindo dele.
+- **Tratar o Instagram como ativo de busca**, e não só como rede: ele já ranqueia
+  para nome de empreendimento e converte melhor que o site.
+- **Criar as páginas que faltam** para as buscas que hoje só o perfil responde,
+  começando por Novo Holanda e Place+ Arbi.
+- Reler as três propriedades juntas na próxima leitura, no fim de setembro.
+
+---
+
 ## P0 · Reescrever title e description das sete páginas de maior desperdício
 
 O item de maior retorno do roadmap, e o mais barato. Não exige página nova,
@@ -108,6 +168,8 @@ envelheceu. Ou ganha atualização mensal com data no title, ou sai do ar.
 - Reescrever `<title>` e `<meta name="description">` das sete, começando pelo
   Trez e pelo Matíz, colocando no title **o que a pessoa digitou**: endereço,
   bairro, preço, "o que existe hoje".
+- Criar as páginas do **Novo Holanda** e do **Place+ Arbi**, que hoje só existem
+  como linha de tabela e cujas buscas caem no perfil do Instagram.
 - Levar para o title os números que a página já tem, porque número em resultado
   de busca é o que ganha o clique de quem compara.
 - Medir de novo em 30 dias, com o mesmo relatório, e comparar só o CTR dessas
