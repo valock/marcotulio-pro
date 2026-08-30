@@ -53,6 +53,8 @@
 details{border:1px solid var(--nevoa);border-radius:var(--r-md);padding:16px 20px;margin-bottom:12px;background:var(--superficie)}
 summary{font-family:var(--fdisp);font-weight:700;color:var(--tinta);cursor:pointer;font-size:1.05rem}
 details p{margin:12px 0 4px;font-size:1rem}
+.mapwrap{position:relative;padding-bottom:56%;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--nevoa);box-shadow:var(--lift);margin:18px 0 8px}
+.mapwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .plhero{position:relative;min-height:clamp(400px,66vh,600px);display:flex;align-items:flex-end;border-radius:var(--r-lg);overflow:hidden;margin:8px 0 30px}
 .plhero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .plhero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,27,45,.12) 0%,rgba(15,27,45,.04) 38%,rgba(15,27,45,.82) 100%)}
@@ -86,8 +88,8 @@ details p{margin:12px 0 4px;font-size:1rem}
   "@type": "FAQPage",
   "mainEntity": [
     {"@type": "Question", "name": "Quanto custa um apartamento no Union Vereda?", "acceptedAnswer": {"@type": "Answer", "text": "Pela tabela de julho de 2026, os apartamentos do Union Vereda partem de cerca de R$ 286 mil. O valor muda conforme a torre, o andar e a metragem, e a entrada pode ser parcelada em até 60 vezes. Confirme comigo o valor da unidade disponível antes de decidir."}},
-    {"@type": "Question", "name": "Por que a entrada do Union Vereda pode ser parcelada em até 60x?", "acceptedAnswer": {"@type": "Answer", "text": "Porque o Union Vereda está em obras, com entrega prevista para 2028. Como há mais tempo até as chaves, dá para diluir a entrada em até 60 parcelas, o que ajuda quem não tem uma reserva grande de uma vez. É uma das vantagens de comprar na planta."}},
-    {"@type": "Question", "name": "Onde fica o Union Vereda?", "acceptedAnswer": {"@type": "Answer", "text": "O Union Vereda fica nas Chácaras Tubalina, zona oeste de Uberlândia. Como o endereço exato ainda não é divulgado publicamente, eu envio a localização e o ponto de referência direto no seu WhatsApp."}},
+    {"@type": "Question", "name": "Por que a entrada do Union Vereda pode ser parcelada em até 60x?", "acceptedAnswer": {"@type": "Answer", "text": "Porque o Union Vereda está em obras, com entrega prevista para o segundo semestre de 2028. Como há mais tempo até as chaves, dá para diluir a entrada em até 60 parcelas, o que ajuda quem não tem uma reserva grande de uma vez. É uma das vantagens de comprar na planta."}},
+    {"@type": "Question", "name": "Onde fica o Union Vereda?", "acceptedAnswer": {"@type": "Answer", "text": "O Union Vereda fica na Avenida Aspirante Mega, 1411, nas Chácaras Tubalina e Quartel, zona oeste de Uberlândia."}},
     {"@type": "Question", "name": "Quantos quartos tem o Union Vereda?", "acceptedAnswer": {"@type": "Answer", "text": "São apartamentos de 2 quartos, sendo uma suíte, com sacada, entre 56,9 e 58,4 m². O condomínio tem lazer completo de clube, como piscina, academia e quadra."}}
   ]
 }
@@ -143,14 +145,15 @@ details p{margin:12px 0 4px;font-size:1rem}
   <ul>
     <li><strong>O que é:</strong> Union Vereda, condomínio clube da HLTS nas Chácaras Tubalina, zona oeste de Uberlândia.</li>
     <li><strong>Apartamento:</strong> 2 quartos com suíte e sacada (2QSS), entre 56,9 e 58,4 m².</li>
-    <li><strong>Status:</strong> em obras, entrega prevista para 2028.</li>
+    <li><strong>Status:</strong> em obras, entrega prevista para o segundo semestre de 2028.</li>
     <li><strong>Preço:</strong> a partir de cerca de R$ 286 mil (tabela de julho/2026).</li>
     <li><strong>Condição:</strong> entrada parcelada em até 60x, financiável pela Caixa.</li>
+    <li><strong>Endereço:</strong> Avenida Aspirante Mega, 1411, Chácaras Tubalina e Quartel.</li>
   </ul>
 </div>
 
 <h2>A vantagem de comprar <em>cedo</em></h2>
-<p>Muita gente enxerga o prazo de obra mais longo como problema. Eu vejo o contrário: como a entrega é prevista para 2028, dá pra <strong>diluir a entrada em até 60 vezes</strong>. Em vez de juntar uma bolada de uma vez, você paga a entrada aos poucos, ao longo da obra, e financia o restante com a Caixa quando o prédio ficar pronto. Pra quem tem renda mas não tem uma reserva grande parada, é o cenário ideal.</p>
+<p>Muita gente enxerga o prazo de obra mais longo como problema. Eu vejo o contrário: como a entrega é prevista para o segundo semestre de 2028, dá pra <strong>diluir a entrada em até 60 vezes</strong>. Em vez de juntar uma bolada de uma vez, você paga a entrada aos poucos, ao longo da obra, e financia o restante com a Caixa quando o prédio ficar pronto. Pra quem tem renda mas não tem uma reserva grande parada, é o cenário ideal.</p>
 <div class="specs">
   <div class="spec"><div class="n">2 quartos</div><div class="l">com suíte e sacada</div></div>
   <div class="spec"><div class="n">56,9 a 58,4 m²</div><div class="l">área privativa</div></div>
@@ -171,15 +174,20 @@ details p{margin:12px 0 4px;font-size:1rem}
 </ul>
 <p>Kit bancada da área gourmet e kit para ar condicionado são opcionais, vendidos à parte. O financiamento é pela <a href="/blog/financiamento-caixa-uberlandia">Caixa</a>, com documentação (ITBI e registro) facilitada para quem se enquadra no programa habitacional e não tem imóvel próprio.</p>
 
-<div class="aviso"><strong>Onde fica:</strong> o endereço exato do Union Vereda ainda não é divulgado publicamente. Ele fica nas Chácaras Tubalina, zona oeste, e eu envio a localização e o ponto de referência direto no seu WhatsApp.</div>
+<h2>Onde <em>fica</em></h2>
+<p>O Union Vereda está na <strong>Avenida Aspirante Mega, 1411</strong>, nas Chácaras Tubalina e Quartel, zona oeste de Uberlândia. É uma avenida de ligação da região, no mesmo trecho que concentra os outros lançamentos do bairro.</p>
+<div class="mapwrap"><iframe src="https://maps.google.com/maps?q=Avenida%20Aspirante%20Mega%2C%201411%2C%20Ch%C3%A1caras%20Tubalina%20e%20Quartel%2C%20Uberl%C3%A2ndia%20-%20MG&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa do Union Vereda nas Chácaras Tubalina, Uberlândia" allowfullscreen></iframe></div>
 
-<a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco%20T%C3%BAlio!%20Quero%20a%20localiza%C3%A7%C3%A3o%20e%20as%20condi%C3%A7%C3%B5es%20do%20Union%20Vereda." target="_blank" rel="noopener" class="jump">Receber a localização e a tabela →</a>
+<h2>O empreendimento é <em>modulado</em></h2>
+<p>O Union Vereda não é vendido de uma vez. Ele é entregue em módulos, e <strong>neste primeiro momento estão em comercialização as torres 02, 04 e 05</strong>. Na prática isso muda duas coisas para você: a escolha de posição e andar é feita dentro dessas três torres, e as unidades das torres que ainda não abriram costumam sair com tabela diferente quando forem lançadas. Se a planta que você quer não estiver nessas torres, vale esperar a abertura do próximo módulo, e eu te aviso.</p>
+
+<a href="https://wa.me/5534996778075?text=Ol%C3%A1%20Marco%20T%C3%BAlio!%20Quero%20as%20condi%C3%A7%C3%B5es%20e%20as%20unidades%20dispon%C3%ADveis%20do%20Union%20Vereda." target="_blank" rel="noopener" class="jump">Ver as unidades disponíveis →</a>
 
 <h2>A linha <em>Union</em> da HLTS</h2>
 <p>O Vereda é um dos três Unions da HLTS, cada um em uma região. Vale comparar com os outros dois:</p>
 <ul class="checks">
   <li><a href="/blog/union-landscape-shopping-park-uberlandia">Union Landscape</a>, no Shopping Park (zona sul), pronto pra morar e abaixo da avaliação da Caixa.</li>
-  <li><a href="/blog/union-vista-grand-ville-uberlandia">Union Vista</a>, no Grand Ville (zona leste), com entrega prevista para 2027.</li>
+  <li><a href="/blog/union-vista-grand-ville-uberlandia">Union Vista</a>, no Grand Ville (zona leste), com as duas primeiras torres previstas para agosto de 2027.</li>
 </ul>
 
 <h2>Perguntas <em>frequentes</em></h2>
@@ -189,11 +197,11 @@ details p{margin:12px 0 4px;font-size:1rem}
 </details>
 <details>
   <summary>Por que a entrada do Union Vereda pode ser parcelada em até 60x?</summary>
-  <p>Porque o Union Vereda está em obras, com entrega prevista para 2028. Como há mais tempo até as chaves, dá para diluir a entrada em até 60 parcelas, o que ajuda quem não tem uma reserva grande de uma vez. É uma das vantagens de comprar na planta.</p>
+  <p>Porque o Union Vereda está em obras, com entrega prevista para o segundo semestre de 2028. Como há mais tempo até as chaves, dá para diluir a entrada em até 60 parcelas, o que ajuda quem não tem uma reserva grande de uma vez. É uma das vantagens de comprar na planta.</p>
 </details>
 <details>
   <summary>Onde fica o Union Vereda?</summary>
-  <p>O Union Vereda fica nas Chácaras Tubalina, zona oeste de Uberlândia. Como o endereço exato ainda não é divulgado publicamente, eu envio a localização e o ponto de referência direto no seu WhatsApp.</p>
+  <p>O Union Vereda fica na Avenida Aspirante Mega, 1411, nas Chácaras Tubalina e Quartel, zona oeste de Uberlândia.</p>
 </details>
 <details>
   <summary>Quantos quartos tem o Union Vereda?</summary>
@@ -202,7 +210,7 @@ details p{margin:12px 0 4px;font-size:1rem}
 
 
 <p class="ver-zona" style="background:var(--superficie);border:1px solid var(--nevoa);border-left:4px solid var(--azul);border-radius:var(--r-md);padding:16px 20px;margin:26px 0;font-size:.97rem;line-height:1.6">🧭 <a href="/blog/apartamentos-zona-oeste-uberlandia"><strong>Veja todos os lançamentos da zona oeste de Uberlândia</strong></a>, com preço, construtora e entrega de cada um numa tabela só.</p>
-<p class="fonte">Valores da tabela HLTS de julho/2026, sujeitos a alteração e disponibilidade sem aviso. Data de entrega é uma previsão da construtora e pode mudar. Documentação gratuita (ITBI e registro) sujeita à análise de perfil e crédito, para compradores enquadrados no programa habitacional vigente e sem imóvel próprio. Este conteúdo não constitui oferta de crédito. Confirme sempre os valores e a disponibilidade do dia antes de decidir.</p>
+<p class="fonte">Valores da tabela HLTS de julho/2026 e endereço, prazo e módulo em comercialização da comunicação da construtora de agosto/2026, sujeitos a alteração e disponibilidade sem aviso. Data de entrega é uma previsão da construtora e pode mudar. Documentação gratuita (ITBI e registro) sujeita à análise de perfil e crédito, para compradores enquadrados no programa habitacional vigente e sem imóvel próprio. Este conteúdo não constitui oferta de crédito. Confirme sempre os valores e a disponibilidade do dia antes de decidir.</p>
 
     </article>
     <aside class="art-cta">
