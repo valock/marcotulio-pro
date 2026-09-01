@@ -8,8 +8,7 @@ Diferente do `CHANGELOG.md`, que registra o que já entrou no ar, aqui fica só 
 que está por vir. Quando um item é entregue, ele sai deste arquivo e vira uma
 entrada no changelog.
 
-Última revisão: 29 de agosto de 2026, depois da leitura dos últimos 12 meses
-de Search Console.
+Última revisão: 1º de setembro de 2026, no fechamento de agosto.
 
 ---
 
@@ -26,12 +25,104 @@ e a que mais destrava trabalho.
 | Tabela oficial, data de lançamento e plantas do Gran Vic Essenza, quando a VIC divulgar | Trocar as condições preliminares da página pelos dados oficiais | Alta |
 | Tabela do Liberty Residence e as condições de recursos próprios, que a Barbosa Amorim solta no início de setembro | Publicar preço na página do Liberty, que hoje sai sem preço de propósito | Alta |
 | Confirmação na Caixa do teto de Uberlândia (R$ 260 mil) e das regras de imóvel usado em 2026 | Fechar os números do cluster MCMV com fonte primária, hoje conferidos em fonte secundária e no Ministério das Cidades | Alta |
+| Um extrato real da Caixa de juros de obra, de qualquer cliente | Calibrar o simulador antes de publicar | Alta |
+| Tabela de setembro do Place+ ARBI | A de agosto venceu em 31/08 | Alta |
+| Preço dos 11 empreendimentos com "consultar" na tabela de zona | 25% das linhas hoje não respondem "quanto custa" | Alta |
+| Decisão sobre a frase "campeã de vendas" na arte do Verdão | Rodar a arte nas redes | Média |
 
-Resolvido desde a última revisão: preço do Matíz, horário do Feirão Canaã,
+Resolvido desde a última revisão: preço do Novo Holanda (R$ 299.000, J.V. Silva), a
+tabela completa do Place+ ARBI, os links de lugar do Arbi e do Union Vereda, o
+endereço do Union Vereda e o parcelamento das três torres do Arbi. Antes disso:
+preço do Matíz, horário do Feirão Canaã,
 datas de publicação dos 3 vídeos, tabela do Bit 580, e a origem dos índices
 para a calculadora de obras (INCC, IPCA, TR e Selic, todos pelo Banco Central).
 Instagram e LinkedIn saíram da lista a pedido do Marco, em 19 de agosto:
 seguram por enquanto.
+
+---
+
+## Setembro é mês de medir, não de publicar
+
+Agosto fechou com **28 publicações em quatro dias**, entre páginas novas e
+correções estruturais. Boa parte delas tem janela de medição que só fecha
+agora:
+
+| Mudança | Quando entrou | Quando dá pra medir |
+|---|---|---|
+| Sete titles reescritos com número | 29/08 | meados de setembro |
+| Desduplicação das quatro páginas de zona | 30/08 | fim de setembro |
+| Seção geográfica nas quatro zonas | 30/08 | fim de setembro |
+| Entidade consolidada com `@id` único | 30/08 | 30 a 60 dias |
+| Ordem do blog por data | 31/08 | imediato, mede engajamento |
+
+Publicar em volume agora é atirar em cima da própria medição. Se em 30 dias o
+CTR subir, eu preciso saber **qual** das mudanças fez isso, e isso exige um
+mês relativamente quieto.
+
+### O que medir, com o número de partida
+
+| Indicador | Em 27/08/2026 | Meta para 30/09 |
+|---|---|---|
+| CTR geral | 2,4% | voltar a 4% |
+| Impressões por dia | 101,1 | manter, não cair |
+| Posição de "zona leste uberlandia" | 48 a 53 | abaixo de 30 |
+| Impressões das zonas leste, norte e oeste | 1, 2 e 12 | dois dígitos nas três |
+| Empreendimentos com preço publicado | 33 de 44 | 40 de 44 |
+
+---
+
+## P0 · Os 11 "consultar" das tabelas de zona
+
+Esse é o item de maior retorno de setembro, e não envolve escrever uma linha.
+
+Das **44 linhas** das quatro tabelas de zona, **11 estão sem preço** (25%):
+
+| Zona | Empreendimento | Construtora |
+|---|---|---|
+| Sul | Gran Vic Essenza | VIC Engenharia |
+| Sul | Moradas do Horizonte (Sabará) | Pacaembu |
+| Sul | Jardim Sul | Opção |
+| Sul | Garden Sul | Opção |
+| Sul | Débora Rocha II | Conexlar |
+| Sul | Ecopark I | Inconew |
+| Leste | Trez Residence | Rummo |
+| Leste | Bris Residence | Rummo |
+| Norte | Matíz Residence | Vitta |
+| Oeste | Horizon Residencial | PrimeiroLar |
+| Oeste | Liberty Residence | Barbosa Amorim |
+
+Cada "consultar" é uma busca que o site **não** responde. E o Search Console
+já mostrou qual padrão funciona: as páginas que ranqueiam são as que trazem
+número. Dos 84 titles do blog, só 37 têm número; 47 não têm.
+
+O Trez merece nota à parte: a página tem preço de **revenda** (R$ 320.000
+hoje contra R$ 205.000 no lançamento), o que é um dado bom e raro, mas não
+tem preço de tabela vigente, e a tabela de zona diz "consultar". Quem busca
+"trez residence preço" recebe meia resposta.
+
+**Pronto quando:** pelo menos 7 dos 11 vierem com número, e as tabelas de zona
+passarem de 75% para 90% de preenchimento.
+
+---
+
+## P0 · Rotina mensal de tabelas
+
+A tabela do Place+ ARBI foi emitida em 1º de agosto declarando **validade de
+30 dias**. Venceu em 31 de agosto. O site publica hoje **33 preços** e não tem
+nenhum processo para renovar isso.
+
+Preço vencido é pior que "consultar": é erro dito com confiança. E é o tipo de
+erro que destrói a credibilidade que o resto do site constrói.
+
+**A rotina:** na primeira semana de cada mês, recolher as tabelas vigentes de
+todas as construtoras, atualizar as quatro tabelas de zona mais o
+`cabe-na-minha-renda`, e carimbar a data na nota de fonte de cada página.
+
+As mesmas ligações que renovam os 33 preços cobram os 11 que faltam. É um
+único esforço que resolve os dois P0.
+
+**Pronto quando:** existir um checklist mensal e a primeira rodada de setembro
+estiver aplicada.
 
 ---
 
@@ -143,7 +234,7 @@ tiver valor, o valor está dentro da própria rede, e precisa ser medido lá.
 
 ---
 
-## P0 · Reescrever title e description das sete páginas de maior desperdício
+## Entregue · Reescrever title e description das sete páginas de maior desperdício (29/08/2026)
 
 O item de maior retorno do roadmap, e o mais barato. Não exige página nova,
 nem dado do Marco, nem imagem.
@@ -182,7 +273,7 @@ depois registrada aqui.
 
 ---
 
-## P0 · As páginas de zona não ranqueiam para o termo da zona
+## Entregue · As páginas de zona não ranqueiam para o termo da zona (30/08/2026)
 
 Descoberto no mesmo relatório e é um problema estrutural, não de texto.
 
